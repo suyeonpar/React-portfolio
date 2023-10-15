@@ -37,10 +37,10 @@ function Main() {
   
   return (
    <>
-   <div className="w-full pb-12 bg-fixed bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/images/main-bg.jpeg)" }}>
+   <div className="w-full pb-12 bg-fixed bg-center bg-no-repeat bg-cover" style={{ backgroundImage: 'url("/images/bb.jpeg")' }}>
    <div className='banner-wrap w-full h-[600px] mx-auto relative'>
       <div className='txt z-999 absolute top-[35%] left-[25%]'>
-          <p className='mb-5 text-7xl'>FRONT-END {"{"}<span id='typed' className='text-7xl text-[#5553CF]'>{Typed}</span>{"}"}</p>
+          <p className='mb-5 font-bold text-7xl'>FRONT-END {"{"}<span id='typed' className='text-7xl text-[#5553CF]'>{Typed}</span>{"}"}</p>
           <p className='text-7xl text-[#242424]'>Design Product</p>
       </div>
       <img src='/images/main-bg.jpeg' alt='메인배너' className='' />
