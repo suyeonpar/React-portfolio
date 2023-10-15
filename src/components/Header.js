@@ -26,12 +26,11 @@ function Header() {
   return (
     <>
      <div className='banner-wrap w-full h-[600px] m-auto relative'>
-        <img src='https://via.placeholder.com/1920x800' alt='메인배너' className='' />
-        <div className='txt z-999 absolute'>
-            <p className='text-3xl'>FRONT-END<span id="typed">{MyComponent}</span></p>
+        <div className='txt z-999 absolute t-[50%]'>
+            <p className='text-3xl'>FRONT-END<span id="typed"></span></p>
             <p>My Design Product</p>
-            <div id="typed"></div>
         </div>
+        <img src='https://via.placeholder.com/1920x800' alt='메인배너' className='' />
      </div>
     </>
   )
