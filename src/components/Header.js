@@ -6,15 +6,14 @@ import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
 function Header() {
 
   const [isActive, setIsActive] = useState(false);
-
   const toggleActive = () => {
     setIsActive(!isActive);
   };
 
-  const [ScrollY, setScrollY] = useState(0); // window 의 scrollY값을 저장
+  const [ScrollY, setScrollY] = useState(0);
   const [ScrollActive, setScrollActive] = useState(false);
   function scrollFixed() {
-    if (ScrollY > 600) {
+    if (ScrollY > 80) {
       setScrollY(window.scrollY);
       setScrollActive(true);
     } else {
@@ -35,9 +34,9 @@ function Header() {
   
   return (
     <>
-     <div className='w-full h-[80px] m-auto bg-white items-center flex justify-between'>
+     <div className={`w-full h-[80px] m-auto bg-white items-center flex justify-between ${ScrollActive ? 'fixed' : ''}`}>
       <img src='/images/logo.png' alt='logo' className='ml-5'/>
-      <ul className='flex items-center justify-between w-[30%]'>
+      <ul className='flex items-center justify-between w-[30%] text-2xl'>
         <li onClick={toggleActive} className='${isActive ? text-black : text-white}'>profile</li>
         <li>content</li>
         <li>game</li>

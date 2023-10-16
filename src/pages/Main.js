@@ -26,24 +26,25 @@ function Main() {
           "Tailwind",
           "JavaScript",
         ],
-        typeSpeed: 100,
+        typeSpeed: 150,
         backSpeed: 80,
+        loop : true
       };
       const typed = new Typed("#typed", options);
       return () => {
         typed.destroy();
       };
-    }, []);
+    });
   
   return (
    <>
-   <div className="w-full pb-12 bg-fixed bg-center bg-no-repeat bg-cover" style={{ backgroundImage: 'url("/images/bb.jpeg")' }}>
-   <div className='banner-wrap w-full h-[600px] mx-auto relative'>
-      <div className='txt z-999 absolute top-[35%] left-[25%]'>
-          <p className='mb-5 font-bold text-7xl'>FRONT-END {"{"}<span id='typed' className='text-7xl text-[#5553CF]'>{Typed}</span>{"}"}</p>
-          <p className='text-7xl text-[#242424]'>Design Product</p>
+   <div className="w-full pb-12 bg-fixed bg-center bg-no-repeat bg-cover">
+    <div className='banner-wrap w-full h-[800px] mx-auto relative'>
+      <img src='/images/bg2.jpg' alt='메인배너' className='z-1' />
+      <div className='txt absolute top-[35%] left-[50%] translate-x-[-50%] w-[80%]'>
+          <p className='mb-5 font-bold text-8xl'>FRONT-END  {"{"}<span id='typed' className='text-8xl text-[#5E5BE3]'>{Typed}</span>{"}"}</p>
+          <p className='text-8xl text-[#242424] font-bold after:'>My Design Portfolio</p>
       </div>
-      <img src='/images/main-bg.jpeg' alt='메인배너' className='' />
    </div>
    <Content />
    <Game />

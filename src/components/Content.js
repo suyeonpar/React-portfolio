@@ -46,18 +46,19 @@ function Content() {
     {
       title : "About ME",
       img : "https://via.placeholder.com/425x450",
+      desc : "디자이너에서 개발자로의 성장",
+      desc2 : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, porro.",
+      icon : faChevronDown
+    },
+    {
+      title : "Project",
+      img : "/images/greenping-logo.jpg",
       desc : "Lorem Ipsum is simply dummy",
       icon : faChevronDown
     },
     {
-      title : "project",
-      img : "https://via.placeholder.com/300x300",
-      desc : "Lorem Ipsum is simply dummy",
-      icon : faChevronDown
-    },
-    {
-      title : "clone-cording",
-      img : "https://via.placeholder.com/300x300",
+      title : "Clone-coding",
+      img : "/images/clone.jpg",
       desc : "Lorem Ipsum is simply dummy",
       icon : faChevronDown
     },
@@ -65,31 +66,26 @@ function Content() {
 
   return (
     <>
-    {/* <div className="w-screen h-screen overflow-hidden bacrelative bg-gradient-to-r from-gray-900 to-gray-800">
-      <div className="absolute w-screen h-screen transform -translate-x-1/2 -translate-y-1/2 sky top-1/2 left-1/2 animate-moveStar">
-        <div className='text-white fill-current stroke-0 stroke-none'></div>
-      </div>
-    </div> */}
-    <div className='absolute w-full mx-auto text-center'>
-      <FontAwesomeIcon icon={faArrowDown} className='text-4xl text-[#474747]' />
-      <p className='mt-10 text-2xl'>성장하는 개발자 박수연입니다.</p>  
+    <div className='w-full mx-auto text-center mt-20'>
+      <p className='mt-10 text-5xl text-[#474747]'>성장하는 개발자 박수연입니다.</p>  
     </div>
     <div className='w-[1200px] mx-auto mt-[200px]'>
-      <div className="flex flex-wrap justify-between max-w-xs">
-        <ul className='flex flex-wrap '>
+      <div className="">
         {
           content.map((e,i)=>{
             return(
-              <div className=''>
-                <img src={e.img} alt='이미지' />
-                <li key={i}>{e.title}</li>
-                <li>{e.desc}</li>
-                <FontAwesomeIcon icon={e.icon} />
-              </div>
+              <ul className=' border-b flex justify-between p-5' key={i}>
+                <img src={e.img} alt={e.title} className='shadow-md rounded-2xl' />
+                <div className='basis-[32%]'>
+                  <li className='font-bold text-5xl mb-3'>{e.title}</li>
+                  <li className='text-2xl mb-3'>{e.desc}</li>
+                  <li className='text-2xl text-[#595959] mb-5'>{e.desc2}</li>
+                  <FontAwesomeIcon icon={e.icon} className='text-2xl' />
+                </div>
+              </ul>
             )
           })
         }
-        </ul>
       </div>
     </div>
     </>
