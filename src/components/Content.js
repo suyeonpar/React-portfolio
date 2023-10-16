@@ -1,4 +1,4 @@
-import { faArrowDown, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
@@ -66,19 +66,19 @@ function Content() {
 
   return (
     <>
-    <div className='w-full mx-auto text-center mt-20'>
-      <p className='mt-10 text-5xl text-[#474747]'>성장하는 개발자 박수연입니다.</p>  
+    <div className='w-full mx-auto text-center'>
+      <p className='text-5xl text-[#474747]'>성장하는 개발자 박수연입니다.</p>  
     </div>
     <div className='w-[1200px] mx-auto mt-[200px]'>
       <div className="">
         {
           content.map((e,i)=>{
             return(
-              <ul className=' border-b flex justify-between p-5' key={i}>
+              <ul className='flex justify-between p-5 border-b ' key={i}>
                 <img src={e.img} alt={e.title} className='shadow-md rounded-2xl' />
                 <div className='basis-[32%]'>
-                  <li className='font-bold text-5xl mb-3'>{e.title}</li>
-                  <li className='text-2xl mb-3'>{e.desc}</li>
+                  <li className='mb-3 text-5xl font-bold'>{e.title}</li>
+                  <li className='mb-3 text-2xl'>{e.desc}</li>
                   <li className='text-2xl text-[#595959] mb-5'>{e.desc2}</li>
                   <FontAwesomeIcon icon={e.icon} className='text-2xl' />
                 </div>

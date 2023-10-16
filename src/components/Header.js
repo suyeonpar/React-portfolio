@@ -13,7 +13,7 @@ function Header() {
   const [ScrollY, setScrollY] = useState(0);
   const [ScrollActive, setScrollActive] = useState(false);
   function scrollFixed() {
-    if (ScrollY > 80) {
+    if (ScrollY > 8) {
       setScrollY(window.scrollY);
       setScrollActive(true);
     } else {
@@ -37,9 +37,9 @@ function Header() {
      <div className={`w-full h-[80px] m-auto bg-white items-center flex justify-between ${ScrollActive ? 'fixed' : ''}`}>
       <img src='/images/logo.png' alt='logo' className='ml-5'/>
       <ul className='flex items-center justify-between w-[30%] text-2xl'>
-        <li onClick={toggleActive} className='${isActive ? text-black : text-white}'>profile</li>
-        <li>content</li>
+        <li onClick={toggleActive} className=''>profile</li>
         <li>game</li>
+        <li>board</li>
         <FontAwesomeIcon icon={faCloudSun} className='mr-5 text-3xl' />
       </ul>
      </div>
