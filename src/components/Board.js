@@ -35,8 +35,8 @@ function Board() {
     <>
     <div className='w-[1280px] mx-auto text-center mb-20'>
       <div className='mb-[60px]'>
-        <span className='text-5xl font-bold'>무엇이 가장 인상적이었나요?</span>
-        <p className='text-2xl mt-4'>의견을 남겨주세요 :{")"}</p>
+        <span className='text-5xl font-bold'>Board</span>
+        <p className='mt-4 text-2xl'>의견을 남겨주세요 :{")"}</p>
       </div>
       <Swiper
       spaceBetween={30}

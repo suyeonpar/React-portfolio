@@ -1,56 +1,68 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Content() {
-
-  const content = [
+  
+  const list = [
     {
-      title : "About ME",
-      img : "https://via.placeholder.com/425x450",
-      desc : "디자이너에서 개발자로의 성장",
-      desc2 : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, porro.",
+      title : "Clone-coding",
+      desc : "belif x VDL",
+      desc2 : "belif x VDL",
       icon : faChevronDown
     },
     {
-      title : "Project",
-      img : "/images/greenping-logo.jpg",
+      title : "Project-greenping",
+      desc : "team project - greenping",
+      desc2 : "team project - greenping",
+      icon : faChevronDown
+    },
+    {
+      title : "Quiz",
       desc : "Lorem Ipsum is simply dummy",
+      desc2 : "Lorem Ipsum is simply dummy",
       icon : faChevronDown
     },
     {
       title : "Clone-coding",
-      img : "/images/clone.jpg",
-      desc : "Lorem Ipsum is simply dummy",
+      desc : "SUBWAY",
+      desc2 : "SUBWAY",
       icon : faChevronDown
     },
   ]
 
+  const [isActive, setIsActive] = useState(0);
+
   return (
     <>
     <div className='w-full h-auto mx-auto'>
-    <div className='text-center h-[400px]'>
-      <p className='text-5xl text-[#474747] leading-[400px] font-bold'>성장하는 개발자 <span className='font-bold text-[#5E5BE3]'>박수연</span>입니다.</p>  
-    </div>
-    <div className='w-[1200px] mx-auto mt-[200px]'>
-      <div className="">
-        {
-          content.map((e,i)=>{
-            return(
-              <ul className='flex justify-between p-5 border-b ' key={i}>
-                <img src={e.img} alt={e.title} className='shadow-md rounded-2xl' />
-                <div className='basis-[32%]'>
-                  <li className='mb-3 text-5xl font-bold'>{e.title}</li>
-                  <li className='mb-3 text-2xl'>{e.desc}</li>
-                  <li className='text-2xl text-[#595959] mb-5'>{e.desc2}</li>
-                  <FontAwesomeIcon icon={e.icon} className='text-2xl' />
-                </div>
-              </ul>
-            )
-          })
-        }
+      <p className='text-5xl text-[#474747] leading-[400px] font-bold text-center'>성장하는 개발자 <span className='font-bold text-[#5E5BE3]'>박수연</span>입니다.</p>  
+      <div className='w-[1200px] mx-auto mt-[200px]'>
+        <div className="flex flex-wrap justify-around w-full">
+          <img src="https://via.placeholder.com/425x450" alt='프로필 사진' className='border shadow-md rounded-2xl'/>
+          <ul className='p-5 text-justify border-b'>
+            <h3 className='mb-3 text-5xl font-bold'>About me</h3>
+            <li className='mb-3 text-3xl'>디자이너에서 <span className='font-bold'>개발자</span>로의 성장</li>
+            <li className='text-2xl text-[#ddd] mb-5 w-[500px]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged..</li>
+          </ul>
+        </div>
       </div>
-    </div>
+      <div className='flex flex-wrap w-[1200px] mx-auto mt-20 bg-white'>
+        
+      {
+        list.map((e,i)=>{
+          return(
+            <div key={i} className="box-border relative flex p-10 cursor-pointer basis-[49%]">
+              <ul className='border-b basis-full'>
+                <h3 className="text-2xl font-bold">{e.title}</h3>
+                <li className="my-4">{e.desc}</li>
+                <li className="my-4">{e.desc}</li>  
+              </ul>
+            </div>
+          )
+        })
+      }
+      </div>
     </div>
     </>
   )

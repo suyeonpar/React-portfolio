@@ -10,12 +10,11 @@ import Aside from './components/Aside';
 function App() {
   return (
     <>
-    <Header />
+
     <Routes>
       <Route path='/' element={<Main />}></Route>
     </Routes>
     <Aside />
-    <Footer />
     </>
   );
 }
