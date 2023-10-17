@@ -9,7 +9,7 @@ function Game() {
     <div className='game-content w-full mx-auto h-[500px] text-center mt-20 items-center mb-20'>
         <div className='pt-12 '>
           <h3 className='text-5xl font-bold'>Would you like to play a game?</h3>
-          <ul className='flex justify-between w-[80%] mt-20 mx-auto'>
+          <ul className='flex justify-between w-[80%] mt-20 mx-auto flex-wrap'>
           {
             list.map((e,i)=>{
               return(

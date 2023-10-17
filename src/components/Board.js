@@ -1,5 +1,9 @@
 import { faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Swiper, SwiperSlide   } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules'
+import 'swiper/css/navigation';
+import 'swiper/css';
 import React from 'react'
 
 function Board() {
@@ -34,22 +38,25 @@ function Board() {
         <span className='text-5xl font-bold'>무엇이 가장 인상적이었나요?</span>
         <p className='text-2xl mt-4'>의견을 남겨주세요 :{")"}</p>
       </div>
+      <Swiper
+      spaceBetween={30}
+      slidesPerView={3}
+      navigation={{clickable: true}}
+      modules={[Navigation, Pagination]}
+    >
       <ul className='flex justify-between w-[1280px] mx-auto'>
-      {
-        data.map((e,i)=>{
-          return(
-            <div key={i}>
-              <img src={e.img} alt='이미지' />
-              <li>{e.title}</li>
-              <FontAwesomeIcon icon={e.svg} className='' />
-            </div>
-              )
-            })
-          }
-        </ul> 
+        {data.map((e, i) => (
+          <SwiperSlide key={i}>
+            <img src={e.img} alt='이미지' />
+            <li>{e.title}</li>
+            <FontAwesomeIcon icon={e.svg} className='' />
+          </SwiperSlide>
+        ))}
+      </ul>
+    </Swiper>
     </div>
     </>
   )
 }
-
+  
 export default Board
