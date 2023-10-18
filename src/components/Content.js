@@ -47,21 +47,21 @@ function Content() {
           </ul>
         </div>
       </div>
-      <div className='flex flex-wrap w-[1200px] mx-auto mt-20 bg-white'>
-        
-      {
-        list.map((e,i)=>{
-          return(
-            <div key={i} className="box-border relative flex p-10 cursor-pointer basis-[49%]">
-              <ul className='border-b basis-full'>
-                <h3 className="text-2xl font-bold">{e.title}</h3>
-                <li className="my-4">{e.desc}</li>
-                <li className="my-4">{e.desc}</li>  
-              </ul>
-            </div>
-          )
-        })
-      }
+      <div className='flex flex-wrap justify-between w-full mx-auto mt-20 bg-white'>
+        {
+          list.map((e,i)=>{
+            return(
+              <div key={i} className="box-border relative flex p-10 cursor-pointer basis-[45%]">
+                <ul className='border-b basis-full'>
+                  <h3 className="text-3xl font-bold">{e.title}</h3>
+                  <li className="my-4 text-2xl">{e.desc}</li>
+                  <li className="my-4">{e.desc}</li>  
+                </ul>
+              </div>
+            )
+          })
+        }
+      <div className='w-[50px] bg-black h-[500px]'></div>
       </div>
     </div>
     </>
