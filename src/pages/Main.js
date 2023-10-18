@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import WOW from 'wowjs';
 import '../App.css';
 import '../index.css';
+import Profile from '../components/Profile';
 
 function Main() {
   //animation
@@ -27,11 +28,13 @@ function Main() {
   }, []);
 
   //별배경
-  const Stars = 800
+  const Stars = 3000;
+  const width = 1920;
+  const height = 800;
   
   const createRandomStar = () => {
-  const x = Math.random() * window.innerWidth;
-  const y = Math.random() * window.innerHeight;
+  const x = Math.random() * width;
+  const y = Math.random() * height;
   const size = Math.random() * 3;
   const animationDelay = Math.random() * 5;
   return { x, y, size, animationDelay };
@@ -42,13 +45,13 @@ function Main() {
   return (
     <div>
       <Header />
-      <div className="w-full overflow-hidden bg-gradient-to-b from-[#010b1a] via-[#001738] to-[#fff] h-[700px] transform">
+      <div className="w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] via-[#001738] to-[#fff] h-[700px] transform">
         <div className='relative custom-spin-animation'> 
           {
             stars.map((star, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-[#ddd] rounded-full overflow-hidden"
+                className="absolute w-2 h-2 bg-[#ddd] rounded-full overflow-hidden top-[50%] left-[50%]"
                 style={{
                   left: `${star.x}px`,
                   top: `${star.y}px`,
@@ -60,7 +63,7 @@ function Main() {
                 )
             )}
           </div>
-          <div className='text-center'>
+          <div className='mt-20 text-center'>
             <p className='mb-10 pt-[130px] text-8xl text-white'>Front-end Developer</p>
             <span className='text-white text-8xl wow animate__fadeInUp'>P</span>
             <span className='text-white text-8xl wow animate__fadeInUp'>o</span>
@@ -73,6 +76,7 @@ function Main() {
             <span className='text-white text-8xl wow animate__fadeInUp'>o</span>
           </div>
         </div>
+      <Profile />
       <Content />
       <Use />
       <Game />
