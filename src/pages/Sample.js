@@ -18,8 +18,32 @@ function Sample() {
 
   const stars = Array.from({ length: Stars }, createRandomStar);
 
+  const list = [
+    {
+      title : "Clone-coding",
+      desc : "belif x VDL",
+      desc2 : "belif x VDL"
+
+    },
+    {
+      title : "Project-greenping",
+      desc : "team project - greenping",
+      desc2 : "team project - greenping"
+    },
+    {
+      title : "Quiz",
+      desc : "Lorem Ipsum is simply dummy",
+    },
+    {
+      title : "Clone-coding",
+      desc : "SUBWAY",
+      desc2 : "SUBWAY"
+    },
+  ]
+
   return (
-    <div className="relative w-full bg-gradient-to-b from-[#010b1a] via-[#001738] via-blue-500 to-[#fff] h-[500px] transform animate-moveStar">
+    <>
+    {/* <div className="relative w-full bg-gradient-to-b from-[#010b1a] via-[#001738] via-blue-500 to-[#fff] h-[500px] transform animate-moveStar">
       {
       stars.map((star, index) => (
         <div
@@ -35,7 +59,9 @@ function Sample() {
         ></div>
       )
     )}
-    </div>
+    </div> */}
+
+    </>
   );
 }
 

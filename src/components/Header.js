@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import 'animate.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
+import { faCloudSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
 
@@ -34,13 +34,13 @@ function Header() {
   
   return (
     <>
-     <div className={`z-999 w-full h-[80px] bg-white mx-auto items-center flex justify-between border-b border-[#808080] ${ScrollActive ? 'fixed' : ''}`}>
+     <div className={`z-[9999] w-full h-[80px] bg-white mx-auto items-center top-0 flex justify-between border-b border-[#808080]  ${ScrollActive ? 'fixed' : 'absolute'}`}>
       <img src='/images/logo-black.png' alt='logo' className='ml-5'/>
-      <ul className='flex items-center justify-between w-[30%] text-2xl'>
+      <ul className='flex items-center justify-between w-[30%] text-2xl cursor-pointer'>
         <li className=''>profile</li>
         <li>game</li>
         <li>board</li>
-        <FontAwesomeIcon icon={faCloudSun} className='mr-5 text-3xl' />
+        <FontAwesomeIcon icon={faMoon} className='mr-5 text-3xl' />
       </ul>
      </div>
     </>
