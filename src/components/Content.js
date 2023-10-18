@@ -66,7 +66,7 @@ function Content() {
             return(
               <div key={i} className="box-border relative flex p-10 cursor-pointer basis-[45%]">
                 <ul className='border-b basis-full'>
-                  <h3 className="text-3xl font-bold">{e.title}</h3>
+                  <h3 className="text-4xl font-bold">{e.title}</h3>
                   <li className="my-4 text-2xl">{e.desc}</li>
                   <li className="my-4">{e.desc}</li>  
                 </ul>
