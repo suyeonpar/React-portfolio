@@ -34,7 +34,7 @@ function Header() {
   
   return (
     <>
-     <div className={`w-full h-[80px] bg-white mx-auto items-center flex justify-between border-b border-[#808080] ${ScrollActive ? 'fixed' : ''}`}>
+     <div className={`z-999 w-full h-[80px] bg-white mx-auto items-center flex justify-between border-b border-[#808080] ${ScrollActive ? 'fixed' : ''}`}>
       <img src='/images/logo.png' alt='logo' className='ml-5'/>
       <ul className='flex items-center justify-between w-[30%] text-2xl'>
         <li className=''>profile</li>

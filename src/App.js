@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Content from './components/Content';
 import Aside from './components/Aside';
+import Sample from './pages/Sample';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
     <Routes>
       <Route path='/' element={<Main />}></Route>
+      <Route path='/sam' element={<Sample />} />
     </Routes>
     <Aside />
     </>

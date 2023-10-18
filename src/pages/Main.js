@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import 'animate.css';
 import Typed from 'typed.js';
 import Content from '../components/Content';
@@ -27,72 +27,54 @@ function Main() {
   }, []);
 
   //별배경
-  class Sky extends Component {
-    constructor() {
-      super();
-      this.state = {
-        stars: []
-      };
-    }
-
-    componentDidMount() {
-      this.makeStars();
-    }
-
-    getRandomX = () => Math.random() * window.innerWidth;
-    getRandomY = () => Math.random() * window.innerHeight;
-    randomRadius = () => Math.random() * 0.7 + 0.6;
-
-    makeStars = () => {
-      const maxSize = Math.max(window.innerWidth, window.innerHeight);
-      const _size = Math.floor(maxSize / 2);
-
-      const stars = new Array(_size).fill().map((_, i) => ({
-        cx: this.getRandomX(),
-        cy: this.getRandomY(),
-        r: this.randomRadius(),
-      }));
-
-      this.setState({ stars });
-    }
-
-    render() {
-      return (
-        <div className="absolute transform -translate-x-1/2 -translate-y-1/2 Sky top-1/2 left-1/2 animate-moveStar">
-          {this.state.stars.map((star, i) => (
-            <circle
-              key={i}
-              className="star"
-              cx={star.cx}
-              cy={star.cy}
-              r={star.r}
-            />
-          ))}
-        </div>
-      );
-    }
-  }
+  const Stars = 300
+  
+  const createRandomStar = () => {
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+  const size = Math.random() * 4;
+  const animationDelay = Math.random() * 5;
+  return { x, y, size, animationDelay };
+  };
+  
+  const stars = Array.from({ length: Stars }, createRandomStar);
 
   return (
     <div>
       <Header />
-      <div className=''>
-      <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 animate-moveStar">
-      </div>
+      <div className="w-full bg-gradient-to-b from-[#010b1a] via-[#001738] via-[#133194] to-[#fff] h-[700px] transform">
+        <div className='relative custom-spin-animation'> 
+          {
+            stars.map((star, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-[#ddd] rounded-full"
+                style={{
+                  left: `${star.x}px`,
+                  top: `${star.y}px`,
+                  width: `${star.size}px`,
+                  height: `${star.size}px`,
+                  animationDelay: `${star.animationDelay}s`
+                  }}
+                  ></div>
+                )
+              )}
+          </div>
+          <div className='text-center'>
+            <p className='mb-10 pt-[130px] text-8xl text-white'>Front-end Developer</p>
+            <span className='text-white text-8xl'>{"{"} </span>
+            <span className='text-white text-8xl wow animate__fadeInUp'>P</span>
+            <span className='text-white text-8xl wow animate__fadeInUp'>o</span>
+            <span className='text-white text-8xl wow animate__fadeInUp'>r</span>
+            <span className='text-white text-8xl wow animate__fadeInUp'>t</span>
+            <span className='text-white text-8xl wow animate__fadeInUp'>f</span>
+            <span className='text-white text-8xl wow animate__fadeInUp'>o</span>
+            <span className='text-white text-8xl wow animate__fadeInUp'>l</span>
+            <span className='text-white text-8xl wow animate__fadeInUp'>i</span>
+            <span className='text-white text-8xl wow animate__fadeInUp'>o</span>
+            <span className='text-white text-8xl'> {"}"}</span>
+          </div>
         </div>
-      <div className='sky'></div>
-      <p className='mb-5 font-bold pt-[130px] text-8xl'>Front-end Developer</p>
-      <span className='text-8xl'>{"{"}</span>
-      <span className='text-[#5E5BE3] text-8xl wow animate__fadeInUp'>P</span>
-      <span className='text-[#5E5BE3] text-8xl wow animate__fadeInUp'>o</span>
-      <span className='text-[#5E5BE3] text-8xl wow animate__fadeInUp'>r</span>
-      <span className='text-[#5E5BE3] text-8xl wow animate__fadeInUp'>t</span>
-      <span className='text-[#5E5BE3] text-8xl wow animate__fadeInUp'>f</span>
-      <span className='text-[#5E5BE3] text-8xl wow animate__fadeInUp'>o</span>
-      <span className='text-[#5E5BE3] text-8xl wow animate__fadeInUp'>l</span>
-      <span className='text-[#5E5BE3] text-8xl wow animate__fadeInUp'>i</span>
-      <span className='text-[#5E5BE3] text-8xl wow animate__fadeInUp'>o</span>
-      <span className='text-8xl'>{"}"}</span>
       <Content />
       <Use />
       <Game />

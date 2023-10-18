@@ -4,16 +4,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;900&display=swap');
 
-@keyframes moveStar {
-  from {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+.custom-spin-animation {
+  animation-name: spin;
+  animation-duration: 80s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 body {
   margin: 0;

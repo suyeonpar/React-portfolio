@@ -5,6 +5,7 @@ import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css/navigation';
 import 'swiper/css';
 import React from 'react'
+import './../index.css'
 
 function Board() {
 
@@ -28,7 +29,17 @@ function Board() {
       title : "notion",
       img : "https://via.placeholder.com/300x200",
       svg : faHandHoldingHeart
-    }  
+    }, 
+    {
+      title : "notion",
+      img : "https://via.placeholder.com/300x200",
+      svg : faHandHoldingHeart
+    }, 
+    {
+      title : "notion",
+      img : "https://via.placeholder.com/300x200",
+      svg : faHandHoldingHeart
+    }
   ]
   
   return (
@@ -38,11 +49,11 @@ function Board() {
         <span className='text-5xl font-bold'>Board</span>
         <p className='mt-4 text-2xl'>의견을 남겨주세요 :{")"}</p>
       </div>
-      <Swiper
-      spaceBetween={30}
+      <Swiper className='swiper'
       slidesPerView={3}
+      centeredSlides= {true}
       navigation={{clickable: true}}
-      modules={[Navigation, Pagination]}
+      modules={[Navigation]}
     >
       <ul className='flex justify-between w-[1280px] mx-auto'>
         {data.map((e, i) => (

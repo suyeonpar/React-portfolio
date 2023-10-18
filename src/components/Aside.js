@@ -36,7 +36,7 @@ function Aside() {
     <>
     <div isActive={isActive} className='bottom-[50px] right-5 fixed'>
       {isActive &&
-        <ul className=''>
+        <ul className='p-3 bg-white rounded-[45%]'>
             <li className=''><FontAwesomeIcon icon={faCloudSun} /></li>
             <li onClick={Top} className=''><FontAwesomeIcon icon={faChevronUp} /></li>
             <li onClick={Down} className=''><FontAwesomeIcon icon={faChevronDown} /></li>
