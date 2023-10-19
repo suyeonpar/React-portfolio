@@ -46,8 +46,8 @@ function Board() {
       <Swiper className='swiper'
       slidesPerView={3}
       centeredSlides= {true}
-      navigation={{clickable: true}}
-      modules={[Navigation]}
+      // navigation={{clickable: true}}
+      // modules={[Navigation]}
     >
       <ul className='flex justify-between w-[1280px] mx-auto'>
         {data.map((e, i) => (

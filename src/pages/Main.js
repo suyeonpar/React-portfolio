@@ -85,7 +85,7 @@ function Main() {
             )}
           </div>
           <div className='mt-20 text-center'>
-            <p className='mb-10 pt-[130px] text-4xl text-white'>S o o o</p>
+            <p className='mb-5 pt-[130px] text-4xl text-[#ddd]'>S o o o</p>
             <span id="typed" className='font-bold text-white text-9xl' />
           </div>
         </div>

@@ -5,6 +5,7 @@ import 'animate.css';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList } from '@fortawesome/free-solid-svg-icons';
+import './../index.css'
 
 function About() {
 
@@ -41,7 +42,7 @@ function About() {
       <p className='pb-20 text-5xl text-center wow animate__fadeInUp' data-wow-duration="1.5s">안녕하세요. 개발자 <span className='font-bold text-[#5E5BE3]'>박수연</span>입니다.</p>
       <div className='w-[1200px] mx-auto pb-20'>
         <div className="flex flex-wrap justify-around">
-          <img src="/images/profile2.jpeg" alt='프로필 사진' className='border shadow-lg rounded-2xl w-[425px] h-[450px]'/>
+          <img src="/images/profile2.jpeg" alt='프로필 사진' className='border shadow-lg rounded-2xl w-[425px] h-[450px]' id='profile'/>
           <ul className='text-justify border-b'>
           <li className='mb-10 text-3xl'>디자이너에서 <span className='font-bold text-[#242424]'>개발자</span>로의 성장</li>
             <li className='text-[22px] text-[#474747] mb-5 w-[500px]'>‘디자인뿐만이 아니라 내가 직접 페이지를 구현하여 개발한다면 어떨까?’라는 생각과 욕심이 생겼고 프론트엔드 개발자라는 직업에 관심이 생겼습니다.</li>

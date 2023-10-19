@@ -8,6 +8,7 @@ import Content from './components/Content';
 import Aside from './components/Aside';
 import Sample from './pages/Sample';
 import About from './pages/About';
+import Notfound from './pages/Notfound';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/' element={<Main />}></Route>
       <Route path='/sam' element={<Sample />} />
       <Route path='/about' element={<About />} />
+      <Route path='*' element={<Notfound />} />
     </Routes>
     <Aside />
     </>
