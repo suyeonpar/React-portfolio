@@ -11,26 +11,46 @@ import WOW from 'wowjs';
 import '../App.css';
 import '../index.css';
 import Profile from '../components/Profile';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Main() {
   //animation
-  useEffect(() => {
-    const elements = document.querySelectorAll('.wow');
-    elements.forEach((e, i) => {
-      const delay = 0.5;
-      const duration = 0.7;
-      const delayTime = i * delay;
-      e.style.animationDelay = `${delayTime}s`;
-      e.style.animationDuration = `${duration}s`;
-    });
+  // useEffect(() => {
+  //   const elements = document.querySelectorAll('.wow');
+  //   elements.forEach((e, i) => {
+  //     const delay = 0.5;
+  //     const duration = 0.7;
+  //     const delayTime = i * delay;
+  //     e.style.animationDelay = `${delayTime}s`;
+  //     e.style.animationDuration = `${duration}s`;
+  //   });
 
-    new WOW.WOW().init();
+  //   new WOW.WOW().init();
+  // }, []);
+
+  //타이핑
+  useEffect(() => {
+    const strings = [
+      "Developer"
+    ];
+  
+    const options = {
+      strings: strings,
+      typeSpeed: 100
+    };
+  
+    const typed = new Typed("#typed", options);
+  
+    return () => {
+      typed.destroy();
+    };
   }, []);
 
   //별배경
   const Stars = 3000;
-  const width = 1920;
-  const height = 800;
+  const [width, setWidth] = useState(1920);
+  const [height, setHeight] = useState(800);
   
   const createRandomStar = () => {
   const x = Math.random() * width;
@@ -45,13 +65,13 @@ function Main() {
   return (
     <div>
       <Header />
-      <div className="w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] via-[#001738] to-[#fff] h-[700px] transform">
+      <div className="w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] to-[#fff] h-[700px] transform pb-10">
         <div className='relative custom-spin-animation'> 
           {
             stars.map((star, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-[#ddd] rounded-full overflow-hidden top-[50%] left-[50%]"
+                className="absolute w-2 h-2 bg-white rounded-full overflow-hidden left-[50%]"
                 style={{
                   left: `${star.x}px`,
                   top: `${star.y}px`,
@@ -64,16 +84,8 @@ function Main() {
             )}
           </div>
           <div className='mt-20 text-center'>
-            <p className='mb-10 pt-[130px] text-8xl text-white'>Front-end Developer</p>
-            <span className='text-white text-8xl wow animate__fadeInUp'>P</span>
-            <span className='text-white text-8xl wow animate__fadeInUp'>o</span>
-            <span className='text-white text-8xl wow animate__fadeInUp'>r</span>
-            <span className='text-white text-8xl wow animate__fadeInUp'>t</span>
-            <span className='text-white text-8xl wow animate__fadeInUp'>f</span>
-            <span className='text-white text-8xl wow animate__fadeInUp'>o</span>
-            <span className='text-white text-8xl wow animate__fadeInUp'>l</span>
-            <span className='text-white text-8xl wow animate__fadeInUp'>i</span>
-            <span className='text-white text-8xl wow animate__fadeInUp'>o</span>
+            <p className='mb-10 pt-[130px] text-9xl text-white'>Front-end</p>
+            <span id="typed" className='font-bold text-white text-9xl' />
           </div>
         </div>
       <Profile />
@@ -85,5 +97,4 @@ function Main() {
     </div>
   );
 }
-
 export default Main;
