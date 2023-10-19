@@ -37,7 +37,8 @@ function Main() {
   
     const options = {
       strings: strings,
-      typeSpeed: 100
+      typeSpeed: 100,
+      showCursor: false
     };
   
     const typed = new Typed("#typed", options);
@@ -55,13 +56,13 @@ function Main() {
   const createRandomStar = () => {
   const x = Math.random() * width;
   const y = Math.random() * height;
-  const size = Math.random() * 3;
+  const size = Math.random() * 2;
   const animationDelay = Math.random() * 5;
   return { x, y, size, animationDelay };
   };
   
   const stars = Array.from({ length: Stars }, createRandomStar);
-
+  
   return (
     <div>
       <Header />
@@ -79,12 +80,12 @@ function Main() {
                   height: `${star.size}px`,
                   animationDelay: `${star.animationDelay}s`
                   }}
-                  ></div>
-                )
+                ></div>
+              )
             )}
           </div>
           <div className='mt-20 text-center'>
-            <p className='mb-10 pt-[130px] text-9xl text-white'>Front-end</p>
+            <p className='mb-10 pt-[130px] text-4xl text-white'>S o o o</p>
             <span id="typed" className='font-bold text-white text-9xl' />
           </div>
         </div>

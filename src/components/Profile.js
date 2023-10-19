@@ -18,23 +18,34 @@ function Profile() {
     };
   }, []);
 
+  const Hint = ["Initial = PSY", "Gender = WOMEN", "Birth = 0715"]
+
   return (
     <>
-    <div className='w-full h-auto mx-auto mt-[400px]'>
-      <div className='text-center mb-10'>
-      {
+    <div className='w-full h-auto mx-auto mt-[200px]'>
+      <div className='mb-10 text-center'>
+      {/* {
         down &&
         <FontAwesomeIcon icon={faArrowDown} />
-      }
+      } */}
       </div>
       <div className='w-[1200px] mx-auto'>
         <div className="flex flex-wrap justify-around">
-          <div className='w-[425px] h-[450px] bg-black rounded-2xl'></div>
+          <div className='w-[425px] h-[450px] bg-[#eee] rounded-2xl text-center leading-[450px]'>
+            {
+              Hint.map((e,i)=>{
+                return(
+                  <p className='text-2xl'>{e}</p>
+                )
+              })
+            }
+          </div>
           <ul className='text-justify'>
-            <h3 className='mb-3 text-5xl font-bold'>About me</h3>
-            <li className='mb-3 text-3xl'>디자이너에서 <span className='font-bold text-[#242424]'>개발자</span>로의 성장</li>
-            <li className='text-[22px] text-[#474747] mb-5 w-[500px]'>‘디자인뿐만이 아니라 내가 직접 페이지를 구현하여 개발한다면 어떨까?’라는 생각과 욕심이 생겼고 프론트엔드 개발자라는 직업에 관심이 생겼습니다.</li>
-            <li className='text-[22px] text-[#474747] mb-5 w-[500px]'>저는 프론트엔드 개발 분야에서 계속해서 성장하고, 최신 웹 개발 기술과 트렌드를 습득하고, 개발자 커뮤니티에 기여하고 프로젝트에 참여하여 지식을 공유하고 배울 것입니다.</li>
+            <h3 className='mb-3 text-5xl font-bold'>Who Am I ?</h3>
+            <li className='text-3xl mb-7'>저는 프론트엔드 개발자로의 <sapn className='text-[#5E5BE3] font-bold'>도전 </sapn>을 즐깁니다.</li>
+            <li className='text-[22px] text-[#636363] mb-5 w-[500px]'>끊임없이 도전하며 자기계발을 추구하고, 항상 더 나은 개발자로 성장하려는 열망을 가지고 있습니다.</li>
+            <li className='text-[22px] text-[#636363] mb-5 w-[500px]'>사용자 경험을 개선하고 웹 애플리케이션을 만드는 것을 좋아하며,</li>
+            <li className='text-[22px] text-[#636363] mb-5 w-[500px]'>빠르게 변화하는 기술 트렌드를 따라가고, 항상 학습과 개선에 열린 자세를 유지합니다.</li>
           <NavLink to='/about'><sapn className='cursor-pointer text-[20px] text-[#ddd] transition-[1s] hover:text-[#090999]'>자기소개 더 보기</sapn></NavLink>
           </ul>
         </div>

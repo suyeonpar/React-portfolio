@@ -12,33 +12,27 @@ function Board() {
   const data = [
     {
       title : "clone cording",
-      img : "https://via.placeholder.com/300x200",
-      svg : faHandHoldingHeart
+      img : "https://via.placeholder.com/300x200"
     },
     {
       title : "game",
-      img : "https://via.placeholder.com/300x200",
-      svg : faHandHoldingHeart
+      img : "https://via.placeholder.com/300x200"
     },
     {
       title : "git",
-      img : "https://via.placeholder.com/300x200",
-      svg : faHandHoldingHeart
+      img : "https://via.placeholder.com/300x200"
     },
     {
       title : "notion",
-      img : "https://via.placeholder.com/300x200",
-      svg : faHandHoldingHeart
+      img : "https://via.placeholder.com/300x200"
     }, 
     {
       title : "notion",
-      img : "https://via.placeholder.com/300x200",
-      svg : faHandHoldingHeart
+      img : "https://via.placeholder.com/300x200"
     }, 
     {
       title : "notion",
-      img : "https://via.placeholder.com/300x200",
-      svg : faHandHoldingHeart
+      img : "https://via.placeholder.com/300x200"
     }
   ]
   
@@ -60,7 +54,6 @@ function Board() {
           <SwiperSlide key={i}>
             <img src={e.img} alt='이미지' />
             <li>{e.title}</li>
-            <FontAwesomeIcon icon={e.svg} className='' />
           </SwiperSlide>
         ))}
       </ul>

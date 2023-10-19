@@ -6,7 +6,7 @@ import '../index.css';
 function Content() {
 
   const icon = [faCopyright, faCopyright, faGamepad, faBox]
-  //console.log(icon)
+  
   
   const list = [
     {
@@ -55,7 +55,7 @@ function Content() {
     <>
     <div className='w-full mt-20'>
       <div className='w-[95%] mx-auto flex flex-wrap py-[2%] justify-between'>
-        <div className='w-[150px] bg-black h-[500px] overflow-hidden'>
+        <div className='w-[150px] bg-black h-[500px] overflow-hidden relative'>
           <div className='relative h-full custom-spin-animation'> 
             {
               stars.map((star, i) => (
@@ -78,8 +78,8 @@ function Content() {
             icon.map((e,i)=>{
               return(
                 <div className='text-2xl' key={i}>
-                  <ul>
-                    <li className='bg-white'><FontAwesomeIcon icon={e} /></li>
+                  <ul className=''>
+                    <li className=''><FontAwesomeIcon icon={e} className='' /></li>
                   </ul>
                 </div>
               )

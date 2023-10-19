@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function Game() {
 
-  const list = ["{Quiz}","{Race}","{Maze}","{Card}"]
+  const list = ["Quiz","Race","Maze","Card"]
   const [isActive, setIsActive] = useState(false)  
   
   return (
