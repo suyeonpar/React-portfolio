@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
-function Header() {
+function Header({themeConfig}) {
 
   const [on, setOn] = useState(false);
 

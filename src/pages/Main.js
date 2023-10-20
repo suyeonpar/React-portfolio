@@ -11,7 +11,7 @@ import WOW from 'wowjs';
 import '../App.css';
 import '../index.css';
 import Profile from '../components/Profile';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faL } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Main() {
@@ -28,6 +28,22 @@ function Main() {
 
   //   new WOW.WOW().init();
   // }, []);
+
+  //다크모드
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  function toggleDarkMode() {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem('darkMode', newMode);
+  }
+
+  useEffect(() => {
+    const storedDarkMode = localStorage.getItem('darkMode');
+    if (storedDarkMode) {
+      setIsDarkMode(storedDarkMode === 'true');
+    }
+  }, []);
 
   //타이핑
   useEffect(() => {

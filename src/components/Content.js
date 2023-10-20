@@ -7,17 +7,9 @@ function Content() {
 
   const icon = [faCopyright, faPencil, faBox]
   
-  
   const list = [
     {
-      title : "Clone-coding",
-      desc : "My clone coding",
-      desc2 : "belif x VDL",
-      desc3 : "SUBWAY",
-      icon : faChevronDown
-    },
-    {
-      title : "Project-greenping",
+      title : "Project",
       desc : "greenping",
       desc2 : "Camping reservation",
       icon : faChevronDown
@@ -27,13 +19,20 @@ function Content() {
       desc : "LET'S PLAY QUIZ!",
       desc2 : "Lorem Ipsum is simply dummy",
       icon : faChevronDown
+    },
+    {
+      title : "Clone-coding",
+      desc : "My clone coding",
+      desc2 : "belif x VDL",
+      desc3 : "SUBWAY",
+      icon : faChevronDown
     }
   ]
 
   const [isActive, setIsActive] = useState();
 
 
-  const Stars = 1000;
+  const [Stars, setStars] = useState(1000);
   const width = window.innerWidth;
   const height = window.innerHeight;
 
@@ -48,17 +47,13 @@ function Content() {
   
   return (
     <>
-    <div className='w-full mt-20'>
-      <div className='w-[95%] mx-auto flex flex-wrap py-[2%] justify-between'>
-        <div className='w-[150px] bg-black h-[500px] overflow-hidden relative'>
+    <div className='w-full mt-[150px]'>
+      <div className='w-full mx-[70%]'>
+        <div className='w-[500px] bg-black h-[60px] overflow-hidden relative text-center leading-[70px]'>
         {
           icon.map((e,i)=>{
             return(
-              <div className='' key={i}>
-                <ul className='pt-20 ml-10 text-3xl'>
-                  <li className=''><FontAwesomeIcon icon={e} className='text-white' /></li>
-                </ul>
-              </div>
+              <FontAwesomeIcon icon={e} key={i} className='text-white text-3xl px-10 cursor-pointer' />
             )
           })
         }
@@ -79,6 +74,8 @@ function Content() {
             )}
           </div>
         </div>
+      </div>
+      <div className='w-[95%] mx-auto flex flex-wrap py-[2%] justify-between'>
         {
           list.map((e,i)=>{
             return(
