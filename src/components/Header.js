@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
-function Header({themeConfig}) {
+function Header({themeConfig},{toggleDarkMode}) {
 
   const [on, setOn] = useState(false);
 
@@ -43,7 +43,7 @@ function Header({themeConfig}) {
         <li className=''>About</li>
         <li>Game</li>
         <li>Board</li>
-        <FontAwesomeIcon icon={faMoon} className='mr-5 text-3xl' />
+        <FontAwesomeIcon icon={faMoon} className='mr-5 text-3xl' onClick={toggleDarkMode} />
       </ul>
      </div>
     </>

@@ -13,6 +13,7 @@ import '../index.css';
 import Profile from '../components/Profile';
 import { faArrowDown, faL } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Project from '../components/Project';
 
 function Main() {
   //animation
@@ -106,9 +107,9 @@ function Main() {
           </div>
         </div>
       <Profile />
+      <Project />
       <Content />
       <Use />
-      <Game />
       <Board />
       <Footer />
     </div>

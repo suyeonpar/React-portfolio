@@ -29,7 +29,7 @@ function Profile() {
       </div>
       <div className='w-[1280px] mx-auto'>
         <div className="flex flex-wrap justify-around">
-          <img src='/images/profile.jpg' alt='프로필' className='object-cover rounded-lg shadow-md sm:basis-full' />
+          <img src='/images/profile.jpg' alt='프로필' className='object-cover rounded-lg shadow-md' />
           <ul className='text-justify'>
             <h3 className='mb-3 text-5xl font-bold'>Who Am I ?</h3>
             <li className='text-3xl mb-7'>저는 프론트엔드 개발자로의 <sapn className='text-[#5E5BE3] text-4xl font-extrabold'>도전 </sapn>을 즐깁니다.</li>
