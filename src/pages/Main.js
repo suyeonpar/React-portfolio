@@ -15,7 +15,7 @@ import { faArrowDown, faL } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Project from '../components/Project';
 
-function Main() {
+function Main({darkMode,setDarkMode}) {
   //animation
   // useEffect(() => {
   //   const elements = document.querySelectorAll('.wow');
@@ -29,22 +29,6 @@ function Main() {
 
   //   new WOW.WOW().init();
   // }, []);
-
-  //다크모드
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  function toggleDarkMode() {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    localStorage.setItem('darkMode', newMode);
-  }
-
-  useEffect(() => {
-    const storedDarkMode = localStorage.getItem('darkMode');
-    if (storedDarkMode) {
-      setIsDarkMode(storedDarkMode === 'true');
-    }
-  }, []);
 
   //타이핑
   useEffect(() => {
@@ -102,8 +86,8 @@ function Main() {
             )}
           </div>
           <div className='mt-20 text-center'>
-            <p className='mb-5 pt-[130px] text-4xl text-[#ddd]'>S o o o</p>
-            <span id="typed" className='font-bold text-white text-9xl' />
+            <p className='mb-5 pt-[130px] text-xl text-[#ddd] sm:text-4xl'>S o o o</p>
+            <span id="typed" className='font-bold text-white text-7xl sm:text-9xl' />
           </div>
         </div>
       <Profile />

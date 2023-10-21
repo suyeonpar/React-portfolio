@@ -10,48 +10,27 @@ import Sample from './pages/Sample';
 import About from './pages/About';
 import Notfound from './pages/Notfound';
 import { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
+import Ex from './pages/Ex';
 
-function App() {
+function App() { 
 
-  const light = {
-    colors : {
-      Primary : "#fff8ef",
-      Secondary : "#102C57",
-      BgColor : "#e9f1f6",
-      TxtColor : "#000",
-      ContentBg : "#fff"
-    }
-  }
-
-  const dark = {
-    colors : {
-      Primary : "#102C57",
-      Secondary : "#fff8ef",
-      BgColor : "#333",
-      Color : "#e9e9e9",
-      ContentBg : "#272929"
-    }
-  }
-
-  const [themeConfig, setThemeConfig] = useState("light");
-  const DarkMode = themeConfig === 'light' ? light : dark;
-
-  const ThemeSelect = () => {
-    setThemeConfig(themeConfig === 'light' ? 'dark' : 'light')
-  }
+  const [darkMode, setDarkMode] = useState(false);
+  
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
     <>
-    <ThemeProvider theme={DarkMode}>
+    <Header darkMode={darkMode} setDarkMode={setDarkMode} />
     <Routes>
       <Route path='/' element={<Main />}></Route>
       <Route path='/sam' element={<Sample />} />
       <Route path='/about' element={<About />} />
       <Route path='*' element={<Notfound />} />
+      <Route path='/e' element={<Ex />} />
     </Routes>
     <Aside />
-    </ThemeProvider>
     </>
   );
 }

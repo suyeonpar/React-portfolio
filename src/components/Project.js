@@ -39,14 +39,14 @@ function Project() {
         <h3 className='mb-20 text-5xl font-bold'>PROJECT</h3>
         <div className='flex justify-between w-[80%] mt-20 mx-auto flex-wrap box-border'>
         {
-            content.map((e, i) => (
-                <ul key={i} className='bg-white border h-[400px] w-[300px] box-border flex flex-col justify-center items-center rounded-lg'>
-                    <li className='text-2xl bg-black text-white p-2'>{e.title}</li>
-                    <img src={e.img} alt='ff' />
-                    <li>{e.desc}</li>
-                    <li>{e.day}</li>
-                </ul>
-            ))
+          content.map((e, i) => (
+            <ul key={i} className='bg-white border mb-4 h-[400px] w-[300px] box-border flex flex-col justify-center items-center rounded-lg basis-full sm:basis-1/4'>
+              <li className='p-2 text-2xl text-white bg-black'>{e.title}</li>
+              <img src={e.img} alt='ff' />
+              <li>{e.desc}</li>
+              <li>{e.day}</li>
+            </ul>
+          ))
         }
         </div>
       </div>

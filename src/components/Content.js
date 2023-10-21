@@ -7,8 +7,6 @@ import data from '../data/GameData'
 function Content() {
 
   const FilterList = ["ALL", "Clone", "Api", "Quiz", "CSS"]
-
-  
   
   const [isActive, setIsActive] = useState(0);
   
@@ -34,8 +32,6 @@ function Content() {
   //     icon : faChevronDown
   //   }
   // ]
-
-
 
   const [Stars, setStars] = useState(1000);
   const width = window.innerWidth;
