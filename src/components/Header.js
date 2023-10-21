@@ -33,18 +33,18 @@ function Header({darkMode,setDarkMode}) {
     <>
       <div className={`z-[9999] w-full h-[80px] bg-white mx-auto items-center top-0 flex justify-between border-b border-[#808080] ${ScrollActive ? 'fixed' : 'absolute'}`}>
         <NavLink to='/'><img src='/images/logo-black.png' alt='logo' className='hidden sm:block scale-[0.8]' /></NavLink>
-        <ul className='hidden text-2xl cursor-pointer sm:block basis-[20%] flex'>
-          <li className=''>About</li>
-          <li className=''>Game</li>
-          <li className=''>Board</li>
-          <FontAwesomeIcon icon={darkMode ? faCloudSun : faMoon} onClick={setDarkMode} className="p-3 text-2xl dark:bg-white" />
+        <ul className='flex items-center hidden mr-3 text-2xl cursor-pointer md:flex'>
+          <li className='mr-5'>About</li>
+          <li className='mr-5'>Game</li>
+          <li className='mr-5'>Board</li>
+          <FontAwesomeIcon icon={darkMode ? faCloudSun : faMoon} onClick={() => setDarkMode(!darkMode)} />
         </ul>
-
-        <div className='flex flex-col block mr-5 cursor-pointer sm:hidden'>
+        
+        <div className='mr-5 cursor-pointer md:hidden'>
         {
           Array(3).fill().map((_,i)=>{
             return(
-              <span key={i} className='w-[30px] h-[1px] bg-black mb-2'></span>
+              <span key={i} className='w-[30px] h-[1px] bg-black mb-2 block'></span>
             )
           })
         }
