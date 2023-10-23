@@ -2,7 +2,7 @@ import { faBox, faChevronDown, faCopyright, faGamepad, faPencil } from '@fortawe
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import '../index.css';
-import content from '../data/GameData'
+import content from '../data/ProjectData'
 
 function Sample() {
 

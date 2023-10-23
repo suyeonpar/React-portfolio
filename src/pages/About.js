@@ -58,7 +58,7 @@ function About() {
             <li className='text-[22px] text-[#474747] mb-5 w-[500px]'>‘디자인뿐만이 아니라 내가 직접 페이지를 구현하여 개발한다면 어떨까?’라는 생각과 욕심이 생겼고 프론트엔드 개발자라는 직업에 관심이 생겼습니다.</li>
             <li className='text-[22px] text-[#474747] mb-5 w-[500px]'>저는 프론트엔드 개발 분야에서 계속해서 성장하고, 최신 웹 개발 기술과 트렌드를 습득하고, 개발자 커뮤니티에 기여하고 프로젝트에 참여하여 지식을 공유하고 배울준비가 되어있습니다.</li>
             <span className='w-[100%] text-3xl cursor-pointer group relative'>sksrbdpdy@naver.com
-            <span class="absolute hidden truncate text-[#ddd] text-xl top-10 left-1/2 transform translate-x-[-50%] group-hover:block   transition-[1s]">메일은 언제나 환영입니다. :{')'}</span>
+            <span class="absolute hidden truncate text-[#ddd] text-xl top-10 left-1/2 transform translate-x-[-50%] group-hover:block transition-[1s]">메일은 언제나 환영입니다. :{')'}</span>
             </span>
           </ul>
         </div>

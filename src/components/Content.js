@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import '../index.css';
 import condata from '../data/ContentData'
-import data from '../data/GameData'
+import data from '../data/ProjectData'
 
 function Content() {
   //별
