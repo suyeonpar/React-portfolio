@@ -14,6 +14,8 @@ import Profile from '../components/Profile';
 import { faArrowDown, faL } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Project from '../components/Project';
+import Aside from '../components/Aside';
+import Notfound from './Notfound';
 
 function Main({darkMode,setDarkMode}) {
   //animation
@@ -91,10 +93,11 @@ function Main({darkMode,setDarkMode}) {
           </div>
         </div>
       <Profile />
-      <Project />
       <Content />
+      <Project />
       <Use />
       <Board />
+      <Aside />
       <Footer />
     </div>
   );

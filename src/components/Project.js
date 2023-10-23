@@ -17,27 +17,15 @@ function Project() {
         desc : "Lorem, ipsum.",
         img : "https://via.placeholder.com/200x200",
         day : "2weeks"
-    },
-    {
-        title : "Greenping",
-        desc : "Lorem, ipsum.",
-        img : "https://via.placeholder.com/200x200",
-        day : "2weeks"
-    },
-    {
-        title : "Greenping",
-        desc : "Lorem, ipsum.",
-        img : "https://via.placeholder.com/200x200",
-        day : "2weeks"
     }
   ]
   
   return (
     <>
     <div className='game-content w-full mx-auto h-[500px] text-center mt-20 items-center mb-20'>
-      <div className='pt-12 '>
+      <div className='pt-12'>
         <h3 className='mb-20 text-5xl font-bold'>PROJECT</h3>
-        <div className='flex justify-between w-[80%] mt-20 mx-auto flex-wrap box-border'>
+        <div className='flex justify-around w-[80%] mt-20 mx-auto flex-wrap box-border'>
         {
           content.map((e, i) => (
             <ul key={i} className='bg-white border mb-4 h-[400px] w-[300px] box-border flex flex-col justify-center items-center rounded-lg basis-full sm:basis-1/4'>

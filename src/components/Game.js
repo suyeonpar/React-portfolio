@@ -4,7 +4,7 @@ function Game() {
 
   const list = ["Quiz","Race","Maze","Card"]
   const [isActive, setIsActive] = useState(false)  
-  
+
   return (
     <>
     <div className='game-content w-full mx-auto h-[500px] text-center mt-20 items-center mb-20'>

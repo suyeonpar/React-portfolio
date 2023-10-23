@@ -34,7 +34,7 @@ function Header({darkMode,setDarkMode}) {
       <div className={`z-[9999] w-full h-[80px] bg-white mx-auto items-center top-0 flex justify-between border-b border-[#808080] ${ScrollActive ? 'fixed' : 'absolute'}`}>
         <NavLink to='/'><img src='/images/logo-black.png' alt='logo' className='hidden sm:block scale-[0.8]' /></NavLink>
         <ul className='flex items-center hidden mr-3 text-2xl cursor-pointer md:flex'>
-          <li className='mr-5'>About</li>
+          <NavLink to='/about'><li className='mr-5'>About</li></NavLink>
           <li className='mr-5'>Game</li>
           <li className='mr-5'>Board</li>
           <FontAwesomeIcon icon={darkMode ? faCloudSun : faMoon} onClick={() => setDarkMode(!darkMode)} />

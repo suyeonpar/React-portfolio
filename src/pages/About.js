@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faList } from '@fortawesome/free-solid-svg-icons';
 import './../index.css'
+import { NavLink } from 'react-router-dom';
 
 function About() {
 
@@ -23,25 +24,34 @@ function About() {
       title: "SKILL",
       desc: "제가 자신있는것은요",
       desc2: ["HTML5", "CSS3", "TailwindCSS", "SCSS", "React", "node.js", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
-      icon: faArrowDown
+      desc3 : [""]
+    },
+    {
+      title: "Collaboration & Tools ",
+      desc: "제가 자신있는 협업툴은요",
+      desc2: ["figma", "slack", "npm", "yarn", "Git", "Github", "Notion", "Vercel"],
+      desc3 : [""]
     },
     {
       title : "EDUCTION",
       desc : "제가 배운것은요",
-      desc2 : ["그린 컴퓨터학원", "그린 온라인 캠프", "Team project"]
+      desc2 : ["그린 컴퓨터학원", "그린 온라인 캠프", "Team project"],
+      desc3 : ["2023.06.28 ~", "2023.06.28 ~", "2023.06.28 ~"]
     }
   ]
 
+  const EDUCTION = ["2023.06.28 ~", "2023.06.28 ~", "2023.06.28 ~"]
+
   const iconArray = [{faList},{faList},{faList}];
-  //console.log(iconArray)
+  console.log(iconArray)
   
   return (
     <>
     <Header />
     <div className='w-full h-auto mx-auto mt-[200px]'>
       <p className='pb-20 text-5xl text-center wow animate__fadeInUp' data-wow-duration="1.5s">안녕하세요. 개발자 <span className='font-bold text-[#5E5BE3]'>박수연</span>입니다.</p>
-      <div className='w-[1200px] mx-auto pb-20'>
-        <div className="flex flex-wrap justify-around">
+      <div className='flex w-[1280px] mx-auto pb-20'>
+        <div className="flex flex-wrap justify-around w-full">
           <img src="/images/profile.jpg" alt='프로필 사진' className='border shadow-lg rounded-2xl w-[425px] h-[450px]' id='profile'/>
           <ul className='text-justify border-b'>
           <li className='mb-10 text-3xl'>디자이너에서 <span className='font-bold text-[#242424]'>개발자</span>로의 성장</li>
@@ -64,22 +74,32 @@ function About() {
         {
           data.map((e,i)=>{
             return(
-              <ul key={i} className='pb-20 mb-3 border-b basis-full flex-wrap'>
+              <ul key={i} className='pb-20 mb-3 border-b basis-full flex-wrap border-[#707070]'>
                 <li className='mb-3 text-3xl font-bold'>{e.title}</li>
                 <li className='text-[20px] mb-10'>{e.desc}</li>
                 {Array(e.desc2.length).fill().map((_,index)=>{
                   return (
-                    <span key={i} className='border mr-2 p-1 rounded-lg cursor-pointer'>{e.desc2[index]}</span>
+                    <span key={i} className='p-1 mr-2 border rounded-lg cursor-pointer'>{e.desc2[index]}</span>
                   )
                 })}
+                {
+                  Array(e.desc3.length).fill().map((_,i)=>{
+                    return(
+                      <p key={i}>{e.desc3[i]}</p>
+                    )
+                  })
+                }
               </ul>
             )
           })
         }
       </div>
-    </div>
+      <div className='w-full mb-5 text-end'>
+      <NavLink to='/'><span className='p-10 text-2xl'>Back</span></NavLink>
+      </div>
+      </div>
     <Footer />
-    </>
+    </> 
   )
 }
 

@@ -49,15 +49,16 @@ function Board() {
       // navigation={{clickable: true}}
       // modules={[Navigation]}
     >
-      <ul className='flex justify-between w-[1280px] mx-auto'>
-        {data.map((e, i) => (
-          <SwiperSlide key={i}>
-            <img src={e.img} alt='이미지' />
-            <li>{e.title}</li>
-          </SwiperSlide>
-        ))}
-      </ul>
+    <ul className='flex justify-between w-[1280px] mx-auto'>
+      {data.map((e, i) => (
+        <SwiperSlide key={i}>
+          <img src={e.img} alt='이미지' />
+          <li>{e.title}</li>
+        </SwiperSlide>
+      ))}
+    </ul>
     </Swiper>
+    <span className='text-3xl'>sksrbdpdy@naver.com</span>
     </div>
     </>
   )
