@@ -62,12 +62,12 @@ function Board() {
   
   return (
     <>
-    <div className='w-[1280px] mx-auto text-center mb-20'>
+    <div className='w-[1280px] mx-auto text-center mb-20 mt-80'>
       <div className='mb-[60px]'>
         <span className='text-5xl font-bold'>Board</span>
         <p className='mt-4 text-2xl'>의견을 남겨주세요 :{")"}</p>
       </div>
-      <Swiper className='swiper'
+      {/* <Swiper className='swiper'
       slidesPerView={3}
       centeredSlides= {true}
       autoplay={true}
@@ -83,7 +83,7 @@ function Board() {
         </SwiperSlide>
       ))}
     </ul>
-    </Swiper>
+    </Swiper> */}
     <div className='mx-auto max-w-7xl'>
       <p>{Comment.length}/{maxLength}자</p>
       <textarea

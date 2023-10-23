@@ -35,7 +35,7 @@ function About() {
     {
       title : "EDUCTION",
       desc : "제가 배운것은요",
-      desc2 : ["그린 컴퓨터학원", "그린 온라인 캠프", "Team project"],
+      desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "Team project"],
       desc3 : ["2023.06.28 ~", "2023.06.28 ~", "2023.06.28 ~"]
     }
   ]
@@ -79,7 +79,7 @@ function About() {
                 <li className='text-[20px] mb-10'>{e.desc}</li>
                 {Array(e.desc2.length).fill().map((_,index)=>{
                   return (
-                    <span key={i} className='p-1 mr-2 border rounded-lg cursor-pointer'>{e.desc2[index]}</span>
+                    <span key={i} className='p-1 mr-2 border border-[#5E5BE3] rounded-lg cursor-pointer'>{e.desc2[index]}</span>
                   )
                 })}
                 {

@@ -1,8 +1,8 @@
-const condata = [
+const contentdata = [
     {
       "id" : "Clone",
       "title" : "belif",
-      "img" : "https://via.placeholder.com/200x200",
+      "img" : "../images/belif.jpg",
       "desc" : "HTML",
       "desc2" : "CSS",
       "desc3" : "JavaScript"
@@ -10,7 +10,7 @@ const condata = [
     {
       "id" : "Clone",
       "title" : "SUBWAY",
-      "img" : "https://via.placeholder.com/200x200",
+      "img" : "../images/subway.jpg",
       "desc" : "HTML",
       "desc2" : "CSS",
       "desc3" : "JavaScript"
@@ -18,7 +18,7 @@ const condata = [
     {
       "id" : "API",
       "title" : "부산 축제 즐기기",
-      "img" : "https://via.placeholder.com/200x200",
+      "img" : "../images/api.jpg",
       "desc" : "React",
       "desc2" : "useEffect",
       "desc3" : "JavaScript"
@@ -26,7 +26,7 @@ const condata = [
     { 
       "id" : "API",
      "title" : "택배 조회하기",
-     "img" : "https://via.placeholder.com/200x200",
+     "img" : "../images/pracel.jpg",
       "desc" : "React",
       "desc2" : "CSS",
       "desc3" : "axios"
@@ -34,11 +34,11 @@ const condata = [
     {
       "id" : "Game",
       "title" : "Quiz",
-      "img" : "https://via.placeholder.com/200x200",
+      "img" : "../images/subway.jpg",
      "desc" : "React",
       "desc2" : "CSS",
       "desc3" : "JavaScript"
     }
 ]
 
-export default condata ;
+export default contentdata ;

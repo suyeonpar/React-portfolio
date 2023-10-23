@@ -93,7 +93,7 @@ function Main({darkMode,setDarkMode}) {
           </div>
         </div>
       <Profile />
-      <Content />
+      <Content Stars={Stars} stars={stars} />
       <Project />
       <Use />
       <Board />
