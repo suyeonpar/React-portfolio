@@ -60,6 +60,9 @@ function Board() {
     </Swiper>
     <span className='text-3xl'>sksrbdpdy@naver.com</span>
     </div>
+    <div>
+      <p>의견을 남겨주세요 :{")"}</p>
+    </div>
     </>
   )
 }

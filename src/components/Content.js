@@ -79,12 +79,12 @@ function Content() {
       <div className='w-[95%] mx-auto flex flex-wrap py-[2%] justify-between'>
         {
           
-          filteredData.map((e,i)=>{
+          condata.map((e,i)=>{
             return(
             <div className='mt-5'>
-              <ul key={i} className='bg-white border-r pr-5'>
-                <li className='font-bold text-3xl'>{e.title}</li>
-                <img src={e.img} alt='이미지' className='rounded-lg border' />
+              <ul key={i} className='pr-5 bg-white border-r'>
+                <li className='text-3xl font-bold'>{e.title}</li>
+                <img src={e.img} alt='이미지' className='border rounded-lg' />
                 <li className='text-white bg-black rounded-sm w-[50px]'>USE</li>
                 <li className='text-xl'>{e.desc}</li>
                 <li className='text-xl'>{e.desc2}</li>
