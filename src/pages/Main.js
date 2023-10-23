@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Project from '../components/Project';
 import Aside from '../components/Aside';
 import Notfound from './Notfound';
+import { Link } from 'react-router-dom';
 
 function Main({darkMode,setDarkMode}) {
   //animation

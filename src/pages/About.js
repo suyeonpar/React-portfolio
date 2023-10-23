@@ -23,7 +23,7 @@ function About() {
     {
       title: "SKILL",
       desc: "제가 자신있는것은요",
-      desc2: ["HTML5", "CSS3", "TailwindCSS", "SCSS", "React", "node.js", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
+      desc2: ["HTML5", "CSS3", "TailwindCSS", "SCSS", "React", "node.js", "TypeScript", "Next.js", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
       desc3 : [""]
     },
     {
@@ -35,15 +35,11 @@ function About() {
     {
       title : "EDUCTION",
       desc : "제가 배운것은요",
-      desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "Team project"],
-      desc3 : ["2023.06.28 ~", "2023.06.28 ~", "2023.06.28 ~"]
+      desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "Toy project"],
+      desc3 : ["2023.06.28 ~", "2023.09.06 ~ 2023.10.06", "2023.10.12 ~"]
     }
   ]
 
-  const EDUCTION = ["2023.06.28 ~", "2023.06.28 ~", "2023.06.28 ~"]
-
-  const iconArray = [{faList},{faList},{faList}];
-  console.log(iconArray)
   
   return (
     <>
@@ -65,13 +61,6 @@ function About() {
       </div>
       <div className='flex flex-wrap mx-auto w-[85%] justify-between'>
         {
-          iconArray.map((e,i)=>{
-            return(
-              <FontAwesomeIcon icon={e} key={i} />
-            )
-          })
-        }
-        {
           data.map((e,i)=>{
             return(
               <ul key={i} className='pb-20 mb-3 border-b basis-full flex-wrap border-[#707070]'>
@@ -79,16 +68,18 @@ function About() {
                 <li className='text-[20px] mb-10'>{e.desc}</li>
                 {Array(e.desc2.length).fill().map((_,index)=>{
                   return (
-                    <span key={i} className='p-1 mr-2 border border-[#5E5BE3] rounded-lg cursor-pointer'>{e.desc2[index]}</span>
+                    <span key={i} className='p-1 mr-2 border border-[#5E5BE3] rounded-lg'>{e.desc2[index]}</span>
                   )
                 })}
+                <div className='flex mt-2'>
                 {
                   Array(e.desc3.length).fill().map((_,i)=>{
                     return(
-                      <p key={i}>{e.desc3[i]}</p>
+                      <p key={i} className='mr-10'>{e.desc3[i]}</p>
                     )
                   })
-                }
+                } 
+                </div>
               </ul>
             )
           })

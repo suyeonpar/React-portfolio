@@ -1,7 +1,7 @@
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 function Profile() {
 
@@ -21,10 +21,10 @@ function Profile() {
   return (
     <>
     <div className='w-full h-auto mx-auto mt-[200px]'>
-      <div className='flex items-center mx-auto w-full'>
-        <div className="max-w-7xl flex justify-between mx-auto">
+      <div className='flex items-center w-full mx-auto'>
+        <div className="flex justify-between mx-auto max-w-7xl">
           <img src='/images/profile.jpg' alt='프로필' className='object-cover rounded-lg shadow-lg' />
-          <ul className='text-justify basis-full ml-20'>
+          <ul className='ml-20 text-justify basis-full'>
             <h3 className='text-5xl font-bold text-start sm:mb-3'>Who Am I ?</h3>
             <li className='text-2xl sm:text-[22px] mb-7'>저는 프론트엔드 개발자로의 <span className='text-[#5E5BE3] text-3xl font-extrabold sm:text-[35px]'>도전</span>을 즐깁니다.</li>
             <li className='text-xl text-[#636363] mb-5 w-[500px]'>끊임없이 도전하며 자기계발을 추구하고, 항상 더 나은 개발자로 성장하려는 열망을 가지고 있습니다.</li>

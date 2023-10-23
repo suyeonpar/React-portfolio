@@ -54,6 +54,12 @@ function Board() {
   const [Comment, setComment] = useState("");
   
   const addComments = () => {
+    if(Comment.length === 0){
+      alert("의견의 없나요? 자유롭게 달아주세요!")
+      return(addComments);
+    }else{
+      alert("댓글이 작성되었습니다.")
+  }
     // 여기에 댓글 작성 로직을 추가합니다.
     // comment 상태 변수를 사용하여 작성된 댓글을 가져올 수 있습니다.
     console.log('작성된 댓글:', Comment);
