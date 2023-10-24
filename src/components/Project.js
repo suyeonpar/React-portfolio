@@ -26,7 +26,7 @@ function Project() {
   
   return (
     <>
-    <div className='w-full mx-auto text-center mt-20 items-center mb-20'>
+    <div className='items-center w-full mx-auto mt-20 mb-20 text-center'>
       <div className='pt-12'>
         <h3 className='mb-10 text-5xl font-bold'>PROJECT</h3>
         <p className='text-xl'>혼자만이 아닌, 함께하는 프로젝트</p>

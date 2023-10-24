@@ -1,4 +1,23 @@
 const contentdata = [
+  {
+    "id" : "Project",
+    "day" : "2Weeks",
+    "title" : "UUF",
+    "desc" : "JavaScript",
+    "desc2" : "css",
+    "img" : "/images/toy-project.jpg",
+    "URL" : "https://suyeonpar.github.io/clone-belif/"
+},
+{
+    "id" : "Project",
+    "day" : "1Month",
+    "title" : "Greenping",
+    "desc" : "React",
+    "desc2" : "JaveScript",
+    "desc3" : "Styled-components",
+    "img" : "/images/greenping.jpg",
+    "URL" : "https://suyeonpar.github.io/clone-belif/"
+},
     {
       "id" : "Clone",
       "day" : "2Weeks",
@@ -35,8 +54,8 @@ const contentdata = [
       "title" : "택배 조회하기",
       "img" : "../images/pracel.jpg",
       "desc" : "React",
-      "desc2" : "CSS",
-      "desc3" : "axios",
+      "desc2" : "typescript",
+      "desc3" : "tailwind CSS",
       "URL" : "https://suyeonpar.github.io/clone-belif/"
     },
     {

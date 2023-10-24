@@ -35,11 +35,12 @@ function Aside() {
   return (
     <>
     <div isActive={isActive} className='bottom-[50px] right-5 fixed'>
-      {isActive &&
-        <ul className='text-3xl lg:p-3 bg-white rounded-[45%]'>
-          <li onClick={Top} className=''><FontAwesomeIcon icon={faChevronUp} /></li>
-          <li onClick={Down} className=''><FontAwesomeIcon icon={faChevronDown} /></li>
-        </ul>
+      {
+        isActive &&
+          <ul className='text-xl md:text-3xl p-3 bg-white rounded-[45%]'>
+            <li onClick={Top} className=''><FontAwesomeIcon icon={faChevronUp} /></li>
+            <li onClick={Down} className=''><FontAwesomeIcon icon={faChevronDown} /></li>
+          </ul>
       }
     </div>
     </>

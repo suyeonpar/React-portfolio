@@ -44,38 +44,39 @@ function About() {
   return (
     <>
     <Header />
-    <div className='w-full h-auto mx-auto mt-[200px]'>
-      <p className='pb-20 text-5xl text-center wow animate__fadeInUp' data-wow-duration="1.5s">안녕하세요. 개발자 <span className='font-bold text-[#5E5BE3]'>박수연</span>입니다.</p>
-      <div className='flex w-[1280px] mx-auto pb-20'>
-        <div className="flex flex-wrap justify-around w-full">
-          <img src="/images/profile.jpg" alt='프로필 사진' className='border shadow-lg rounded-2xl w-[425px] h-[450px]' id='profile'/>
-          <ul className='text-justify border-b'>
-          <li className='mb-10 text-3xl'>디자이너에서 <span className='font-bold text-[#242424]'>개발자</span>로의 성장</li>
-            <li className='text-[22px] text-[#474747] mb-5 w-[500px]'>‘디자인뿐만이 아니라 내가 직접 페이지를 구현하여 개발한다면 어떨까?’라는 생각과 욕심이 생겼고 프론트엔드 개발자라는 직업에 관심이 생겼습니다.</li>
-            <li className='text-[22px] text-[#474747] mb-5 w-[500px]'>저는 프론트엔드 개발 분야에서 계속해서 성장하고, 최신 웹 개발 기술과 트렌드를 습득하고, 개발자 커뮤니티에 기여하고 프로젝트에 참여하여 지식을 공유하고 배울준비가 되어있습니다.</li>
-            <span className='w-[100%] text-3xl cursor-pointer group relative'>sksrbdpdy@naver.com
-            <span class="absolute hidden truncate text-[#ddd] text-xl top-10 left-1/2 transform translate-x-[-50%] group-hover:block transition-[1s]">메일은 언제나 환영입니다. :{')'}</span>
-            </span>
+    <div className='w-full mx-auto mt-[200px] md:h-auto'>
+      <p className='pb-20 text-2xl text-center md:text-5xl wow animate__fadeInUp' data-wow-duration="1.5s">안녕하세요. 개발자 <span className='font-bold text-[#5E5BE3]'>박수연</span>입니다.</p>
+      <div className='flex mx-auto mb-20 max-w-7xl'>
+        <div className="flex flex-wrap justify-between text-center md:basis-full">
+          <ul className='pb-5 mx-auto text-center text-justify border-b basis-4/5 md:pb-9 basis-1/2'>
+            <li className='mb-10 text-2xl text-center md:text-4xl'>디자이너에서 <span className='font-bold text-[#242424]'>개발자</span>로의 성장</li>
+            <li className='text-xl text-[#474747] mb-5 md:text-[22px]'>‘디자인뿐만이 아니라 내가 직접 페이지를 구현하여 개발한다면 어떨까?’라는 생각과 욕심이 생겼고 프론트엔드 개발자라는 직업에 관심이 생겼습니다.</li>
+            <li className='text-xl text-[#474747] mb-5 md:text-[22px]'>저는 프론트엔드 개발 분야에서 계속해서 성장하고, 최신 웹 개발 기술과 트렌드를 습득하고, 개발자 커뮤니티에 기여하고 프로젝트에 참여하여 지식을 공유하고 배울준비가 되어있습니다.</li>
+            <span className='w-[100%] text-xl cursor-pointer group relative md:text-3xl'>sksrbdpdy@naver.com
+            <span class="absolute text-sm hidden truncate text-[#ddd] top-6 left-1/2 transform translate-x-[-50%] group-hover:block transition-[1s] md:top-10 text-2xl">메일은 언제나 환영입니다. :{')'}</span></span>
           </ul>
         </div>
       </div>
-      <div className='flex flex-wrap mx-auto w-[85%] justify-between'>
+      <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
         {
           data.map((e,i)=>{
             return(
-              <ul key={i} className='pb-20 mb-3 border-b basis-full flex-wrap border-[#707070]'>
-                <li className='mb-3 text-3xl font-bold'>{e.title}</li>
-                <li className='text-[20px] mb-10'>{e.desc}</li>
-                {Array(e.desc2.length).fill().map((_,index)=>{
-                  return (
-                    <span key={i} className='p-1 mr-2 border border-[#5E5BE3] rounded-lg'>{e.desc2[index]}</span>
-                  )
-                })}
+              <ul key={i} className='pb-20 mb-5 border-b basis-1/3 border-[#ddd] md:basis-full'>
+                <li className='mb-3 text-xl font-bold md:text-3xl'>{e.title}</li>
+                <li className='text-xl mb-10 md:text-[24px]'>{e.desc}</li>
+                <div className='w-[40%] mx-auto md:w-full'>
+                  {Array(e.desc2.length).fill().map((_,index)=>{
+                    return (
+                      <span key={i} className='p-1 mr-2 text-sm border border-[#5E5BE3] rounded-lg md:text-xl basis-full'>{e.desc2[index]}</span>
+                    )
+                  })
+                  }  
+                </div>
                 <div className='flex mt-2'>
                 {
                   Array(e.desc3.length).fill().map((_,i)=>{
                     return(
-                      <p key={i} className='mr-10'>{e.desc3[i]}</p>
+                      <p key={i} className='mr-10 md:mr-20 basis-[7%]'>{e.desc3[i]}</p>
                     )
                   })
                 } 
@@ -86,7 +87,7 @@ function About() {
         }
       </div>
       <div className='w-full mb-5 text-end'>
-      <NavLink to='/'><span className='p-10 text-2xl'>Back</span></NavLink>
+      <NavLink to='/'><span className='p-10 text-sm md:text-2xl'>Back</span></NavLink>
       </div>
       </div>
     <Footer />

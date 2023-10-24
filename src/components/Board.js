@@ -65,7 +65,7 @@ function Board() {
   
   return (
     <>
-    <div className='max-w-7xl mx-auto text-center mb-20 mt-20 flex flex-col items-center justify-center '>
+    <div className='flex flex-col items-center justify-center mx-auto mt-20 mb-20 text-center max-w-7xl '>
       <div className='mb-[60px]'>
         <span className='text-5xl font-bold'>Board</span>
         <p className='mt-4 text-2xl'>의견을 남겨주세요 :{")"}</p>
@@ -90,7 +90,7 @@ function Board() {
     <div className='mx-auto max-w-7xl'>
       <textarea
         rows="3"
-        cols="33"
+        cols="40"
         maxLength={maxLength - 1}
         className="p-2 text-black placeholder-gray-400 border rounded textarea"
         placeholder="의견을 남겨주세요."
@@ -100,7 +100,7 @@ function Board() {
         }}
       ></textarea>
       <p>{Comment.length}/{maxLength}자</p>
-      <button className='p-3 text-white bg-black text-xl lg:text-3xl' onClick={addComments}>작성하기</button>
+      <button className='p-3 text-xl text-white bg-black lg:text-3xl' onClick={addComments}>작성하기</button>
     </div>
     {/* <span className='relative text-3xl group'>sksrbdpdy@naver.com
       <span className='absolute group hidden group-hover:block top-7 left-[50%] text-[#ddd] text-xl'>메일은 환영입니다 🙌</span>

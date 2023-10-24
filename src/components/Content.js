@@ -3,14 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import '../index.css';
 import contentdata from '../data/ContentData'
-import { Link } from 'react-router-dom';
 
 function Content(props) {
   //별
   const { Stars, stars } = props;
 
   //필터
-  const txtList = ["Clone", "API", "Game"];
+  const txtList = ["Project", "Clone", "API", "Game"];
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
@@ -34,9 +33,9 @@ function Content(props) {
   return (
     <>
     <div className='w-full mt-[150px] pb-20 mx-auto'>
-      <p className='mb-20 text-5xl font-bold text-center'>WORK</p>
-      <div className='w-[500px] bg-[#010b1a] h-[60px] overflow-hidden relative text-center leading-[70px] mx-auto'>
-        <div className='flex justify-between mx-auto w-[80%]'>
+      <p className='mb-20 text-3xl font-bold text-center md:text-6xl'>WORK</p>
+      <div className='w-[60%] bg-[#010b1a] h-[60px] overflow-hidden relative text-center leading-[70px] mx-auto sm:w-[500px]'>
+        <div className='flex justify-between mx-auto md:w-[80%]'>
         <p className={`text-white text-2xl leading-[60px] cursor-pointer
         ${txt === -1 ? 'text-4xl on' : ''}`} onClick={() => {
           setTxt(-1);
@@ -76,7 +75,7 @@ function Content(props) {
           DataFilter.map((e,i)=>{
             return(
             <div className='mt-10'>
-              <ul key={i} className='basis-full pr-3 bg-white cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}}>
+              <ul key={i} className='pr-3 bg-white cursor-pointer basis-full' onClick={()=>{OpenNewTab(e.URL)}}>
                 <li className='text-3xl font-bold'>{e.id}</li>
                 <div className='flex justify-between'>
                   <li>{e.day}</li>   

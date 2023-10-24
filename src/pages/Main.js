@@ -68,9 +68,9 @@ function Main({darkMode,setDarkMode}) {
   const stars = Array.from({ length: Stars }, createRandomStar);
 
   return (
-    <div className='w-full mx-auto h-full'>
+    <div className='w-full h-full mx-auto'>
       <Header />
-      <div className="w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] to-[#fff] h-[700px] transform pb-10">
+      <div className="w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] to-[#fff] h-[500px] transform pb-10 md:h-[700px]">
         <div className='relative custom-spin-animation'> 
           {
             stars.map((star, i) => (
@@ -89,13 +89,12 @@ function Main({darkMode,setDarkMode}) {
             )}
           </div>
           <div className='mt-20 text-center'>
-            <p className='mb-5 pt-[130px] text-xl text-[#ddd] sm:text-4xl'>S o o o</p>
-            <span id="typed" className='font-bold text-white text-7xl sm:text-9xl' />
+            <p className='mb-5 pt-[130px] text-xl text-[#ddd] md:text-4xl'>S o o o</p>
+            <span id="typed" className='text-6xl font-bold text-white md:text-9xl' />
           </div>
         </div>
       <Profile />
       <Content Stars={Stars} stars={stars} />
-      <Project />
       <Board />
       <Footer />
       <Aside />
