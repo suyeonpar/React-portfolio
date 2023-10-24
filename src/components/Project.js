@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function Project() {
+function Project({ dark, toggleDarkMode }) {
 
   const list = ["Quiz","Race","Maze","Card"]
   const [isActive, setIsActive] = useState(false) 

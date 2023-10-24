@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
-function Header({darkMode,setDarkMode}) {
+function Header({ dark, toggleDarkMode }) {
 
   //스크롤 이벤트 (헤더 fixed)
   const [ScrollY, setScrollY] = useState(0);
@@ -41,18 +41,18 @@ function Header({darkMode,setDarkMode}) {
 
   return (
     <>
-      <div className={`z-[9999] h-[50px] w-full bg-white mx-auto items-center top-0 flex justify-between border-b border-[#808080] md:h-[80px] ${ScrollActive ? 'fixed' : 'absolute'}`}>
-        <NavLink to='/'><img src='/images/logo-black.png' alt='logo' className='scale-[0.8]' /></NavLink>
+      <div className={`z-[9999] h-[50px] w-full  ${dark ? 'bg-black text-white' : 'bg-white'} mx-auto items-center top-0 flex justify-between border-b border-[#808080] md:h-[80px] ${ScrollActive ? 'fixed' : 'absolute'}`}>
+        <NavLink to='/'><img src='/images/logo-black.png' alt='logo' className='scale-[0.5] md:scale-[0.8]' /></NavLink>
         <ul className='flex items-center hidden mr-3 text-2xl cursor-pointer md:flex'>
           <NavLink to='/about'><li className='mr-5'>about</li></NavLink>
           <li className='mr-5'>work</li>
           <li className='mr-5'>board</li>
-          <FontAwesomeIcon icon={darkMode ? faCloudSun : faMoon} onClick={() => setDarkMode(!darkMode)} />
+          <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={dark ? `bg-black text-white` : `bg-white text-black`} />
         </ul>
         <div className='relative mr-5 transition-all cursor-pointer md:hidden'>
         
           {Array(3).fill().map((_, i) => (
-            <span key={i} className='hamburger w-[30px] h-[1px] bg-black mb-2'></span>
+            <span key={i} className='hamburger w-[30px] h-[1px] bg-black mb-2 block'></span>
           ))}
 
           <div className='content absolute bg-white top-0 -right-[400px]'>
@@ -62,7 +62,6 @@ function Header({darkMode,setDarkMode}) {
               <li className='text-xl'>board</li>
             </ul>
           </div>
-        
         </div>
       </div>
     </>

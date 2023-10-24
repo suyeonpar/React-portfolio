@@ -18,7 +18,7 @@ import Aside from '../components/Aside';
 import Notfound from './Notfound';
 import { Link } from 'react-router-dom';
 
-function Main({darkMode,setDarkMode}) {
+function Main() {
   //animation
   // useEffect(() => {
   //   const elements = document.querySelectorAll('.wow');
@@ -32,6 +32,12 @@ function Main({darkMode,setDarkMode}) {
 
   //   new WOW.WOW().init();
   // }, []);
+
+  //다크모드
+  const [dark, setDark] = useState(false);
+  const toggleDarkMode = () =>{
+    setDark(!dark);
+  }
 
   //타이핑
   useEffect(() => {
@@ -68,8 +74,9 @@ function Main({darkMode,setDarkMode}) {
   const stars = Array.from({ length: Stars }, createRandomStar);
 
   return (
-    <div className='w-full h-full mx-auto'>
-      <Header />
+    <>
+    <div className={`w-full ${dark ? `bg-[#010b1a]` : `bg-white`} h-full mx-auto`}>
+      <Header dark={dark} toggleDarkMode={toggleDarkMode} />
       <div className="w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] to-[#fff] h-[500px] transform pb-10 md:h-[700px]">
         <div className='relative custom-spin-animation'> 
           {
@@ -93,12 +100,13 @@ function Main({darkMode,setDarkMode}) {
             <span id="typed" className='text-6xl font-bold text-white md:text-9xl' />
           </div>
         </div>
-      <Profile />
-      <Content Stars={Stars} stars={stars} />
-      <Board />
-      <Footer />
+      <Profile dark={dark} toggleDarkMode={toggleDarkMode}/>
+      <Content Stars={Stars} stars={stars} dark={dark} toggleDarkMode={toggleDarkMode} />
+      <Board dark={dark} toggleDarkMode={toggleDarkMode}/>
+      <Footer dark={dark} toggleDarkMode={toggleDarkMode} />
       <Aside />
     </div>
+    </>
   );
 }
 export default Main;

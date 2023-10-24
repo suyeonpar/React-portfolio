@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 import './../index.css'
 import { useNavigate } from 'react-router-dom';
 
-function Board() {
+function Board({ dark, toggleDarkMode }) {
 
   const data = [
     {
@@ -67,8 +67,8 @@ function Board() {
     <>
     <div className='flex flex-col items-center justify-center mx-auto mt-20 mb-20 text-center max-w-7xl '>
       <div className='mb-[60px]'>
-        <span className='text-5xl font-bold'>Board</span>
-        <p className='mt-4 text-2xl'>의견을 남겨주세요 :{")"}</p>
+        <span className={`text-5xl ${dark ? `text-white` : `text-black`} font-bold`}>Board</span>
+        <p className={`mt-4 ${dark ? `text-white` : `text-[#999]`} text-2xl`}>의견을 남겨주세요 :{")"}</p>
       </div>
       {/* <Swiper className='swiper'
       slidesPerView={3}

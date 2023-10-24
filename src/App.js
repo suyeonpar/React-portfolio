@@ -15,21 +15,19 @@ import './index.css'
 
 function App() { 
 
-  const [darkMode, setDarkMode] = useState(false);
-  
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
-
+  //다크모드
+  const [dark, setDark] = useState(false);
+  const toggleDarkMode = () =>{
+    setDark(!dark);
+  }
 
   return (
     <>
-    <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+    <Header />
     <Routes>
       <Route path='/' element={<Main />}></Route>
       <Route path='/sam' element={<Sample />} />
-      <Route path='/about' element={<About />} />
+      <Route path='/about' element={<About dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/e' element={<Ex />} />
       <Route path='/*' element={<Notfound />} />
     </Routes>

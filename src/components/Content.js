@@ -6,10 +6,7 @@ import contentdata from '../data/ContentData'
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-function Content(props) {
-  //별
-  const { Stars, stars } = props;
-
+function Content({Stars, stars, dark, toggleDarkMode }) {
   //필터
   const txtList = ["Project", "Clone", "API", "Game"];
   const [txt, setTxt] = useState(-1);
@@ -46,11 +43,11 @@ function Content(props) {
   return (
     <>
     <div className='w-full mt-[150px] pb-20 mx-auto'>
-      <p className='mb-20 text-3xl font-bold text-center md:text-6xl'>WORK</p>
-      <div className='w-[60%] bg-[#010b1a] h-[60px] overflow-hidden relative text-center leading-[70px] mx-auto sm:w-[500px]'>
+      <p className={`mb-20 text-3xl ${dark ? `text-white` : `text-black`} font-bold text-center md:text-6xl`}>WORK</p>
+      <div className={`w-[60%] bg-[#010b1a] ${dark ? `border-[#ddd]` : `border-none`} h-[60px] overflow-hidden relative text-center leading-[70px] mx-auto sm:w-[500px]`}>
         <div className='flex justify-between mx-auto md:w-[80%]'>
         <p className={`text-white text-2xl leading-[60px] cursor-pointer
-        ${txt === -1 ? 'text-4xl on' : ''}`} onClick={() => {
+        ${txt === -1 ? 'text-4xl font-bold on' : ''}`} onClick={() => {
           setTxt(-1);
         }
         }>ALL</p>
@@ -58,7 +55,7 @@ function Content(props) {
           FilterId.map((e,i)=>{
             return(
               <p className={`text-white text-2xl leading-[60px] text-on cursor-pointer
-              ${txt === i ? 'text-3xl on' : ''}`}
+              ${txt === i ? 'text-3xl font-bold on' : ''}`}
                onClick={()=>{
                setTxt(i)
               }}>{e}</p>
