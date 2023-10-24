@@ -11,6 +11,7 @@ import About from './pages/About';
 import Notfound from './pages/Notfound';
 import { useState } from 'react';
 import Ex from './pages/Ex';
+import './index.css'
 
 function App() { 
 

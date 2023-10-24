@@ -1,8 +1,10 @@
 import { faBox, faChevronDown, faCopyright, faGamepad, faPencil } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useEffect, useState } from 'react'
-import '../index.css';
+import React, { useRef, useEffect, useState } from 'react'
+import '../index.css'; 
 import contentdata from '../data/ContentData'
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 function Content(props) {
   //별
@@ -29,6 +31,17 @@ function Content(props) {
   const OpenNewTab = (url) => {
     window.open(url, "_blank", "noopener, noreferrer");
   };
+
+  //swiper
+  // const SwiperComponent = () => {
+  //   const swiperRef = useRef(null);
+  
+  //   useEffect(() => {
+  //     if (swiperRef.current) {
+  //       swiperRef.current.swiper.update();
+  //     }
+  //   }, [])};
+  
 
   return (
     <>

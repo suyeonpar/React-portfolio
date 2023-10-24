@@ -8,7 +8,6 @@ function Footer() {
         <p className='text-sm text-white leading-10 md:text-2xl leading-[50px]'>@Copyright ©suyeon. All rights reserved.</p>
       </div>
     </div>
-
     </>
   )
 }
