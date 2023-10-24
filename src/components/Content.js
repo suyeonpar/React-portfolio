@@ -39,7 +39,7 @@ function Content(props) {
           FilterId.map((e,i)=>{
             return(
               <p className={`text-white text-2xl leading-[60px] text-on cursor-pointer
-              ${txt === i ? 'text-4xl on' : ''}`}
+              ${txt === i ? 'text-3xl on' : ''}`}
                onClick={()=>{
                setTxt(i)
               }}>{e}</p>
