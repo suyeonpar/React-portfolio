@@ -66,9 +66,9 @@ function Main({darkMode,setDarkMode}) {
   };
   
   const stars = Array.from({ length: Stars }, createRandomStar);
-  
+
   return (
-    <div>
+    <div className='w-full mx-auto h-full'>
       <Header />
       <div className="w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] to-[#fff] h-[700px] transform pb-10">
         <div className='relative custom-spin-animation'> 
@@ -96,10 +96,9 @@ function Main({darkMode,setDarkMode}) {
       <Profile />
       <Content Stars={Stars} stars={stars} />
       <Project />
-      <Use />
       <Board />
-      <Aside />
       <Footer />
+      <Aside />
     </div>
   );
 }

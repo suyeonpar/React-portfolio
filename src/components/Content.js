@@ -24,6 +24,13 @@ function Content(props) {
     }
   }, [txt]);
 
+  //새로운창
+  
+  //새로운창 연결
+  const OpenNewTab = (url) => {
+    window.open(url, "_blank", "noopener, noreferrer");
+  };
+
   return (
     <>
     <div className='w-full mt-[150px] pb-20 mx-auto'>
@@ -64,25 +71,22 @@ function Content(props) {
           )}
         </div>
       </div>
-      <div className='w-[85%] mx-auto flex flex-wrap py-[2%] justify-around'>
+      <div className='max-w-7xl mx-auto flex flex-wrap py-[2%] justify-around'>
         {
           DataFilter.map((e,i)=>{
             return(
             <div className='mt-10'>
-              <Link to={e.URL}>
-              <ul key={i} className='pr-3 bg-white cursor-pointer'>
-                <li className='text-3xl font-bold'>{e.title}</li>
+              <ul key={i} className='basis-full pr-3 bg-white cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}}>
+                <li className='text-3xl font-bold'>{e.id}</li>
                 <div className='flex justify-between'>
-                  <li className='mr-2'>{e.id}</li>
                   <li>{e.day}</li>   
                 </div>
-                <img src={e.img} alt='이미지' className='mb-5 border rounded-lg' />
+                <img src={e.img} alt={e.title} className='mb-5 border rounded-lg' />
                 <li className='text-white bg-black rounded-sm w-[50px] text-center'>USE</li>
                 <li className='text-xl'>{e.desc}</li>
                 <li className='text-xl'>{e.desc2}</li>
                 <li className='text-xl'>{e.desc3}</li>   
               </ul>
-              </Link>
             </div>
             )
           })

@@ -60,15 +60,12 @@ function Board() {
     }else{
       alert("댓글이 작성되었습니다.")
   }
-    // 여기에 댓글 작성 로직을 추가합니다.
-    // comment 상태 변수를 사용하여 작성된 댓글을 가져올 수 있습니다.
     console.log('작성된 댓글:', Comment);
-    // 댓글 작성 로직을 추가하세요.
   };
   
   return (
     <>
-    <div className='w-[1280px] mx-auto text-center mb-20 mt-80'>
+    <div className='max-w-7xl mx-auto text-center mb-20 mt-20 flex flex-col items-center justify-center '>
       <div className='mb-[60px]'>
         <span className='text-5xl font-bold'>Board</span>
         <p className='mt-4 text-2xl'>의견을 남겨주세요 :{")"}</p>
@@ -91,7 +88,6 @@ function Board() {
     </ul>
     </Swiper> */}
     <div className='mx-auto max-w-7xl'>
-      <p>{Comment.length}/{maxLength}자</p>
       <textarea
         rows="3"
         cols="33"
@@ -103,7 +99,8 @@ function Board() {
           setComment(e.target.value);
         }}
       ></textarea>
-      <button className='p-3 text-white bg-black' onClick={addComments}>작성하기</button>
+      <p>{Comment.length}/{maxLength}자</p>
+      <button className='p-3 text-white bg-black text-xl lg:text-3xl' onClick={addComments}>작성하기</button>
     </div>
     {/* <span className='relative text-3xl group'>sksrbdpdy@naver.com
       <span className='absolute group hidden group-hover:block top-7 left-[50%] text-[#ddd] text-xl'>메일은 환영입니다 🙌</span>

@@ -43,7 +43,7 @@ const contentdata = [
       "id" : "Game",
       "day" : "2Days",
       "title" : "Quiz",
-      "img" : "../images/subway.jpg",
+      "img" : "../images/quiz.jpg",
       "desc" : "React",
       "desc2" : "Tailwind CSS",
       "desc3" : "JavaScript",

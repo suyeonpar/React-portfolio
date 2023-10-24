@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 function Header({darkMode,setDarkMode}) {
 
+  //스크롤 이벤트 (헤더 fixed)
   const [ScrollY, setScrollY] = useState(0);
   const [ScrollActive, setScrollActive] = useState(false);
   
@@ -29,6 +30,15 @@ function Header({darkMode,setDarkMode}) {
     };
   });
 
+  //햄버거 네비
+  const HamburgerNav = () =>{
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleNav = () =>{
+      setIsOpen(!isOpen);
+    }
+  };
+
   return (
     <>
       <div className={`z-[9999] w-full h-[80px] bg-white mx-auto items-center top-0 flex justify-between border-b border-[#808080] ${ScrollActive ? 'fixed' : 'absolute'}`}>
@@ -39,15 +49,21 @@ function Header({darkMode,setDarkMode}) {
           <li className='mr-5'>Board</li>
           <FontAwesomeIcon icon={darkMode ? faCloudSun : faMoon} onClick={() => setDarkMode(!darkMode)} />
         </ul>
+        <div className='mr-5 cursor-pointer relative md:hidden transition-all'>
         
-        <div className='mr-5 cursor-pointer md:hidden'>
-        {
-          Array(3).fill().map((_,i)=>{
-            return(
-              <span key={i} className='w-[30px] h-[1px] bg-black mb-2 block'></span>
-            )
-          })
-        }
+          {Array(3).fill().map((_, i) => (
+            <span key={i} className='hamburger w-[30px] h-[1px] bg-black mb-2 block'></span>
+          ))}
+        
+
+          <div className='content absolute bg-white top-0 -right-[400px]'>
+            <ul>
+              <li className='text-xl'>about</li>
+              <li className='text-xl'>content</li>
+              <li className='text-xl'>game</li>
+            </ul>
+          </div>
+        
         </div>
       </div>
     </>
