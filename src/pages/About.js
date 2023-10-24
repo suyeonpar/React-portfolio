@@ -44,7 +44,7 @@ function About({ dark, toggleDarkMode }) {
   return (
     <>
     <Header dark={dark} toggleDarkMode={toggleDarkMode} />
-    <div className={`w-full mx-auto pt-[200px] ${dark ? `bg-[#010b1a]` : `bg-white`} md:h-auto`}>
+    <div className={`w-full mx-auto pt-[200px] ${dark ? `bg-[#010b1a]` : `bg-white`}`}>
       <p className={`pb-20 text-2xl ${dark ? `text-white` : `text-black`} text-center md:text-5xl wow animate__fadeInUp`} data-wow-duration="1.5s">안녕하세요. 개발자 <span className='text-3xl font-bold text-[#5E5BE3] md:text-6xl'>박수연</span> 입니다.</p>
       <div className='flex mx-auto mb-20 max-w-7xl'>
         <div className="flex flex-wrap justify-between text-center md:basis-full">
@@ -86,7 +86,7 @@ function About({ dark, toggleDarkMode }) {
           })
         }
       </div>
-      <div className='w-full mb-5 text-end'>
+      <div className='w-full pb-5 text-end'>
       <NavLink to='/'><span className='p-10 text-sm md:text-2xl'>Back</span></NavLink>
       </div>
       </div>
