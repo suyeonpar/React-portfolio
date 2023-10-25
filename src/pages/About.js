@@ -6,10 +6,12 @@ import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faList } from '@fortawesome/free-solid-svg-icons';
 import './../index.css'
-import { NavLink, Navigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function About({ dark, toggleDarkMode }) {
 
+  const navigate = useNavigate();
+  
   useEffect(()=>{
     new WOW.WOW({
       boxClass: "wow",
@@ -39,7 +41,6 @@ function About({ dark, toggleDarkMode }) {
       desc3 : ["2023.06.28 ~", "2023.09.06 ~ 2023.10.06", "2023.10.12 ~"]
     }
   ]
-
   
   return (
     <>
@@ -87,7 +88,7 @@ function About({ dark, toggleDarkMode }) {
         }
       </div>
       <div className='w-full pb-5 text-end'>
-      <NavLink to='/'><span className={`p-10 text-sm md:text-2xl ${dark ? `text-white` : ``}`}>Back</span></NavLink>
+      <span onClick={() => navigate(-1)} className={`p-10 text-sm md:text-2xl ${dark ? `text-white` : ``}`}>Back</span>
       </div>
       </div>
     <Footer />

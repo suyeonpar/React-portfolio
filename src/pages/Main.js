@@ -65,11 +65,11 @@ function Main() {
   const [height, setHeight] = useState(800);
   
   const createRandomStar = () => {
-  const x = Math.random() * width;
-  const y = Math.random() * height;
-  const size = Math.random() * 2;
-  const animationDelay = Math.random() * 5;
-  return { x, y, size, animationDelay };
+    const x = Math.random() * width;
+    const y = Math.random() * height;
+    const size = Math.random() * 2;
+    const animationDelay = Math.random() * 5;
+    return { x, y, size, animationDelay };
   };
   
   const stars = Array.from({ length: Stars }, createRandomStar);

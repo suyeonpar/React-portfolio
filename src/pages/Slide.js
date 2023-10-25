@@ -78,8 +78,8 @@ function Slide({dark, stars }) {
         </div>
       </div>
       <div className="relative flex w-full h-[500px] items-center mt-[50px] mx-auto mb-[150px] bg-black">
-        <div className="swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2" style={{ color: 'red' }} />
-        <div className="swiper-button-next absolute top-1/2 right-0 transform -translate-y-1/2" />
+        <div className="absolute left-0 transform -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
+        <div className="absolute right-0 transform -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
         <Swiper
           loop={true}
           spaceBetween={10}

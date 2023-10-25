@@ -36,11 +36,10 @@ function Board({ dark, toggleDarkMode }) {
       img : "https://via.placeholder.com/300x200"
     }
   ]
-  
+
   const [InputCnt, setInputCnt] = useState(0);
   const navigate = useNavigate();
   const [maxLength, setMaxLength] = useState(50);
-
   //댓글 글자수 제한
   const InputText = (Comment, setComment) => {
     if (Comment.length > maxLength) {
@@ -51,24 +50,35 @@ function Board({ dark, toggleDarkMode }) {
   
   //댓글 작성
   const [Comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
   
   const addComments = () => {
-    if(Comment.length === 0){
-      alert("의견의 없나요? 자유롭게 달아주세요!")
-      return(addComments);
-    }else{
-      alert("소중한 의견 감사합니다.")
+    if (Comment.trim() !== "" && Comment.length === 0) {
+      alert("의견의 없나요? 자유롭게 달아주세요!");
+    } else {
+      alert("소중한 의견 감사합니다.");
+      setComments([...comments, Comment]);
+      setComment("");
     }
   };
+  
   
   return (
     <>
     <div className='w-full h-auto mx-auto text-center'>
       <h3 className={`text-3xl ${dark ? `text-white` : `text-black`} font-bold md:text-6xl`}>Board</h3>
       <p className={`mt-4 text-sm ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>의견을 남겨주세요 :{")"}</p>
-      <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
-        <div className='h-full bg-white border basis-full md:basis-1/2'>
-          의견 올려지는곳
+      <div className='flex flex-wrap justify-between mx-auto mt-10 max-w-7xl'>
+        <div className='h-full bg-white border-r basis-full md:basis-1/2'>
+          {
+            comments.map((Comment,i)=>{
+              return(
+                <div key={i} className='p-2 mb-2 border-b border-[#ddd]'>
+                  {Comment}
+                </div>
+              )
+            })
+          }
         </div>
         <div className='flex flex-col items-center justify-center mx-auto mb-20 text-center max-w-7xl '>
           <div className='mx-auto max-w-7xl'>
