@@ -1,8 +1,8 @@
-import { faChevronDown, faChevronUp, faCloudSun } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faChevronUp, faCloudSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 
-function Aside() {
+function Aside({dark, toggleDarkMode}) {
 
   const [isActive, setIsActive] = useState(false);
 
@@ -37,10 +37,13 @@ function Aside() {
     <div isActive={isActive} className='bottom-[50px] right-5 fixed'>
       {
         isActive &&
-          <ul className='text-xl md:text-3xl p-3 bg-white rounded-[45%]'>
-            <li onClick={Top} className=''><FontAwesomeIcon icon={faChevronUp} /></li>
-            <li onClick={Down} className=''><FontAwesomeIcon icon={faChevronDown} /></li>
-          </ul>
+        <ul className='bg-white flex flex-col items-center text-xl md:text-3xl p-3 rounded-[45%]'>
+          <li>
+          <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`rounded-[50%] p-1 text-xl md:hidden ${dark ? `bg-black text-white` : `bg-white text-black`}`} />
+          </li>
+          <li onClick={Top} className='p-1 rounded-full'><FontAwesomeIcon icon={faChevronUp} /></li>
+          <li onClick={Down} className='p-1 rounded-full'><FontAwesomeIcon icon={faChevronDown} /></li>
+        </ul>
       }
     </div>
     </>

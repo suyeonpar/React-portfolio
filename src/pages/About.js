@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faList } from '@fortawesome/free-solid-svg-icons';
 import './../index.css'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Navigate } from 'react-router-dom';
 
 function About({ dark, toggleDarkMode }) {
 
@@ -18,7 +18,7 @@ function About({ dark, toggleDarkMode }) {
       mobile: true
     }).init();
   },[])
-   
+
   const data = [
     {
       title: "SKILL",

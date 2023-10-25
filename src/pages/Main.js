@@ -17,6 +17,7 @@ import Project from '../components/Project';
 import Aside from '../components/Aside';
 import Notfound from './Notfound';
 import { Link } from 'react-router-dom';
+import Slide from './Slide';
 
 function Main() {
   //animation
@@ -75,9 +76,9 @@ function Main() {
 
   return (
     <>
-    <div className={`w-full ${dark ? `bg-[#010b1a]` : `bg-white`} h-full mx-auto`}>
+    <div className={`w-full ${dark ? `bg-[#02081f]` : `bg-white`} h-full mx-auto`}>
       <Header dark={dark} toggleDarkMode={toggleDarkMode} />
-      <div className={`w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] to-[#fff] h-[500px] transform pb-10 md:h-[700px] ${dark ? `bg-gradient-to-b from-[#1b1b21] via-[#010b1a] to-[#09062e]` : ``}`}>
+      <div className={`w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] to-[#fff] h-[500px] transform pb-10 md:h-[700px] ${dark ? `bg-gradient-to-b from-[#010b1a] to-black` : ``}`}>
         <div className='relative custom-spin-animation'> 
           {
             stars.map((star, i) => (
@@ -100,11 +101,11 @@ function Main() {
             <span id="typed" className='text-6xl font-bold text-white md:text-9xl' />
           </div>
         </div>
-      <Profile dark={dark} toggleDarkMode={toggleDarkMode}/>
-      <Content Stars={Stars} stars={stars} dark={dark} toggleDarkMode={toggleDarkMode} />
-      <Board dark={dark} toggleDarkMode={toggleDarkMode}/>
+      <Profile dark={dark} />
+      <Slide dark={dark} toggleDarkMode={toggleDarkMode} Stars={Stars} stars={stars} />
+      <Board dark={dark} />
       <Footer dark={dark} toggleDarkMode={toggleDarkMode} />
-      <Aside />
+      <Aside dark={dark} toggleDarkMode={toggleDarkMode} />
     </div>
     </>
   );
