@@ -77,7 +77,7 @@ function Main() {
     <>
     <div className={`w-full ${dark ? `bg-[#010b1a]` : `bg-white`} h-full mx-auto`}>
       <Header dark={dark} toggleDarkMode={toggleDarkMode} />
-      <div className="w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] to-[#fff] h-[500px] transform pb-10 md:h-[700px]">
+      <div className={`w-full overflow-hidden bg-gradient-to-b from-black via-[#010b1a] to-[#fff] h-[500px] transform pb-10 md:h-[700px] ${dark ? `bg-gradient-to-b from-[#1b1b21] via-[#010b1a] to-[#09062e]` : ``}`}>
         <div className='relative custom-spin-animation'> 
           {
             stars.map((star, i) => (

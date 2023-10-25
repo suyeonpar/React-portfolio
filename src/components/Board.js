@@ -39,16 +39,15 @@ function Board({ dark, toggleDarkMode }) {
   
   const [InputCnt, setInputCnt] = useState(0);
   const navigate = useNavigate();
-  const maxLength = 50;
+  const [maxLength, setMaxLength] = useState(50);
 
   //댓글 글자수 제한
   const InputText = (Comment, setComment) => {
-    if (Comment.length >= maxLength) {
+    if (Comment.length > maxLength) {
       setComment(Comment.slice(0, maxLength));
     }
-    setInputCnt(Comment.length - 1);
+    setInputCnt(Comment.length);
   };
-  console.log()
   
   //댓글 작성
   const [Comment, setComment] = useState("");
@@ -99,8 +98,8 @@ function Board({ dark, toggleDarkMode }) {
           setComment(e.target.value);
         }}
       ></textarea>
-      <p>{Comment.length}/{maxLength}자</p>
-      <button className='p-3 text-xl text-white bg-black lg:text-3xl' onClick={addComments}>작성하기</button>
+      <p className={`${dark ? `text-white` : ``} pb-2`}>{Comment.length}/{maxLength}자</p>
+      <button className={`p-3 text-xl rounded-md text-white bg-black lg:text-2xl ${dark ? `border-[#ddd] bg-[#5E5BE3]` : ``}`} onClick={addComments}>작성하기</button>
     </div>
     {/* <span className='relative text-3xl group'>sksrbdpdy@naver.com
       <span className='absolute group hidden group-hover:block top-7 left-[50%] text-[#ddd] text-xl'>메일은 환영입니다 🙌</span>

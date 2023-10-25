@@ -42,8 +42,8 @@ function Header({ dark, toggleDarkMode }) {
   return (
     <>
       <div className={`z-[9999] h-[50px] w-full  ${dark ? 'bg-black text-white' : 'bg-white'} mx-auto items-center top-0 flex justify-between border-b border-[#808080] md:h-[80px] ${ScrollActive ? 'fixed' : 'absolute'}`}>
-        <NavLink to='/'><img src='/images/logo-black.png' alt='logo' className='scale-[0.5] md:scale-[0.8]' /></NavLink>
-        <ul className='flex items-center hidden mr-3 text-2xl cursor-pointer md:flex'>
+        <NavLink to='/'><img src={dark ? '/images/suyeon-logo-dk.png' : '/images/logo-black.png'} alt='logo' className='scale-[0.5] md:scale-[0.8]' /></NavLink>
+        <ul className='flex items-center mr-3 text-2xl cursor-pointer md:flex hidden'>
           <NavLink to='/about'><li className='mr-5'>about</li></NavLink>
           <li className='mr-5'>work</li>
           <li className='mr-5'>board</li>
@@ -52,7 +52,7 @@ function Header({ dark, toggleDarkMode }) {
         <div className='relative mr-5 transition-all cursor-pointer md:hidden'>
         
           {Array(3).fill().map((_, i) => (
-            <span key={i} className='hamburger w-[30px] h-[1px] bg-black mb-2 block'></span>
+            <span key={i} className={`hamburger w-[30px] h-[1px] bg-black mb-2 block ${dark ? `bg-white` : ``}`}></span>
           ))}
 
           <div className='content absolute bg-white top-0 -right-[400px]'>

@@ -4,9 +4,11 @@ import React, { useRef, useEffect, useState } from 'react'
 import '../index.css'; 
 import contentdata from '../data/ContentData'
 import 'swiper/css';
+import 'swiper/css/effect-cards';
+import { EffectCards } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-function Content({Stars, stars, dark, toggleDarkMode }) {
+function Content({ stars, dark, toggleDarkMode }) {
   //필터
   const txtList = ["Project", "Clone", "API", "Game"];
   const [txt, setTxt] = useState(-1);
@@ -44,18 +46,18 @@ function Content({Stars, stars, dark, toggleDarkMode }) {
     <>
     <div className='w-full mt-[150px] pb-20 mx-auto'>
       <p className={`mb-20 text-3xl ${dark ? `text-white` : `text-black`} font-bold text-center md:text-6xl`}>WORK</p>
-      <div className={`w-[60%] bg-[#010b1a] ${dark ? `border-[#ddd]` : `border-none`} h-[60px] overflow-hidden relative text-center leading-[70px] mx-auto sm:w-[500px]`}>
-        <div className='flex justify-between mx-auto md:w-[80%]'>
-        <p className={`text-white text-2xl leading-[60px] cursor-pointer
-        ${txt === -1 ? 'text-4xl font-bold on' : ''}`} onClick={() => {
+      <div className={`h-[40px] w-[60%] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[60px] w-[40%]`}>
+        <div className='flex w-60 justify-between mx-auto md:w-[80%]'>
+        <p className={`text-white text-sm leading-[60px] cursor-pointer md:text-2xl
+        ${txt === -1 ? 'text-xl md:text-3xl font-bold on' : ''}`} onClick={() => {
           setTxt(-1);
         }
         }>ALL</p>
         {
           FilterId.map((e,i)=>{
             return(
-              <p className={`text-white text-2xl leading-[60px] text-on cursor-pointer
-              ${txt === i ? 'text-3xl font-bold on' : ''}`}
+              <p className={`text-white text-sm leading-[60px] text-on cursor-pointer md:text-2xl
+              ${txt === i ? 'text-xl md:text-3xl font-bold on' : ''}`}
                onClick={()=>{
                setTxt(i)
               }}>{e}</p>
@@ -102,6 +104,22 @@ function Content({Stars, stars, dark, toggleDarkMode }) {
         }
       </div>
     </div>
+    <Swiper
+        effect={'cards'}
+        grabCursor={true}
+        modules={[EffectCards]}
+        className="mySwiper"
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
     </>
   )
 }
