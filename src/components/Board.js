@@ -57,37 +57,37 @@ function Board({ dark, toggleDarkMode }) {
       alert("의견의 없나요? 자유롭게 달아주세요!")
       return(addComments);
     }else{
-      alert("댓글이 작성되었습니다.")
-  }
-
-    console.log('작성된 댓글:', Comment);
+      alert("소중한 의견 감사합니다.")
+    }
   };
   
   return (
     <>
-    <div className='flex flex-col items-center justify-center mx-auto mt-20 mb-20 text-center max-w-7xl '>
-      <div className='mb-[60px]'>
-        <span className={`text-3xl ${dark ? `text-white` : `text-black`} font-bold md:text-6xl`}>Board</span>
-        <p className={`mt-4 text-sm ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>의견을 남겨주세요 :{")"}</p>
+    <div className='w-full h-auto mx-auto text-center'>
+      <h3 className={`text-3xl ${dark ? `text-white` : `text-black`} font-bold md:text-6xl`}>Board</h3>
+      <p className={`mt-4 text-sm ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>의견을 남겨주세요 :{")"}</p>
+      <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
+        <div className='h-full bg-white border basis-full md:basis-1/2'>
+          의견 올려지는곳
+        </div>
+        <div className='flex flex-col items-center justify-center mx-auto mb-20 text-center max-w-7xl '>
+          <div className='mx-auto max-w-7xl'>
+            <textarea
+              rows="3"
+              cols="40"
+              maxLength={maxLength - 1}
+              className="p-2 text-black placeholder-gray-400 border rounded textarea"
+              placeholder="의견을 남겨주세요."
+              value={Comment}
+              onChange={(e) => {
+                setComment(e.target.value);
+              }}
+            ></textarea>
+            <p className={`${dark ? `text-white` : ``} pb-2`}>{Comment.length}/{maxLength}자</p>
+            <button className={`p-3 text-xl rounded-md text-white bg-black md:text-2xl ${dark ? `border-[#ddd] bg-[#5E5BE3]` : ``}`} onClick={addComments}>작성하기</button>
+          </div>
+        </div>
       </div>
-      <div className='mx-auto max-w-7xl'>
-        <textarea
-          rows="3"
-          cols="40"
-          maxLength={maxLength - 1}
-          className="p-2 text-black placeholder-gray-400 border rounded textarea"
-          placeholder="의견을 남겨주세요."
-          value={Comment}
-          onChange={(e) => {
-            setComment(e.target.value);
-          }}
-        ></textarea>
-        <p className={`${dark ? `text-white` : ``} pb-2`}>{Comment.length}/{maxLength}자</p>
-        <button className={`p-3 text-xl rounded-md text-white bg-black md:text-2xl ${dark ? `border-[#ddd] bg-[#5E5BE3]` : ``}`} onClick={addComments}>작성하기</button>
-      </div>
-      {/* <span className='relative text-3xl group'>sksrbdpdy@naver.com
-      <span className='absolute group hidden group-hover:block top-7 left-[50%] text-[#ddd] text-xl'>메일은 환영입니다 🙌</span>
-    </span> */}
     </div>
     </>
   )
