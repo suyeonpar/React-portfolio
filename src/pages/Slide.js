@@ -15,7 +15,7 @@ import "animate.css";
 import contentdata from '../data/ContentData'
 
 
-function Slide({dark, stars }) {
+function Slide({dark, stars, restars }) {
 
   //필터
   const txtList = ["Project", "Clone", "API", "Game"];
@@ -79,6 +79,24 @@ function Slide({dark, stars }) {
             )
           )}
         </div>
+        <div className='relative custom-spin-animation2'> 
+  {
+    restars.map((e, i) => (
+      <div
+        key={i}
+        className="absolute w-2 h-2 bg-white rounded-full overflow-hidden left-[50%]"
+        style={{
+          left: `${e.x}px`,
+          top: `${e.y}px`,
+          width: `${e.size}px`,
+          height: `${e.size}px`,
+          animationDelay: `${e.animationDelay}s`
+        }}
+      >
+      </div>
+    ))
+  }
+</div>
       </div>
       <div className="relative flex w-full h-[450px] items-center mt-20 mx-auto mb-[150px] bg-black">
         <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
@@ -128,7 +146,7 @@ function Slide({dark, stars }) {
                   </ul> */}
                   </div>
                   <div className="flex items-center border-t-[#ddd] justify-around mx-auto w-full h-full">
-                    <ul className="border-r w-1/2 ">
+                    <ul className="w-1/2 border-r ">
                       <li className='text-white bg-black rounded-sm w-[50px] text-center'>USE</li>
                       <li className='text-xl'>{e.desc}</li>
                       <li className='text-xl'>{e.desc2}</li>
