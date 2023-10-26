@@ -26,6 +26,8 @@ function Slide({dark, stars }) {
   // 만약 txtList 값이 많아진다면??
   useEffect(() => {
     if (txt === -1) {
+      const random = Math.floor(Math.random() * contentdata.length)
+      const DataRandom = contentdata[random]
       setDataFilter(contentdata);
     } else {
       const filteredData = contentdata.filter(e => e.id === txtList[txt]);
@@ -79,7 +81,7 @@ function Slide({dark, stars }) {
         </div>
       </div>
       <div className="relative flex w-full h-[450px] items-center mt-20 mx-auto mb-[150px] bg-black">
-        <div className="absolute left-0 transform -translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
+        <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
         <div className="absolute right-0 transform -translate-x-1/2 -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
         <Swiper className="absolute top-[20%]"
           loop={true}
@@ -119,23 +121,23 @@ function Slide({dark, stars }) {
               <SwiperSlide style={{ overflow: "hidden" }} key={i}>
                 <div className='bg-white basis-1/2 h-[400px] border mb-10'>
                   <div className="flex items-center justify-around w-full mx-auto text-center border-b mt-7">
-                    <img src={e.img} alt={e.title} className='mb-5 border' onClick={()=>{OpenNewTab(e.URL)}} />
+                    <img src={e.img} alt={e.title} className='mb-5 border cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}} />
                     <p className='mb-1 text-3xl font-bold mr-7'>{e.id}</p>
                   {/* <ul className='flex justify-between'>
                     <li>{e.day}</li>   
                   </ul> */}
                   </div>
-                  <div className="flex items-center border-t-[#ddd] justify-around mx-auto w-full">
-                    <ul className="w-1/2 border-r">
+                  <div className="flex items-center border-t-[#ddd] justify-around mx-auto w-full h-full">
+                    <ul className="border-r w-1/2 ">
                       <li className='text-white bg-black rounded-sm w-[50px] text-center'>USE</li>
                       <li className='text-xl'>{e.desc}</li>
                       <li className='text-xl'>{e.desc2}</li>
                       <li className='text-xl'>{e.desc3}</li>   
                     </ul>
                     <ul className="w-1/2 h-full text-center">
-                      <li className='text-xs'>{e.desc}</li>
-                      <li className='text-xs'>{e.desc2}</li>
-                      <li className='text-xs'>{e.desc3}</li>   
+                      <li className='text-xs md:text-xl'>{e.desc}</li>
+                      <li className='text-xs md:text-xl'>{e.desc2}</li>
+                      <li className='text-xs md:text-xl'>{e.desc3}</li>   
                     </ul>
                   </div>
                 </div>

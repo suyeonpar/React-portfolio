@@ -83,8 +83,17 @@ function Main() {
     const animationDelay = Math.random() * 5;
     return { x, y, size, animationDelay };
   };
+
+  const reverseStar = () => {
+    const x = Math.random() * -width;
+    const y = Math.random() * -height;
+    const size = Math.random() * 2;
+    const animationDelay = Math.random() * 5;
+    return { x, y, size, animationDelay };
+  };
   
   const stars = Array.from({ length: Stars }, createRandomStar);
+  const restars = Array.from({ length: Stars}, reverseStar);
 
   return (
     <>
@@ -107,6 +116,11 @@ function Main() {
                 ></div>
               )
             )}
+            {
+              restars.map((restars, i)=>{
+                
+              })
+            }
           </div>
           <div className='mt-20 text-center'>
             <p className='mb-5 pt-[130px] text-xl text-[#ddd] md:text-4xl'>S o o o</p>
