@@ -76,7 +76,7 @@ const contentdata = [
       "desc" : "JavaScript",
       "desc2" : "HTML",
       "desc3" : "CSS",
-      "URL" : "https://quiz-one-sigma.vercel.app/"
+      "URL" : "https://suyeonpar.github.io/drawing-mini-game/"
     }
 ]
 

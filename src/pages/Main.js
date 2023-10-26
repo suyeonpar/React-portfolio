@@ -35,10 +35,22 @@ function Main() {
   // }, []);
 
   //다크모드
-  const [dark, setDark] = useState(false);
-  const toggleDarkMode = () =>{
+  const savedDarkMode = localStorage.getItem('dark');
+  const isDarkMode = savedDarkMode ? savedDarkMode === 'true' : false;
+  const [dark, setDark] = useState(isDarkMode);
+
+  useEffect(() => {
+    if (dark) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem('dark', dark ? 'true' : 'false');
+  }, [dark]);
+
+  const toggleDarkMode = () => {
     setDark(!dark);
-  }
+  };
 
   //타이핑
   useEffect(() => {

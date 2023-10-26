@@ -17,7 +17,7 @@ import contentdata from '../data/ContentData'
 
 function Slide({dark, stars }) {
 
-//필터
+  //필터
   const txtList = ["Project", "Clone", "API", "Game"];
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
@@ -77,7 +77,7 @@ function Slide({dark, stars }) {
           )}
         </div>
       </div>
-      <div className="relative flex w-full h-[500px] items-center mt-[50px] mx-auto mb-[150px] bg-black">
+      <div className="relative flex w-full h-[500px] items-center mt-20 mx-auto mb-[150px] bg-black">
         <div className="absolute left-0 transform -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
         <div className="absolute right-0 transform -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
         <Swiper
@@ -85,7 +85,7 @@ function Slide({dark, stars }) {
           spaceBetween={10}
           slidesPerView={1}
           centeredSlides={true}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          //autoplay={{ delay: 3500, disableOnInteraction: false }}
           breakpoints={{
             768: {
               slidesPerView: 1.6,
@@ -116,17 +116,26 @@ function Slide({dark, stars }) {
           DataFilter.map((e,i)=>{
               return(
               <SwiperSlide style={{ overflow: "hidden" }} key={i}>
-                <ul className='bg-white cursor-pointer basis-1/2' onClick={()=>{OpenNewTab(e.URL)}}>
-                  <li className='text-3xl font-bold'>{e.id}</li>
-                  <div className='flex justify-between'>
+                <div className='bg-white cursor-pointer basis-1/2' onClick={()=>{OpenNewTab(e.URL)}}>
+                  <p className='text-3xl font-bold'>{e.id}</p>
+                  <ul className='flex justify-between'>
                     <li>{e.day}</li>   
-                  </div>
+                  </ul>
                   <img src={e.img} alt={e.title} className='mb-5 border rounded-lg' />
-                  <li className='text-white bg-black rounded-sm w-[50px] text-center'>USE</li>
-                  <li className='text-xl'>{e.desc}</li>
-                  <li className='text-xl'>{e.desc2}</li>
-                  <li className='text-xl'>{e.desc3}</li>   
-                </ul>
+                  <div className="flex items-center">
+                    <ul className="w-1/2 border-r">
+                      <li className='text-white bg-black rounded-sm w-[50px] text-center'>USE</li>
+                      <li className='text-xl'>{e.desc}</li>
+                      <li className='text-xl'>{e.desc2}</li>
+                      <li className='text-xl'>{e.desc3}</li>   
+                    </ul>
+                    <ul className="w-1/2 h-full text-center border-r ">
+                      <li className='text-xs'>{e.desc}</li>
+                      <li className='text-xs'>{e.desc2}</li>
+                      <li className='text-xs'>{e.desc3}</li>   
+                    </ul>
+                  </div>
+                </div>
               </SwiperSlide>
               )
             })
