@@ -37,7 +37,7 @@ function Aside({dark, toggleDarkMode}) {
     <div isActive={isActive} className='bottom-[50px] right-5 fixed z-9999'>
       {
         isActive &&
-        <ul className='flex flex-col items-center text-xl md:text-3xl p-3 rounded-[45%]'>
+        <ul className='flex flex-col items-center text-xl md:text-3xl p-3 rounded-[45%] z-[99999]'>
           <li>
           <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`rounded-[50%] p-1 text-xl md:hidden ${dark ? `bg-black text-white` : `text-black`}`} />
           </li>

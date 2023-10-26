@@ -53,7 +53,7 @@ function Board({ dark, toggleDarkMode }) {
   const [comments, setComments] = useState([]);
   
   const addComments = () => {
-    if (Comment.trim() !== "" && Comment.length === 0) {
+    if (Comment.length === 0) {
       alert("의견의 없나요? 자유롭게 달아주세요!");
     } else {
       alert("소중한 의견 감사합니다.");
@@ -94,7 +94,7 @@ function Board({ dark, toggleDarkMode }) {
               }}
             ></textarea>
             <p className={`${dark ? `text-white` : ``} pb-2`}>{Comment.length}/{maxLength}자</p>
-            <button className={`p-3 text-xl rounded-md text-white bg-black md:text-2xl ${dark ? `border-[#ddd] bg-[#5E5BE3]` : ``}`} onClick={addComments}>작성하기</button>
+            <button className={`p-2 text-sm border rounded-md text-white bg-black md:text-xl ${dark ? `border-[#ddd] bg-[#5E5BE3]` : ``}`} onClick={addComments}>작성하기</button>
           </div>
         </div>
       </div>
