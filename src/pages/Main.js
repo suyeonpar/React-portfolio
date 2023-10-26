@@ -102,9 +102,9 @@ function Main() {
           </div>
         </div>
       <Profile dark={dark} />
-      <Slide dark={dark} toggleDarkMode={toggleDarkMode} Stars={Stars} stars={stars} />
+      <Slide dark={dark} Stars={Stars} stars={stars} />
       <Board dark={dark} />
-      <Footer dark={dark} toggleDarkMode={toggleDarkMode} />
+      <Footer dark={dark} />
       <Aside dark={dark} toggleDarkMode={toggleDarkMode} />
     </div>
     </>

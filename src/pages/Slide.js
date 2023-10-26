@@ -113,24 +113,24 @@ function Slide({dark, stars }) {
           }}
         >
         {
-            DataFilter.map((e,i)=>{
-                return(
-                <SwiperSlide style={{ overflow: "hidden" }} key={i}>
-                  <ul className='bg-white cursor-pointer basis-1/2' onClick={()=>{OpenNewTab(e.URL)}}>
-                    <li className='text-3xl font-bold'>{e.id}</li>
-                    <div className='flex justify-between'>
-                      <li>{e.day}</li>   
-                    </div>
-                    <img src={e.img} alt={e.title} className='mb-5 border rounded-lg' />
-                    <li className='text-white bg-black rounded-sm w-[50px] text-center'>USE</li>
-                    <li className='text-xl'>{e.desc}</li>
-                    <li className='text-xl'>{e.desc2}</li>
-                    <li className='text-xl'>{e.desc3}</li>   
-                  </ul>
-                </SwiperSlide>
-                )
-              })
-            }
+          DataFilter.map((e,i)=>{
+              return(
+              <SwiperSlide style={{ overflow: "hidden" }} key={i}>
+                <ul className='bg-white cursor-pointer basis-1/2' onClick={()=>{OpenNewTab(e.URL)}}>
+                  <li className='text-3xl font-bold'>{e.id}</li>
+                  <div className='flex justify-between'>
+                    <li>{e.day}</li>   
+                  </div>
+                  <img src={e.img} alt={e.title} className='mb-5 border rounded-lg' />
+                  <li className='text-white bg-black rounded-sm w-[50px] text-center'>USE</li>
+                  <li className='text-xl'>{e.desc}</li>
+                  <li className='text-xl'>{e.desc2}</li>
+                  <li className='text-xl'>{e.desc3}</li>   
+                </ul>
+              </SwiperSlide>
+              )
+            })
+          }
         </Swiper>
       </div>
     </div>

@@ -88,11 +88,11 @@ function About({ dark, toggleDarkMode }) {
         }
       </div>
       <div className='w-full pb-5 text-end'>
-      <span onClick={() => navigate(-1)} className={`p-10 text-sm md:text-2xl ${dark ? `text-white` : ``}`}>Back</span>
+      <span onClick={() => navigate(-1)} className={`cursor-pointer p-10 text-sm md:text-2xl ${dark ? `text-white` : ``}`}>Back</span>
       </div>
       </div>
     <Footer />
-    </> 
+    </>
   )
 }
 

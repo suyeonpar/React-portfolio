@@ -37,12 +37,12 @@ function Aside({dark, toggleDarkMode}) {
     <div isActive={isActive} className='bottom-[50px] right-5 fixed'>
       {
         isActive &&
-        <ul className='bg-white flex flex-col items-center text-xl md:text-3xl p-3 rounded-[45%]'>
+        <ul className='flex flex-col items-center text-xl md:text-3xl p-3 rounded-[45%]'>
           <li>
-          <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`rounded-[50%] p-1 text-xl md:hidden ${dark ? `bg-black text-white` : `bg-white text-black`}`} />
+          <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`rounded-[50%] p-1 text-xl md:hidden ${dark ? `bg-black text-white` : `text-black`}`} />
           </li>
-          <li onClick={Top} className='p-1 rounded-full'><FontAwesomeIcon icon={faChevronUp} /></li>
-          <li onClick={Down} className='p-1 rounded-full'><FontAwesomeIcon icon={faChevronDown} /></li>
+          <li onClick={Top} className={ `p-1 rounded-full ${dark ? `text-white bg-[#02081f]` : ``}`}><FontAwesomeIcon icon={faChevronUp} /></li>
+          <li onClick={Down} className={ `p-1 rounded-full ${dark ? `text-white bg-[#02081f]` : ``}`}><FontAwesomeIcon icon={faChevronDown} /></li>
         </ul>
       }
     </div>

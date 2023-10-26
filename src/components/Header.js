@@ -50,7 +50,7 @@ function Header({ dark, toggleDarkMode }) {
           <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={dark ? `bg-black text-white` : `bg-white text-black`} />
         </ul>
         <div className='relative mr-5 transition-all cursor-pointer md:hidden'>
-        
+  
           {Array(3).fill().map((_, i) => (
             <span key={i} className={`hamburger w-[30px] h-[1px] bg-black mb-2 block ${dark ? `bg-white` : ``}`}></span>
           ))}

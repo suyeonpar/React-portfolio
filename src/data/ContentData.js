@@ -60,12 +60,22 @@ const contentdata = [
     },
     {
       "id" : "Game",
-      "day" : "2Days",
+      "day" : "3Days",
       "title" : "Quiz",
       "img" : "../images/quiz.jpg",
       "desc" : "React",
       "desc2" : "Tailwind CSS",
       "desc3" : "JavaScript",
+      "URL" : "https://quiz-one-sigma.vercel.app/"
+    },
+    {
+      "id" : "Game",
+      "day" : "1Days",
+      "title" : "Drawing",
+      "img" : "../images/drawing.jpg",
+      "desc" : "JavaScript",
+      "desc2" : "HTML",
+      "desc3" : "CSS",
       "URL" : "https://quiz-one-sigma.vercel.app/"
     }
 ]
