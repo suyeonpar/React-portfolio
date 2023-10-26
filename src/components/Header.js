@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import 'animate.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faCloudSun, faL, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
 function Header({ dark, toggleDarkMode }) {
+
+  const [isActive, setIsActive] = useState(false);
+
+  const handleHamburgerClick = () => {
+    setIsActive(!isActive);
+  };
 
   //스크롤 이벤트 (헤더 fixed)
   const [ScrollY, setScrollY] = useState(0);
@@ -49,19 +55,17 @@ function Header({ dark, toggleDarkMode }) {
           <li className='mr-5'>board</li>
           <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={dark ? `bg-black text-white` : `bg-white text-black`} />
         </ul>
-        <div className='relative mt-2 mr-5 transition-all cursor-pointer md:hidden'>
-  
+        <div onClick={handleHamburgerClick} className='mt-2 mr-5 transition-all cursor-pointer md:hidden'>
           {Array(3).fill().map((_, i) => (
-            <span key={i} className={`hamburger w-[30px] h-[1px] bg-black mb-2 block ${dark ? `bg-white` : ``}`}></span>
+            <span
+              key={i}
+              className={`hamburger w-[30px] h-[1px] bg-black mb-2 block ${dark ? 'bg-white' : ''}`}
+              style={{
+                transform: isActive ? (i === 0 ? 'rotate(45deg) translateY(12px)' : i === 2 ? 'rotate(-45deg) translateY(-13px)' : 'rotate(0)') : '',
+                opacity: isActive ? (i === 1 ? 0 : 1) : 1,
+              }}>
+            </span>
           ))}
-
-          <div className='content absolute bg-white top-0 -right-[400px]'>
-            <ul>
-              <li className='text-xl'>about</li>
-              <li className='text-xl'>work</li>
-              <li className='text-xl'>board</li>
-            </ul>
-          </div>
         </div>
       </div>
     </>
