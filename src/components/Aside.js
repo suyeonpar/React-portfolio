@@ -34,7 +34,7 @@ function Aside({dark, toggleDarkMode}) {
 
   return (
     <>
-    <div isActive={isActive} className='bottom-[50px] right-5 fixed z-9999'>
+    <div isActive={isActive} className='right-0 bottom-[50px] md:right-5 fixed z-9999'>
       {
         isActive &&
         <ul className='flex flex-col items-center text-xl md:text-3xl p-3 rounded-[45%] z-[99999]'>

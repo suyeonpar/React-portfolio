@@ -47,7 +47,9 @@ body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
-
+::-webkit-scrollbar {
+  width: 0;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

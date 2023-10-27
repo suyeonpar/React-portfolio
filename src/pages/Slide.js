@@ -40,22 +40,25 @@ function Slide({dark, stars, restars }) {
         window.open(url, "_blank", "noopener, noreferrer");
     };
 
+    // 마우스오버 이벤트
+    
+
   return (
     <>
     <div className='w-full mt-[150px] pb-20 mx-auto'>
-      <p className={`mb-20 text-3xl ${dark ? `text-white` : `text-black`} font-bold text-center md:text-6xl`}>WORK</p>
+      <p className={`md:mb-20 mb-10 text-3xl ${dark ? `text-white` : `text-black`} font-bold text-center md:text-6xl`}>WORK</p>
       <div className={`h-[40px] w-[60%] leading-[40px] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[60px] w-[40%]`}>
-        <div className='flex w-[70%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
-        <p className={`text-white text-sm cursor-pointer md:text-2xl
-        ${txt === -1 ? 'text-xl md:text-3xl lg:text-4xl font-bold on' : ''}`} onClick={() => {
+        <div className='flex w-[82%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
+        <p className={`text-white text-[12px] cursor-pointer md:text-2xl
+        ${txt === -1 ? 'text-[14px] md:text-3xl lg:text-4xl font-bold on' : ''}`} onClick={() => {
           setTxt(-1);
         }
         }>ALL</p>
         {
           FilterId.map((e,i)=>{
             return(
-              <p key={i} className={`text-white text-sm leading-[60px] text-on cursor-pointer md:text-xl lg:text-2xl
-              ${txt === i ? 'text-xl md:text-2xl lg:text-4xl font-bold on' : ''}`}
+              <p key={i} className={`text-white text-[12px] leading-[60px] text-on cursor-pointer md:text-xl lg:text-2xl
+              ${txt === i ? 'text-[14px] md:text-2xl lg:text-4xl font-bold on' : ''}`}
                onClick={()=>{
                setTxt(i)
               }}>{e}</p>
@@ -106,7 +109,7 @@ function Slide({dark, stars, restars }) {
           spaceBetween={10}
           slidesPerView={1}
           centeredSlides={true}
-          //autoplay={{ delay: 3500, disableOnInteraction: false }}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
           breakpoints={{
             768: {
               slidesPerView: 1.6,
@@ -138,25 +141,20 @@ function Slide({dark, stars, restars }) {
               return(
               <SwiperSlide style={{ overflow: "hidden" }} key={i}>
                 <div className='bg-white basis-1/2 h-[400px] border mb-10'>
-                  <div className="flex items-center justify-around w-full mx-auto text-center border-b mt-7">
-                    <img src={e.img} alt={e.title} className='mb-5 border cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}} />
-                    <p className='mb-1 text-3xl font-bold mr-7'>{e.id}</p>
-                  {/* <ul className='flex justify-between'>
-                    <li>{e.day}</li>   
-                  </ul> */}
-                  </div>
-                  <div className="flex items-center border-t-[#ddd] justify-around mx-auto w-full h-full">
-                    <ul className="w-1/2 border-r ">
-                      <li className='text-white bg-black rounded-sm w-[50px] text-center'>USE</li>
-                      <li className='text-xl'>{e.desc}</li>
-                      <li className='text-xl'>{e.desc2}</li>
-                      <li className='text-xl'>{e.desc3}</li>   
-                    </ul>
-                    <ul className="w-1/2 h-full text-center">
-                      <li className='text-xs md:text-xl'>{e.desc}</li>
-                      <li className='text-xs md:text-xl'>{e.desc2}</li>
-                      <li className='text-xs md:text-xl'>{e.desc3}</li>   
-                    </ul>
+                  <div className="flex justify-start w-[95%] mx-auto text-center mt-5">
+                    <img src={e.img} alt={e.title} className='mb-2 mr-7 md:w-[200px] lg:mb-5 md:mb-5 border cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}} />
+                    <div className="w-4/5">
+                      <p className='mb-2 text-3xl font-bold'>{e.id}</p>
+                      <p>{e.title}</p>
+                      <div className="flex items-center mt-5 mx-auto">
+                        <div className="w-1/2 text-start mt-10">
+                          <p className='text-white bg-black rounded-sm w-[50px] text-center'>USE</p>
+                          <p className='text-xl'>{e.desc}</p>
+                          <p className='text-xl'>{e.desc2}</p>
+                          <p className='text-xl'>{e.desc3}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>

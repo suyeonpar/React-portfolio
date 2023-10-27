@@ -5,8 +5,8 @@ const contentdata = [
     "title" : "UUF",
     "desc" : "JavaScript",
     "desc2" : "css",
-    "img" : "/images/toy-project.jpg",
-    "URL" : "https://suyeonpar.github.io/clone-belif/"
+    "img" : "/images/toy-project.svg",
+    "URL" : "http://127.0.0.1:5501/BSY/index.html"
   },
   {
       "id" : "Project",
@@ -32,7 +32,7 @@ const contentdata = [
     "id" : "Clone",
     "day" : "4Days",
     "title" : "SUBWAY",
-    "img" : "../images/subway.jpg",
+    "img" : "../images/subway.svg",
     "desc" : "HTML",
     "desc2" : "CSS",
     "desc3" : "JavaScript",
@@ -62,7 +62,7 @@ const contentdata = [
     "id" : "Game",
     "day" : "3Days",
     "title" : "Quiz",
-    "img" : "../images/quiz.jpg",
+    "img" : "../images/quiz.svg",
     "desc" : "React",
     "desc2" : "Tailwind CSS",
     "desc3" : "JavaScript",
