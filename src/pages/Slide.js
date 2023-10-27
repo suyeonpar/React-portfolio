@@ -41,7 +41,14 @@ function Slide({dark, stars, restars }) {
     };
 
     // 마우스오버 이벤트
-    
+    const [mouseOver, setMouseOver] = useState(false);
+
+    useEffect(()=>{
+      if( mouseOver === true){
+        
+      }
+
+    })
 
   return (
     <>

@@ -4,7 +4,7 @@ import WOW from 'wowjs';
 import 'animate.css';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faList } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faChevronDown, faList } from '@fortawesome/free-solid-svg-icons';
 import './../index.css'
 import { NavLink, useNavigate } from 'react-router-dom';
 
@@ -34,25 +34,29 @@ function About({ dark, toggleDarkMode }) {
       title: "WORK EXPERIENCE",
       desc: "제가 경험한 것은요",
       desc2: ["No.1 스포츠 의류 쇼핑몰", "Allendino 남성쇼핑몰", "오늘미술학원"],
-      desc3 : ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
+      desc3 : ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"],
+      icon: faChevronDown
     },
     {
       title: "SKILL",
       desc: "제가 자신 있는 것은요",
       desc2: ["HTML5", "CSS3", "TailwindCSS", "SCSS", "React", "node.js", "TypeScript", "Next.js", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
-      desc3 : [""]
+      desc3 : [""],
+      icon: faChevronDown
     },
     {
       title: "Collaboration & Tools ",
       desc: "제가 자신있는 협업툴은요",
       desc2: ["figma", "slack", "npm", "yarn", "Git", "Github", "Notion", "Vercel"],
-      desc3 : [""]
+      desc3 : [""],
+      icon: faChevronDown
     },
     {
       title : "EDUCTION",
       desc : "제가 배운것은요",
       desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "스터디 Toy project"],
-      desc3 : ["2023.06.29 ~", "2023.09.06 ~ 2023.10.06", "2023.10.12 ~"]
+      desc3 : ["2023.06.29 ~", "2023.09.06 ~ 2023.10.06", "2023.10.12 ~"],
+      icon: faChevronDown
     }
   ]
   
@@ -86,30 +90,28 @@ function About({ dark, toggleDarkMode }) {
         {
           data.map((e,i)=>{
             return(
-              
-                <ul key={i} className='pb-20 w-[75%] md:w-[80%] lg:w-full mx-auto mt-5 border-b border-[#ddd]'>
-                  <li className={`mb-3 text-sm font-bold md:text-2xl lg:text-3xl ${dark ? `text-white` : ``}`}>{e.title}</li>
-                  <li className={`text-xs mb-2 md:mb-5 lg:mb-10 md:text-xl lg:text-[24px] ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc}</li>
-                  <li className='mx-auto flex flex-wrap'>
-                    {Array(e.desc2.length).fill().map((_,index)=>{
-                      return (
-                        <span key={i} className={`p-1 mr-2 mb-2 text-xs border ${dark ? `text-[#ddd]` : ``} border-[#5E5BE3] rounded-lg md:text-sm lg:text-xl`}>{e.desc2[index]}</span>
-                      )
-                    })
-                  }  
-                  </li>
-                  <li className='flex mt-2'>
-                  {
-                    Array(e.desc3.length).fill().map((_,i)=>{
-                      return(
-                        <p key={i} className={`mr-10 ${dark ? `text-[#ddd]` : ``} md:mr-20 basis-[7%]`}>{e.desc3[i]}</p>
-                      )
-                    })
-                  } 
-                  </li>
-                </ul>
-          
-
+              <ul key={i} className='relative pb-20 w-[75%] md:w-[80%] lg:w-full mx-auto mt-5 border-b border-[#ddd]'>
+                <li className={`mb-3 text-sm font-bold md:text-2xl lg:text-3xl ${dark ? `text-white` : ``}`}>{e.title}</li>
+                <li className={`text-xs mb-2 md:mb-5 lg:mb-10 md:text-xl lg:text-[24px] ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc}</li>
+                <li className='mx-auto flex flex-wrap'>
+                  {Array(e.desc2.length).fill().map((_,index)=>{
+                    return (
+                      <span key={i} className={`p-1 mr-2 mb-2 text-xs border ${dark ? `text-[#ddd]` : ``} border-[#5E5BE3] rounded-lg md:text-sm lg:text-xl`}>{e.desc2[index]}</span>
+                    )
+                  })
+                }  
+                </li>
+                <li className='flex mt-2'>
+                {
+                  Array(e.desc3.length).fill().map((_,i)=>{
+                    return(
+                      <p key={i} className={`mr-10 ${dark ? `text-[#ddd]` : ``} md:mr-20 basis-[7%]`}>{e.desc3[i]}</p>
+                    )
+                  })
+                } 
+                </li>
+                <li className='absolute right-5 bottom-10 text-xs md:text-xl'><FontAwesomeIcon icon={e.icon}></FontAwesomeIcon></li>
+              </ul>
             )
           })
         }
