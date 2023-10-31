@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import WOW from 'wowjs';
 import 'animate.css';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faChevronDown, faList } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faChevronDown, faGift, faList, faGithub } from '@fortawesome/free-solid-svg-icons';
 import './../index.css'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
+
+
 
 function About({ dark, toggleDarkMode }) {
 
@@ -59,6 +61,12 @@ function About({ dark, toggleDarkMode }) {
       icon: faChevronDown
     }
   ]
+
+  const [arrows, setArrows] = useState(false);
+
+  const toggleArrow = () => {
+    setArrows(!arrows)
+  }
   
   return (
     <>
@@ -86,14 +94,14 @@ function About({ dark, toggleDarkMode }) {
           </div>
         </div>
       </div>
-      <div className='md:justify-start mx-auto max-w-7xl'>
+      <div className='mx-auto md:justify-start max-w-7xl'>
         {
           data.map((e,i)=>{
             return(
               <ul key={i} className='relative pb-20 w-[75%] md:w-[80%] lg:w-full mx-auto mt-5 border-b border-[#ddd]'>
                 <li className={`mb-3 text-sm font-bold md:text-2xl lg:text-3xl ${dark ? `text-white` : ``}`}>{e.title}</li>
                 <li className={`text-xs mb-2 md:mb-5 lg:mb-10 md:text-xl lg:text-[24px] ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc}</li>
-                <li className='mx-auto flex flex-wrap'>
+                <li className='flex flex-wrap mx-auto'>
                   {Array(e.desc2.length).fill().map((_,index)=>{
                     return (
                       <span key={i} className={`p-1 mr-2 mb-2 text-xs border ${dark ? `text-[#ddd]` : ``} border-[#5E5BE3] rounded-lg md:text-sm lg:text-xl`}>{e.desc2[index]}</span>
@@ -110,7 +118,7 @@ function About({ dark, toggleDarkMode }) {
                   })
                 } 
                 </li>
-                <li className='absolute right-5 bottom-10 text-xs md:text-xl'><FontAwesomeIcon icon={e.icon}></FontAwesomeIcon></li>
+                <li onClick={toggleArrow} className='absolute text-xs cursor-pointer right-5 bottom-10 md:text-xl'><FontAwesomeIcon icon={e.icon} className={`fa-rotate-${setArrows ? '45' : '-45'}`} /></li>
               </ul>
             )
           })
