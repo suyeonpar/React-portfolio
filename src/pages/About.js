@@ -4,7 +4,7 @@ import WOW from 'wowjs';
 import 'animate.css';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faChevronDown, faGift, faList, faGithub } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faChevronDown, faGift, faList } from '@fortawesome/free-solid-svg-icons';
 import './../index.css'
 import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -62,10 +62,10 @@ function About({ dark, toggleDarkMode }) {
     }
   ]
 
-  const [arrows, setArrows] = useState(false);
+  const [isArrows, setIsArrows] = useState(false);
 
   const toggleArrow = () => {
-    setArrows(!arrows)
+    setIsArrows(!isArrows)
   }
   
   return (
@@ -118,7 +118,9 @@ function About({ dark, toggleDarkMode }) {
                   })
                 } 
                 </li>
-                <li onClick={toggleArrow} className='absolute text-xs cursor-pointer right-5 bottom-10 md:text-xl'><FontAwesomeIcon icon={e.icon} className={`fa-rotate-${setArrows ? '45' : '-45'}`} /></li>
+                <li onClick={toggleArrow} className={`absolute text-xs cursor-pointer right-5 bottom-10 md:text-xl`}>
+                  <FontAwesomeIcon icon={e.icon} className={`${isArrows ? 'rotate-[-180deg]' : 'rotate-0'}`} />
+                </li>
               </ul>
             )
           })
