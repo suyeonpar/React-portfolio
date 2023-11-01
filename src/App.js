@@ -12,6 +12,7 @@ import Notfound from './pages/Notfound';
 import { useState } from 'react';
 import Ex from './pages/Ex';
 import './index.css'
+import Gallery from './components/Gallery';
 
 function App() { 
 
@@ -20,7 +21,7 @@ function App() {
   const toggleDarkMode = () =>{
     setDark(!dark);
   }
-// https://hyeonsu-jung.vercel.app/
+
   return (
     <>
     <Header />
@@ -30,6 +31,7 @@ function App() {
       <Route path='/about' element={<About dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/e' element={<Ex />} />
       <Route path='/*' element={<Notfound />} />
+      <Route path='/gallery' element={<Gallery />} />
     </Routes>
     </>
   );

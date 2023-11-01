@@ -48,8 +48,8 @@ function Header({ dark, toggleDarkMode }) {
   return (
     <>
       <div className={`z-[999] h-[50px] w-full  ${dark ? 'bg-black text-white' : 'bg-white'} mx-auto items-center top-0 flex justify-between border-b border-[#808080] md:h-[80px] ${ScrollActive ? 'fixed' : 'absolute'}`}>
-        <NavLink to='/'><img src={dark ? '/images/suyeon-logo-dk.png' : '/images/logo-black.png'} alt='logo' className='scale-[0.5] md:scale-[0.8]' /></NavLink>
-        <ul className='flex items-center hidden mr-3 text-2xl cursor-pointer md:flex'>
+        <NavLink to='/'><img src={dark ? '/images/suyeon-logo-dark-1.png' : '/images/suyeon-logo-1.png'} alt='logo' className='scale-[0.5] md:scale-[0.8]' /></NavLink>
+        <ul className='flex items-center hidden mr-3 text-2xl cursor-pointer md:flex md:block'>
           <NavLink to='/about'><li className='mr-5'>about</li></NavLink>
           <li className='mr-5'>work</li>
           <li className='mr-5'>board</li>
@@ -68,7 +68,7 @@ function Header({ dark, toggleDarkMode }) {
           ))}
         </div>
       </div>
-      <div className='bg-white z-[998] fixed top-0 w-[500px] h-full right-0 md:hidden'>
+      <div className={`bg-white z-[998] fixed top-0 w-[500px] h-full md:hidden ${isActive ? `right-0` : `-right-[500px]`}`}>
         <ul className='w-4/5 mx-auto mt-20 text-xl'>
           <li className='mb-5 border-b hover:font-bold'>about</li>
           <li className='mb-5 border-b hover:font-bold'>work</li>

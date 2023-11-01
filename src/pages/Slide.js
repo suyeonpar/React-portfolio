@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import WOW from "wowjs";
 import "animate.css";
 import contentdata from '../data/ContentData'
-
+import { NavLink } from 'react-router-dom';
 
 function Slide({dark, stars, restars }) {
 
@@ -22,6 +22,8 @@ function Slide({dark, stars, restars }) {
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
+ 
+  const menu = ["/slide" , "/gallery"]
 
   // 만약 txtList 값이 많아진다면??
   useEffect(() => {
@@ -41,14 +43,14 @@ function Slide({dark, stars, restars }) {
     };
 
     // 마우스오버 이벤트
-    const [mouseOver, setMouseOver] = useState(false);
+    // const [mouseOver, setMouseOver] = useState(false);
 
-    useEffect(()=>{
-      if( mouseOver === true){
+    // useEffect(()=>{
+    //   if( mouseOver === true){
         
-      }
+    //   }
 
-    })
+    // })
 
   return (
     <>
@@ -108,6 +110,21 @@ function Slide({dark, stars, restars }) {
         }
         </div>
       </div>
+      {/* <div className="w-[90%] flex justify-end mt-14">
+        <NavLink to={menu[i]}><span className="bg-black p-2 text-white text-xl mr-5  cursor-pointer">Slide</span></NavLink>
+        <NavLink to={menu[i]}><span className="bg-black p-2 text-white text-xl cursor-pointer">Gallery</span></NavLink>
+      </div> */}
+      {
+        menu.map((e,i)=>{
+          return(
+            <>
+            <div key={i} className="w-[90%] flex justify-end mt-14">
+              <NavLink to={menu[i]}><span className="bg-black p-2 text-white text-xl mr-5 cursor-pointer">{e}</span></NavLink>
+            </div>
+            </>
+          )
+        })
+      }
       <div className="relative flex w-full h-[450px] items-center mt-20 mx-auto mb-[150px] bg-black">
         <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
         <div className="absolute right-0 transform -translate-x-1/2 -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
