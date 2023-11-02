@@ -14,6 +14,14 @@ import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
 function About({ dark, toggleDarkMode }) {
 
   const navigate = useNavigate();
+
+  const gitClick = () => {
+    window.open('https://github.com/suyeonpar', '_blank');
+  };
+
+  const notionClick = () => {
+    window.open('https://www.notion.so/SUYEON-HOME-9923404870d24fffb5f06fe933f9956e', '_blank');
+  }
   
   useEffect(()=>{
     new WOW.WOW({
@@ -40,7 +48,6 @@ function About({ dark, toggleDarkMode }) {
       desc: "제가 경험한 것은요",
       desc2: ["No.1 스포츠 의류 쇼핑몰", "Allendino 남성쇼핑몰", "오늘미술학원"],
       desc3 : ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"],
-      icon: faChevronDown,
       iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
     },
     {
@@ -48,7 +55,6 @@ function About({ dark, toggleDarkMode }) {
       desc: "제가 자신 있는 것은요",
       desc2: ["HTML5", "CSS3", "TailwindCSS", "SCSS", "React", "node.js", "TypeScript", "Next.js", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
       desc3 : [""],
-      icon: faChevronDown,
       iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
     },
     {
@@ -56,7 +62,6 @@ function About({ dark, toggleDarkMode }) {
       desc: "제가 자신있는 협업툴은요",
       desc2: ["figma", "slack", "npm", "yarn", "Git", "Github", "Notion", "Vercel"],
       desc3 : [""],
-      icon: faChevronDown,
       iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
     },
     {
@@ -64,12 +69,19 @@ function About({ dark, toggleDarkMode }) {
       desc : "제가 배운것은요",
       desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "스터디 Toy project"],
       desc3 : ["2023.06.29 ~", "2023.09.06 ~ 2023.10.06", "2023.10.12 ~"],
-      icon: faChevronDown,
       iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
     }
   ]
 
   const [isArrows, setIsArrows] = useState(false);
+
+  const [activeItems, setActiveItems] = useState(data.map(() => false)); // 각 항목에 대한 활성화 상태를 초기화
+
+  const toggleItem = (i) => {
+    const newActiveItems = [...activeItems];
+    newActiveItems[i] = !newActiveItems[i];
+    setActiveItems(newActiveItems);
+  };
 
   const toggleArrow = () => {
     setIsArrows(!isArrows)
@@ -82,7 +94,7 @@ function About({ dark, toggleDarkMode }) {
       <p className={`pb-5 md:pb-10 text-xl ${dark ? `text-white` : `text-black`} text-center md:text-4xl lg:text-5xl wow animate__fadeInUp`} data-wow-duration="1.5s">안녕하세요. 개발자 <span className='text-2xl font-bold text-[#5E5BE3] md:text-5xl lg:text-6xl'>박수연</span> 입니다.</p>
       <div className='flex mx-auto md:mb-20 max-w-7xl'>
         <div className="flex flex-wrap justify-between mx-auto text-center">
-          <div className='mx-auto pb-7 text-justify border-b basis-[78%] md:pb-10 md:basis-full'>
+          <div className='mx-auto pb-5 mb-10 text-justify border-b basis-[78%] md:pb-10 md:basis-full'>
             <p className={`mb-5 ${dark ? `text-[#bdbdbd]` : `text-black`} text-xl text-center md:text-3xl lg:text-4xl md:mb-20`}>디자이너에서 <span className={`font-bold ${dark ? `text-[#ddd]`: ``} text-[#242424]`}>개발자 </span>로의 성장</p>
             {
               Comment.map((e,i)=>{
@@ -91,14 +103,18 @@ function About({ dark, toggleDarkMode }) {
                     <p className={`text-xs mb-5 md:text-xl md:w-4/5 md:mx-auto lg:w-full lg:text-2xl ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc}</p>
                     <p className={`text-xs mb-5 md:text-xl md:w-4/5 md:mx-auto lg:w-full lg:text-2xl ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc2}</p>
                     <p className={`text-xs mb-5 md:text-xl md:w-4/5 md:mx-auto lg:w-full lg:text-2xl md:mb-10 ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc3}</p>
-                    <FontAwesomeIcon icon={faGithub} className={`text-2xl p-1 cursor-pointer ${dark ? `bg-white rounded-lg` : ``}`} />
-                    <img src={e.img} alt={e.img} title={e.img} className='w-[30px] cursor-pointer' />
                   </div>
                 )
               })
             }
-            <span className={`w-[100%] text-sm ${dark ? `text-[#b3b3b3]` : ``} cursor-pointer group relative md:text-2xl md:ml-[9.7%] lg:text-3xl lg:ml-0`}>sksrbdpdy@naver.com
-            <span class={`absolute top-6 text-sm hidden truncate ${dark ? `text-[#5c5c5c]` : `text-[#ddd]`} md:top-8 lg:top-10 left-1/2 transform translate-x-[-50%] group-hover:block transition-[1s] md:text-2xl group-hover:md:top-10`}>메일은 언제나 환영입니다. :{')'}</span></span>
+            <div className='flex'>
+              <span className={`w-[100%] text-sm ${dark ? `text-[#b3b3b3]` : ``} cursor-pointer group relative md:text-2xl md:ml-[9.7%] lg:text-3xl lg:ml-0`}>sksrbdpdy@naver.com
+              <span class={`absolute top-6 text-sm hidden truncate ${dark ? `text-[#5c5c5c]` : `text-[#ddd]`} md:top-8 lg:top-10 left-0 transform group-hover:block transition-[1s] md:text-2xl group-hover:md:top-10`}>메일은 언제나 환영입니다. :{')'}</span></span>
+              <div className='flex mt-0 md:mt-2'> 
+                <FontAwesomeIcon icon={faGithub} onClick={gitClick} className={`text-2xl md:text-[40px] p-1 cursor-pointer ${dark ? `bg-white rounded-lg` : ``}`} />
+                <img src="../images/notion.png" alt='{e.img}' title='{e.img}' className='w-[32px] md:w-[45px] cursor-pointer ml-3 mr-5 md:ml-7 md:mr-8' onClick={notionClick} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -107,7 +123,7 @@ function About({ dark, toggleDarkMode }) {
           data.map((e,i)=>{
             return(
               <>
-              <ul key={i} className='relative pb-20 w-[75%] md:w-[80%] lg:w-full mx-auto mt-5 border-b border-[#ddd]'>
+              <ul key={i} className='relative pb-10 md:pb-16 w-[75%] md:w-[80%] lg:w-full mx-auto mt-5 border-b border-[#ddd]'>
                 <li className={`mb-3 text-sm font-bold md:text-2xl lg:text-3xl ${dark ? `text-white` : ``}`}>{e.title}</li>
                 <li className={`text-xs mb-2 md:mb-5 lg:mb-10 md:text-xl lg:text-[24px] ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc}</li>
                 <li className='flex flex-wrap mx-auto'>
@@ -118,28 +134,17 @@ function About({ dark, toggleDarkMode }) {
                   })
                 }  
                 </li>
-                <li className='flex mt-2'>
-                {
-                  Array(e.desc3.length).fill().map((_,i)=>{
-                    return(
-                      <p key={i} className={`mr-10 ${dark ? `text-[#ddd]` : ``} md:mr-20 basis-[7%]`}>{e.desc3[i]}</p>
-                    )
-                  })
-                } 
-                </li>
-                <li onClick={toggleArrow} className={`absolute text-xs cursor-pointer right-5 bottom-10 md:text-xl`}>
-                  <FontAwesomeIcon icon={e.icon} className={`${isArrows ? 'rotate-[-180deg]' : 'rotate-0'}`} />
+                <li onClick={toggleItem[i]} className={`absolute text-xs cursor-pointer right-5 bottom-5 md:text-xl`}>
+                <FontAwesomeIcon icon={faChevronDown} className={activeItems[i] ? 'rotate-180' : ''} />
                 </li>
               </ul>
               {
                 isArrows &&
-                  e.iconDesc && e.iconDesc.length > 0 && (
                   <ul>
-                    {e.iconDesc.map((e, i) => (
-                      <li key={i} className='text-2xl'>{e}</li>
+                    {e.desc3.map((e, i) => (
+                      <li key={i} className={`text-2xl text-white`}>{e}</li>
                     ))}
                   </ul>
-                )
               }
               </>
             )

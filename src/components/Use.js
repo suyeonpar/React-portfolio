@@ -32,8 +32,8 @@ function Use() {
             descData.map((e,i)=>{
               return(
                 <div key={i}>
-                  <h3 className='text-2xl md:text-3xl'></h3>
-                  <p>{e.desc}</p>
+                  <h3 className='text-2xl md:text-3xl'>{e.title}</h3>
+                  <p className='text-xl md:text-2xl'>{e.desc}</p>
                 </div>
               )
             })
