@@ -42,6 +42,7 @@ function Content({ stars, dark, toggleDarkMode }) {
         }
         }>ALL</p>
         {
+          FilterId &&
           FilterId.map((e,i)=>{
             return(
               <p className={`text-white text-sm leading-[60px] text-on cursor-pointer md:text-2xl
@@ -72,6 +73,7 @@ function Content({ stars, dark, toggleDarkMode }) {
       </div>
       <div className='max-w-7xl mx-auto flex flex-wrap py-[2%] justify-around'>
         {
+          DataFilter &&
           DataFilter.map((e,i)=>{
             return(
             <div className='mt-10'>

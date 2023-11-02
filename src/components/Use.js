@@ -28,6 +28,7 @@ function Use() {
         <div className='bg-[#eee] border w-[45%] h-[200px] md:h-[600px] lg:h-[600px] mx-auto rounded-md basis-4/5 mb-5 md:basis-[48%]'></div>
         <div className='overflow-y-scroll inner-custom" w-[45%] h-[200px] md:h-[600px] lg:h-[600px] bg-[#eee] shadow-inner border mx-auto rounded-md basis-4/5 md:basis-[48%] overflow-hidden'>
           {
+            descData &&
             descData.map((e,i)=>{
               return(
                 <div key={i}>

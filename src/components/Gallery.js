@@ -13,6 +13,7 @@ function Gallery() {
     <div className='w-full mx-auto mt-32'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
         {
+          contentdata &&
           contentdata.map((e,i)=>{
             return(
               <>

@@ -72,6 +72,7 @@ function Board({ dark, toggleDarkMode }) {
       <div className='flex flex-wrap justify-between mx-auto mt-10 max-w-7xl'>
         <div className='h-full bg-white border-r basis-full md:basis-1/2'>
           {
+            comments &&
             comments.map((Comment,i)=>{
               return(
                 <div key={i} className='p-2 mb-2 border-b border-[#ddd]'>

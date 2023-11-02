@@ -18,6 +18,7 @@ import Aside from '../components/Aside';
 import Notfound from './Notfound';
 import { Link } from 'react-router-dom';
 import Slide from './Slide';
+import Work from '../components/Work';
 
 function Main() {
 
@@ -128,7 +129,7 @@ function Main() {
         </div>
       </div>
       <Profile dark={dark} />
-      <Slide dark={dark} Stars={Stars} stars={stars} restars={restars} />
+      <Work dark={dark} Stars={Stars} stars={stars} restars={restars} />
       <Use />
       <Board dark={dark} />
       <Footer dark={dark} />
