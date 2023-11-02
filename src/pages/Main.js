@@ -129,6 +129,7 @@ function Main() {
       </div>
       <Profile dark={dark} />
       <Slide dark={dark} Stars={Stars} stars={stars} restars={restars} />
+      <Use />
       <Board dark={dark} />
       <Footer dark={dark} />
       <Aside dark={dark} toggleDarkMode={toggleDarkMode} />

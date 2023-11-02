@@ -40,6 +40,7 @@ function Board({ dark, toggleDarkMode }) {
   const [InputCnt, setInputCnt] = useState(0);
   const navigate = useNavigate();
   const [maxLength, setMaxLength] = useState(50);
+  
   //댓글 글자수 제한
   const InputText = (Comment, setComment) => {
     if (Comment.length > maxLength) {

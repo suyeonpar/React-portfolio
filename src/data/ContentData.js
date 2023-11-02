@@ -81,7 +81,7 @@ const contentdata = [
   {
     "id" : "Game",
     "day" : "1Days",
-    "title" : "Drawing",
+    "title" : "오늘의 운세",
     "img" : "../images/drawing.jpg",
     "desc" : "JavaScript",
     "desc2" : "HTML",

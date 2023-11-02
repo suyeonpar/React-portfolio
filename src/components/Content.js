@@ -29,18 +29,7 @@ function Content({ stars, dark, toggleDarkMode }) {
   const OpenNewTab = (url) => {
     window.open(url, "_blank", "noopener, noreferrer");
   };
-
-  //swiper
-  // const SwiperComponent = () => {
-  //   const swiperRef = useRef(null);
   
-  //   useEffect(() => {
-  //     if (swiperRef.current) {
-  //       swiperRef.current.swiper.update();
-  //     }
-  //   }, [])};
-  
-
   return (
     <>
     <div className='w-full mt-[150px] pb-20 mx-auto'>

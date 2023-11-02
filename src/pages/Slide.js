@@ -14,6 +14,7 @@ import WOW from "wowjs";
 import "animate.css";
 import contentdata from '../data/ContentData'
 import { NavLink } from 'react-router-dom';
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 function Slide({dark, stars, restars }) {
 
@@ -22,14 +23,17 @@ function Slide({dark, stars, restars }) {
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
- 
-  const menu = ["/slide" , "/gallery"]
+  const [isActive, setIsActive] = useEffect(false);
+  const menu = ["/slide" , "/gallery"];
 
-  // 만약 txtList 값이 많아진다면??
+  const [isGalleryVisible, setIsGalleryVisible] = useState(false);
+
+  const handleGalleryClick = () => {
+    setIsGalleryVisible(true);
+  };
+
   useEffect(() => {
     if (txt === -1) {
-      const random = Math.floor(Math.random() * contentdata.length)
-      const DataRandom = contentdata[random]
       setDataFilter(contentdata);
     } else {
       const filteredData = contentdata.filter(e => e.id === txtList[txt]);
@@ -111,20 +115,24 @@ function Slide({dark, stars, restars }) {
         </div>
       </div>
       {/* <div className="w-[90%] flex justify-end mt-14">
-        <NavLink to={menu[i]}><span className="bg-black p-2 text-white text-xl mr-5  cursor-pointer">Slide</span></NavLink>
-        <NavLink to={menu[i]}><span className="bg-black p-2 text-white text-xl cursor-pointer">Gallery</span></NavLink>
+        <NavLink to={menu[i]}><span className="p-2 mr-5 text-xl text-white bg-black cursor-pointer">Slide</span></NavLink>
+        <NavLink to={menu[i]}><span className="p-2 text-xl text-white bg-black cursor-pointer">Gallery</span></NavLink>
       </div> */}
-      {
+      {/* {
         menu.map((e,i)=>{
           return(
             <>
             <div key={i} className="w-[90%] flex justify-end mt-14">
-              <NavLink to={menu[i]}><span className="bg-black p-2 text-white text-xl mr-5 cursor-pointer">{e}</span></NavLink>
+              <NavLink to={menu[i]}><span className="p-2 mr-5 text-xl text-white bg-black cursor-pointer">{e}</span></NavLink>
             </div>
             </>
           )
         })
-      }
+      } */}
+      <div className="w-[90%] flex justify-end mt-14">
+        <NavLink to={menu[0]}><span className="p-2 mr-5 text-xl text-white bg-black cursor-pointer">Slide</span></NavLink>
+        <NavLink to={menu[1]}><span className="p-2 mr-5 text-xl text-white bg-black cursor-pointer">Gallery</span></NavLink>
+      </div>
       <div className="relative flex w-full h-[450px] items-center mt-20 mx-auto mb-[150px] bg-black">
         <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
         <div className="absolute right-0 transform -translate-x-1/2 -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
@@ -170,8 +178,8 @@ function Slide({dark, stars, restars }) {
                     <div className="w-4/5">
                       <p className='mb-2 text-3xl font-bold'>{e.id}</p>
                       <p>{e.title}</p>
-                      <div className="flex items-center mt-5 mx-auto">
-                        <div className="w-1/2 text-start mt-10">
+                      <div className="flex items-center mx-auto mt-5">
+                        <div className="w-1/2 mt-10 text-start">
                           <p className='text-white bg-black rounded-sm w-[50px] text-center'>USE</p>
                           <p className='text-xl'>{e.desc}</p>
                           <p className='text-xl'>{e.desc2}</p>
