@@ -13,6 +13,7 @@ import { useState } from 'react';
 import Ex from './pages/Ex';
 import './index.css'
 import Gallery from './components/Gallery';
+import Slide from './pages/Slide';
 
 function App() { 
 
@@ -22,16 +23,44 @@ function App() {
     setDark(!dark);
   }
 
+  //별배경
+  const Stars = 2000;
+  const [width, setWidth] = useState(1920);
+  const [height, setHeight] = useState(800);
+  const [rewidth, setReWidth] = useState(1920);
+  const [reheight, setReHeight] = useState(-800);
+  
+  const createRandomStar = () => {
+    const x = Math.random() * width;
+    const y = Math.random() * height;
+    const size = Math.random() * 2;
+    const animationDelay = Math.random() * 5;
+    return { x, y, size, animationDelay };
+  };
+
+  const reverseStar = () => {
+    const x = Math.random() * rewidth;
+    const y = Math.random() * reheight;
+    const size = Math.random() * 2;
+    const animationDelay = Math.random() * 5;
+    return { x, y, size, animationDelay };
+  };
+  
+  const stars = Array.from({ length: Stars }, createRandomStar);
+  const restars = Array.from({ length: Stars}, reverseStar);
+
   return (
     <>
     <Header />
     <Routes>
-      <Route path='/' element={<Main />}></Route>
+      <Route path='/' element={<Main Stars={Stars} stars={stars} restars={restars} />}></Route>
       <Route path='/sam' element={<Sample />} />
       <Route path='/about' element={<About dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/e' element={<Ex />} />
       <Route path='/*' element={<Notfound />} />
       <Route path='/gallery' element={<Gallery />} />
+      <Route path='/slide' element={<Slide Stars={Stars} stars={stars} restars={restars} />} />
+      <Route path='/content' element={<Content />} />
     </Routes>
     </>
   );

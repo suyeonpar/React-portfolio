@@ -140,11 +140,11 @@ function About({ dark, toggleDarkMode }) {
               </ul>
               {
                 isArrows &&
-                  <ul>
-                    {e.desc3.map((e, i) => (
-                      <li key={i} className={`text-2xl text-white`}>{e}</li>
-                    ))}
-                  </ul>
+                <ul>
+                  {e.desc3.map((e, i) => (
+                    <li key={i} className={`text-2xl text-white`}>{e}</li>
+                  ))}
+                </ul>
               }
               </>
             )
