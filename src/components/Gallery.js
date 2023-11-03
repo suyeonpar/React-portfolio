@@ -1,7 +1,8 @@
 import React from 'react'
 import contentdata from '../data/ContentData'
+import { useState } from 'react';
 
-function Gallery() {
+function Gallery({ stars, restars, dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
   
   //새로운창 연결
   const OpenNewTab = (url) => {
@@ -10,7 +11,46 @@ function Gallery() {
 
   return (
     <>
-    <div className='w-full mx-auto mt-32'>
+    <div className="flex flex-wrap items-center mx-auto">
+        <div className={`h-[40px] w-[80%] leading-[40px] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[60px] md:w-[60%]`}>
+          <div className='flex w-[82%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
+          </div>
+          <div className='relative h-full custom-spin-animation'> 
+            {stars &&
+              stars.map((e,i) => (
+                <div
+                  key={i}
+                  className="absolute -top-[50px] bg-white rounded-full"
+                  style={{
+                    left: `${e.x}px`,
+                    top: `${e.y}px`,
+                    width: `${e.size}px`,
+                    height: `${e.size}px`,
+                  }}
+                ></div>
+              )
+            )}
+          </div>
+          <div className='relative custom-spin-animation2'> 
+          {restars &&
+            restars.map((e, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-white rounded-full overflow-hidden left-[50%]"
+                style={{
+                  left: `${e.x}px`,
+                  top: `${e.y}px`,
+                  width: `${e.size}px`,
+                  height: `${e.size}px`,
+                  animationDelay: `${e.animationDelay}s`
+                }}
+              >
+              </div>
+            ))
+          }
+        </div>
+      </div></div>
+    <div className='w-full mx-auto mt-10'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
         {
           contentdata &&

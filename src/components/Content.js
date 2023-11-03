@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { EffectCards } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Slide from '../pages/Slide';
+import Slide from './Slide';
 
 function Content({ stars, dark, toggleDarkMode }) {
   //필터

@@ -62,7 +62,13 @@ function Board({ dark, toggleDarkMode }) {
       setComment("");
     }
   };
-  
+
+  // 댓글삭제
+  const deleteComment = (idx) => {
+    const newComments = [...comments];
+    newComments.splice(idx, 1);
+    setComments(newComments);
+  };
   
   return (
     <>
@@ -70,26 +76,29 @@ function Board({ dark, toggleDarkMode }) {
       <h3 className={`text-3xl ${dark ? `text-white` : `text-black`} font-bold md:text-6xl`}>Board</h3>
       <p className={`mt-4 text-sm ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>의견을 남겨주세요 :{")"}</p>
       <div className='flex flex-wrap justify-between mx-auto mt-10 max-w-7xl'>
-        <div className='h-full bg-white border-r basis-full md:basis-1/2'>
-          {
-            comments &&
-            comments.map((Comment,i)=>{
-              return(
-                <div key={i} className='p-2 mb-2 border-b border-[#ddd]'>
-                  {Comment}
-                </div>
-              )
-            })
-          }
+        <div className="h-40 bg-white border rounded-md basis-[59%] mb-5 mx-auto md:basis-1/2">
+          <div className='h-full bg-white border-b basis-full md:basis-1/2 overflow-y-scroll'>
+            {
+              comments &&
+              comments.map((Comment,i)=>{
+                return(
+                  <div key={i} className='p-2 items-center flex justify-around mb-2 border-b border-[#ddd] text-xs md:text-xl'>
+                    <p className='mr-5'>{Comment}</p>
+                    <button onClick={deleteComment} className='bg-black w-12 h-5 border-gray-100 rounded-md text-white'>삭제</button>
+                  </div>
+                )
+              })
+            }
+          </div>
         </div>
         <div className='flex flex-col items-center justify-center mx-auto mb-20 text-center max-w-7xl '>
           <div className='mx-auto max-w-7xl'>
             <textarea
-              rows="3"
+              rows="5"
               cols="40"
-              maxLength={maxLength - 1}
-              className="p-2 text-black placeholder-gray-400 border rounded textarea"
-              placeholder="의견을 남겨주세요."
+              maxLength={maxLength}
+              className="p-2 text-black text-xs md:text-xl placeholder-gray-400 border rounded textarea"
+              placeholder="의견 작성하기."
               value={Comment}
               onChange={(e) => {
                 setComment(e.target.value);

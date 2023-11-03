@@ -17,7 +17,7 @@ import Project from '../components/Project';
 import Aside from '../components/Aside';
 import Notfound from './Notfound';
 import { Link } from 'react-router-dom';
-import Slide from './Slide';
+import Slide from '../components/Slide';
 import Work from '../components/Work';
 
 function Main() {
@@ -64,24 +64,33 @@ function Main() {
   const [rewidth, setReWidth] = useState(1920);
   const [reheight, setReHeight] = useState(-800);
   
-  const createRandomStar = () => {
-    const x = Math.random() * width;
-    const y = Math.random() * height;
-    const size = Math.random() * 2;
-    const animationDelay = Math.random() * 5;
-    return { x, y, size, animationDelay };
-  };
+  const [stars, setStars] = useState([]);
+  const [restars, setRestars] = useState([]);
 
-  const reverseStar = () => {
-    const x = Math.random() * rewidth;
-    const y = Math.random() * reheight;
-    const size = Math.random() * 2;
-    const animationDelay = Math.random() * 5;
-    return { x, y, size, animationDelay };
-  };
-  
-  const stars = Array.from({ length: Stars }, createRandomStar);
-  const restars = Array.from({ length: Stars}, reverseStar);
+  useEffect(() => {
+
+    const createRandomStar = () => {
+      const x = Math.random() * width;
+      const y = Math.random() * height;
+      const size = Math.random() * 2;
+      const animationDelay = Math.random() * 5;
+      return { x, y, size, animationDelay };
+    };
+
+    const starsArray = Array.from({ length: Stars }, createRandomStar);
+    setStars(starsArray);
+
+    const reverseStar = () => {
+      const x = Math.random() * rewidth;
+      const y = Math.random() * reheight;
+      const size = Math.random() * 2;
+      const animationDelay = Math.random() * 5;
+      return { x, y, size, animationDelay };
+    };
+
+    const restarsArray = Array.from({ length: Stars }, reverseStar);
+    setRestars(restarsArray);
+  }, []);
 
   return (
     <>
