@@ -1,18 +1,51 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import contentdata from '../data/ContentData'
 import { useState } from 'react';
 
 function Gallery({ stars, restars, dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
+
+  // 필터
+  const txtList = ["Project", "Clone", "API", "Game"];
+  const [txt, setTxt] = useState(-1);
+  const FilterId = [...new Set(contentdata.map(e => e.id))];
+  const [DataFilter, setDataFilter] = useState([]);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    if (txt === -1) {
+      setDataFilter(contentdata);
+    } else {
+      const filteredData = contentdata.filter(e => e.id === txtList[txt]);
+      setDataFilter(filteredData);
+    }
+  }, [txt]);
   
   //새로운창 연결
   const OpenNewTab = (url) => {
     window.open(url, "_blank", "noopener, noreferrer");
   };
 
+
   return (
     <>
     <div className="flex flex-wrap items-center mx-auto">
         <div className={`h-[40px] w-[80%] leading-[40px] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[60px] md:w-[60%]`}>
+        <div className='flex w-[82%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
+            <p className={`text-white text-[12px] cursor-pointer md:text-2xl
+            ${txt === -1 ? 'text-[14px] md:text-3xl lg:text-4xl font-bold on' : ''}`} onClick={() => {setTxt(-1);}}>ALL</p>
+            {
+              FilterId &&
+              FilterId.map((e,i)=>{
+                return(
+                  <p key={i} className={`text-white text-[12px] leading-[60px] text-on cursor-pointer md:text-xl lg:text-2xl
+                  ${txt === i ? 'text-[14px] md:text-2xl lg:text-4xl font-bold on' : ''}`}
+                   onClick={()=>{
+                   setTxt(i)
+                  }}>{e}</p>
+                )
+              })
+            }
+          </div>
           <div className='flex w-[82%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
           </div>
           <div className='relative h-full custom-spin-animation'> 
@@ -49,12 +82,13 @@ function Gallery({ stars, restars, dark, setShowGallery, setShowSlide, showGalle
             ))
           }
         </div>
+        
       </div></div>
     <div className='w-full mx-auto mt-10'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
         {
-          contentdata &&
-          contentdata.map((e,i)=>{
+          DataFilter &&
+          DataFilter.map((e,i)=>{
             return(
               <>
               <div key={i} className='bg-white basis-full h-[400px] border mb-10'>
