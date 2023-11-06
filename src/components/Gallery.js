@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import contentdata from '../data/ContentData'
 import { useState } from 'react';
+import { createStars } from '../store';
+import Slide from './Slide';
 
-function Gallery({ stars, restars, dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
+function Gallery({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
 
   // 필터
   const txtList = ["Project", "Clone", "API", "Game"];
@@ -24,6 +26,32 @@ function Gallery({ stars, restars, dark, setShowGallery, setShowSlide, showGalle
   const OpenNewTab = (url) => {
     window.open(url, "_blank", "noopener, noreferrer");
   };
+
+  // 별
+  const Stars = 2000;
+  const [width, setWidth] = useState(1920);
+  const [height, setHeight] = useState(800);
+  const [rewidth, setReWidth] = useState(1920);
+  const [reheight, setReHeight] = useState(-800);
+
+  const [stars, setStars] = useState([]);
+  const [restars, setRestars] = useState([]);
+
+  useEffect(() => {
+    const { stars, restars } = createStars(Stars, width, height, rewidth, reheight);
+    setStars(stars);
+    setRestars(restars);
+  }, [Stars, width, height, rewidth, reheight]);
+
+  const toggleSlide = () =>{
+    setShowSlide(!showSlide);
+    setShowGallery(false);
+  };
+  
+  const toggleGallery = () => {
+    setShowGallery(!showGallery);
+    setShowSlide(false);
+  }
 
 
   return (
@@ -82,8 +110,8 @@ function Gallery({ stars, restars, dark, setShowGallery, setShowSlide, showGalle
             ))
           }
         </div>
-        
-      </div></div>
+      </div>
+      </div>
     <div className='w-full mx-auto mt-10'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
         {

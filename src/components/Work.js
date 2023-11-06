@@ -22,20 +22,14 @@ function Work({dark, stars, restars}) {
   const [showSlide, setShowSlide] = useState(true);
   
   const toggleSlide = () =>{
-    setShowSlide(!showSlide);
+    setShowSlide(true);
     setShowGallery(false);
   };
 
   const toggleGallery = () => {
-    setShowGallery(!showGallery);
+    setShowGallery(true);
     setShowSlide(false);
   }
-  
-
-  // const showToggle = () => {
-  //   setShowGallery(!showGallery);
-  //   setShowSlide(!showSlide);
-  // };
 
     //새로운창 연결
     const OpenNewTab = (url) => {
@@ -47,10 +41,10 @@ function Work({dark, stars, restars}) {
     <>
     <div className='w-full mt-[150px] pb-20 mx-auto'>
       <p className={`md:mb-20 mb-10 text-3xl ${dark ? `text-white` : `text-black`} font-bold text-center md:text-6xl`}>WORK</p>
-      {/* <div className="w-[90%] flex justify-center mx-auto mt-7">
-        <span onClick={toggleSlide} className="p-2 mr-5 text-xs md:text-xl text-white bg-black cursor-pointer">Slide</span>
-        <span onClick={toggleGallery} className="p-2 text-xs md:text-xl text-white bg-black cursor-pointer">Gallery</span>
-      </div> */}
+      <div className="w-[90%] flex justify-center mx-auto mt-7">
+        <span onClick={toggleSlide} className="p-2 mr-5 text-xs text-white bg-black cursor-pointer md:text-xl">Slide</span>
+        <span onClick={toggleGallery} className="p-2 text-xs text-white bg-black cursor-pointer md:text-xl">Gallery</span>
+      </div>
       {showSlide && <Slide setShowGallery={setShowGallery} setShowSlide={setShowSlide} showGallery={showGallery} showSlide={showSlide} />}
       {showGallery && <Gallery setShowGallery={setShowGallery} setShowSlide={setShowSlide} showGallery={showGallery} showSlide={showSlide} />}
     </div>

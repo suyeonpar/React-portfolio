@@ -1,8 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import 'animate.css';
 import Typed from 'typed.js';
-import Content from '../components/Content';
-import Game from '../components/Game';
 import Board from '../components/Board';
 import Use from '../components/Use';
 import Header from '../components/Header';
@@ -13,12 +11,9 @@ import '../index.css';
 import Profile from '../components/Profile';
 import { faArrowDown, faL } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Project from '../components/Project';
 import Aside from '../components/Aside';
-import Notfound from './Notfound';
-import { Link } from 'react-router-dom';
-import Slide from '../components/Slide';
 import Work from '../components/Work';
+import { createStars } from './../store';
 
 function Main() {
 
@@ -63,34 +58,15 @@ function Main() {
   const [height, setHeight] = useState(800);
   const [rewidth, setReWidth] = useState(1920);
   const [reheight, setReHeight] = useState(-800);
-  
+
   const [stars, setStars] = useState([]);
   const [restars, setRestars] = useState([]);
 
   useEffect(() => {
-
-    const createRandomStar = () => {
-      const x = Math.random() * width;
-      const y = Math.random() * height;
-      const size = Math.random() * 2;
-      const animationDelay = Math.random() * 5;
-      return { x, y, size, animationDelay };
-    };
-
-    const starsArray = Array.from({ length: Stars }, createRandomStar);
-    setStars(starsArray);
-
-    const reverseStar = () => {
-      const x = Math.random() * rewidth;
-      const y = Math.random() * reheight;
-      const size = Math.random() * 2;
-      const animationDelay = Math.random() * 5;
-      return { x, y, size, animationDelay };
-    };
-
-    const restarsArray = Array.from({ length: Stars }, reverseStar);
-    setRestars(restarsArray);
-  }, []);
+    const { stars, restars } = createStars(Stars, width, height, rewidth, reheight);
+    setStars(stars);
+    setRestars(restars);
+  }, [Stars, width, height, rewidth, reheight]);
 
   return (
     <>

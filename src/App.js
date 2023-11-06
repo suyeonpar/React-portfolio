@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import Ex from './pages/Ex';
 import './index.css'
 import Gallery from './components/Gallery';
+import Slide from './components/Slide';
 
 function App() { 
 
@@ -61,7 +62,7 @@ function App() {
     <>
     <Header />
     <Routes>
-      <Route path='/' element={<Main Stars={Stars} stars={stars} restars={restars} />}></Route>
+      <Route path='/' element={<Main />}></Route>
       <Route path='/sam' element={<Sample />} />
       <Route path='/about' element={<About dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/e' element={<Ex />} />

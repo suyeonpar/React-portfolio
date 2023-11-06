@@ -15,6 +15,7 @@ import "animate.css";
 import contentdata from '../data/ContentData'
 import { NavLink } from 'react-router-dom';
 import Gallery from "./Gallery";
+import { createStars } from './../store';
 
 function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
 
@@ -23,6 +24,7 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
+  console.log(DataFilter)
   const [isActive, setIsActive] = useState(false);
 
     const toggleSlide = () =>{
@@ -57,34 +59,16 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
   const [height, setHeight] = useState(800);
   const [rewidth, setReWidth] = useState(1920);
   const [reheight, setReHeight] = useState(-800);
-  
+
   const [stars, setStars] = useState([]);
   const [restars, setRestars] = useState([]);
 
   useEffect(() => {
+    const { stars, restars } = createStars(Stars, width, height, rewidth, reheight);
+    setStars(stars);
+    setRestars(restars);
+  }, [Stars, width, height, rewidth, reheight]);
 
-    const createRandomStar = () => {
-      const x = Math.random() * width;
-      const y = Math.random() * height;
-      const size = Math.random() * 2;
-      const animationDelay = Math.random() * 5;
-      return { x, y, size, animationDelay };
-    };
-
-    const starsArray = Array.from({ length: Stars }, createRandomStar);
-    setStars(starsArray);
-
-    const reverseStar = () => {
-      const x = Math.random() * rewidth;
-      const y = Math.random() * reheight;
-      const size = Math.random() * 2;
-      const animationDelay = Math.random() * 5;
-      return { x, y, size, animationDelay };
-    };
-
-    const restarsArray = Array.from({ length: Stars }, reverseStar);
-    setRestars(restarsArray);
-  }, []);
 
   return (
     <>
@@ -142,11 +126,6 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
           }
         </div>
       </div>
-      <div className="w-[90%] flex justify-center mx-auto mt-7">
-        <span onClick={toggleSlide} className="p-2 mr-5 text-xs md:text-xl text-white bg-black cursor-pointer">Slide</span>
-        <span onClick={toggleGallery} className="p-2 text-xs md:text-xl text-white bg-black cursor-pointer">Gallery</span>
-      </div>
-      {showGallery && <Gallery stars={stars} restars={restars} />}
       </div>
 
       <div className="relative flex justify-center items-center w-full h-[450px] mt-10 mx-auto mb-[150px] bg-black">
@@ -184,7 +163,7 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
             }).init();
           }}
         >
-        {DataFilter &&
+        {
           DataFilter.map((e, i) => (
             <SwiperSlide style={{ overflow: "hidden" }} key={i}>
               <div className='bg-white basis-1/2 h-[400px] border mb-10'>

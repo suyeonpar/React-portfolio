@@ -24,6 +24,8 @@ function Use() {
   return (
     <>
     <div className='w-full mx-auto mb-20'>
+        <h3 className='text-3xl font-bold text-center'>RENEWAL</h3>
+        <p className='text-center'>새롭게 만들다</p>
       <div className='flex flex-wrap justify-between h-full mx-auto max-w-7xl'>
         <div className='bg-[#eee] border w-[45%] h-[200px] md:h-[600px] lg:h-[600px] mx-auto rounded-md basis-4/5 mb-5 md:basis-[48%]'></div>
         <div className='overflow-y-scroll inner-custom" w-[45%] h-[200px] md:h-[600px] lg:h-[600px] bg-[#eee] shadow-inner border mx-auto rounded-md basis-4/5 md:basis-[48%] overflow-hidden'>
