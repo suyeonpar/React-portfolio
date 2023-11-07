@@ -66,5 +66,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ### `yarn build` fails to minify
+![image](https://github.com/suyeonpar/React-portfolio/assets/142365626/60b81118-e1c7-4d33-9c77-ed22730ed37b) 갑자기 슬라이드 데이터가 안보이는 에러 발생
+
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
