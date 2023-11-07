@@ -11,7 +11,6 @@ function Gallery({ dark, setShowGallery, setShowSlide, showGallery, showSlide })
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
-  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     if (txt === -1) {
@@ -42,17 +41,6 @@ function Gallery({ dark, setShowGallery, setShowSlide, showGallery, showSlide })
     setStars(stars);
     setRestars(restars);
   }, [Stars, width, height, rewidth, reheight]);
-
-  const toggleSlide = () =>{
-    setShowSlide(!showSlide);
-    setShowGallery(false);
-  };
-  
-  const toggleGallery = () => {
-    setShowGallery(!showGallery);
-    setShowSlide(false);
-  }
-
 
   return (
     <>

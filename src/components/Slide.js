@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createStars } from './../store';
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -14,8 +15,6 @@ import WOW from "wowjs";
 import "animate.css";
 import contentdata from '../data/ContentData'
 import { NavLink } from 'react-router-dom';
-import Gallery from "./Gallery";
-import { createStars } from './../store';
 
 function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
 
@@ -24,18 +23,6 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
-  console.log(DataFilter)
-  const [isActive, setIsActive] = useState(false);
-
-    const toggleSlide = () =>{
-      setShowSlide(!showSlide);
-      setShowGallery(false);
-    };
-    
-    const toggleGallery = () => {
-      setShowGallery(!showGallery);
-      setShowSlide(false);
-    }
 
   useEffect(() => {
     if (txt === -1) {
@@ -54,6 +41,7 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
   // 마우스오버 이벤트
   const [mouseOver, setMouseOver] = useState(false);
     
+  // 별
   const Stars = 2000;
   const [width, setWidth] = useState(1920);
   const [height, setHeight] = useState(800);
@@ -68,7 +56,6 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
     setStars(stars);
     setRestars(restars);
   }, [Stars, width, height, rewidth, reheight]);
-
 
   return (
     <>
@@ -163,7 +150,7 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
             }).init();
           }}
         >
-        {
+        {DataFilter &&
           DataFilter.map((e, i) => (
             <SwiperSlide style={{ overflow: "hidden" }} key={i}>
               <div className='bg-white basis-1/2 h-[400px] border mb-10'>

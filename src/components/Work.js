@@ -41,7 +41,7 @@ function Work({dark, stars, restars}) {
     <>
     <div className='w-full mt-[150px] pb-20 mx-auto'>
       <p className={`md:mb-20 mb-10 text-3xl ${dark ? `text-white` : `text-black`} font-bold text-center md:text-6xl`}>WORK</p>
-      <div className="w-[90%] flex justify-center mx-auto mt-7">
+      <div className="w-[90%] flex justify-center mx-auto mb-7">
         <span onClick={toggleSlide} className="p-2 mr-5 text-xs text-white bg-black cursor-pointer md:text-xl">Slide</span>
         <span onClick={toggleGallery} className="p-2 text-xs text-white bg-black cursor-pointer md:text-xl">Gallery</span>
       </div>
