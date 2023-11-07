@@ -23,41 +23,6 @@ function App() {
     setDark(!dark);
   }
 
-  //별배경
-  const Stars = 2000;
-  const [width, setWidth] = useState(1920);
-  const [height, setHeight] = useState(800);
-  const [rewidth, setReWidth] = useState(1920);
-  const [reheight, setReHeight] = useState(-800);
-  
-  const [stars, setStars] = useState([]);
-  const [restars, setRestars] = useState([]);
-
-  useEffect(() => {
-
-    const createRandomStar = () => {
-      const x = Math.random() * width;
-      const y = Math.random() * height;
-      const size = Math.random() * 2;
-      const animationDelay = Math.random() * 5;
-      return { x, y, size, animationDelay };
-    };
-
-    const starsArray = Array.from({ length: Stars }, createRandomStar);
-    setStars(starsArray);
-
-    const reverseStar = () => {
-      const x = Math.random() * rewidth;
-      const y = Math.random() * reheight;
-      const size = Math.random() * 2;
-      const animationDelay = Math.random() * 5;
-      return { x, y, size, animationDelay };
-    };
-
-    const restarsArray = Array.from({ length: Stars }, reverseStar);
-    setRestars(restarsArray);
-  }, []);
-
   return (
     <>
     <Header />
@@ -66,7 +31,7 @@ function App() {
       <Route path='/sam' element={<Sample />} />
       <Route path='/about' element={<About dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/e' element={<Ex />} />
-      <Route path='/gallery' element={<Gallery stars={stars} restars={restars} />} />
+      <Route path='/gallery' element={<Gallery />} />
       <Route path='/content' element={<Content />} />
       <Route path='/*' element={<Notfound />} />
     </Routes>

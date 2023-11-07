@@ -44,17 +44,17 @@ function About({ dark, toggleDarkMode }) {
 
   const data = [
     {
+      title: "SKILL",
+      desc: "제가 자신 있는 것은요",
+      desc2: ["React", "Next.js","HTML5", "CSS3", "TailwindCSS", "SCSS", "node.js", "TypeScript", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
+      desc3 : [""],
+      iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
+    },
+    {
       title: "WORK EXPERIENCE",
       desc: "제가 경험한 것은요",
       desc2: ["No.1 스포츠 의류 쇼핑몰", "Allendino 남성쇼핑몰", "오늘미술학원"],
       desc3 : ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"],
-      iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
-    },
-    {
-      title: "SKILL",
-      desc: "제가 자신 있는 것은요",
-      desc2: ["HTML5", "CSS3", "TailwindCSS", "SCSS", "React", "node.js", "TypeScript", "Next.js", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
-      desc3 : [""],
       iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
     },
     {

@@ -4,9 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
   Autoplay,
-  Pagination,
-  EffectCoverflow,
-  Mousewheel,
+  EffectCoverflow
 } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,6 +13,8 @@ import WOW from "wowjs";
 import "animate.css";
 import contentdata from '../data/ContentData'
 import { NavLink } from 'react-router-dom';
+import 'swiper/swiper-bundle.css';
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
 
@@ -39,8 +39,17 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
     };
 
   // 마우스오버 이벤트
-  const [mouseOver, setMouseOver] = useState(false);
-    
+  const [autoPlay, setAutoPlay] = useState(true)
+  console.log(autoPlay)
+
+  const onMouseOver = () => {
+    setAutoPlay(false)
+  };
+
+  const onMouseLeave = () => {
+    setAutoPlay(true)
+  };
+
   // 별
   const Stars = 2000;
   const [width, setWidth] = useState(1920);
@@ -118,12 +127,12 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
       <div className="relative flex justify-center items-center w-full h-[450px] mt-10 mx-auto mb-[150px] bg-black">
         <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
         <Swiper
-          className="absolute top-[20%]"
+          className='absolute top-[20%]'
           loop={true}
           spaceBetween={10}
           slidesPerView={1}
           centeredSlides={true}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          autoplay={{ delay: 2000, disableOnInteraction : false }}
           breakpoints={{
             768: {
               slidesPerView: 1.6,
@@ -139,10 +148,8 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
           }}
           modules={[
             EffectCoverflow,
-            Pagination,
             Autoplay,
-            Navigation,
-            Mousewheel,
+            Navigation
           ]}
           onSlideChange={() => {
             new WOW.WOW({
@@ -152,9 +159,9 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
         >
         {DataFilter &&
           DataFilter.map((e, i) => (
-            <SwiperSlide style={{ overflow: "hidden" }} key={i}>
+            <SwiperSlide style={{ overflow: "hidden" }} key={i} onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
               <div className='bg-white basis-1/2 h-[400px] border mb-10'>
-                <div className="flex justify-start w-[95%] mx-auto text-center mt-5">
+                <div className="flex justify-start w-[95%] mx-auto text-center mt-5" >
                   <img src={e.img} alt={e.title} className='mb-2 mr-7 md:w-[200px] lg:mb-5 md:mb-5 border cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}} />
                   <div className="w-4/5">
                     <p className='mb-2 text-3xl font-bold'>{e.id}</p>

@@ -49,7 +49,7 @@ function Header({ dark, toggleDarkMode }) {
     <>
       <div className={`z-[999] h-[50px] w-full  ${dark ? 'bg-black text-white' : 'bg-white'} mx-auto items-center top-0 flex justify-between border-b border-[#808080] md:h-[80px] ${ScrollActive ? 'fixed' : 'absolute'}`}>
         <NavLink to='/'><img src={dark ? '/images/suyeon-logo-dark-1.png' : '/images/suyeon-logo-1.png'} alt='logo' className='scale-[0.5] md:scale-[0.8]' /></NavLink>
-        <ul className='items-center hidden mr-3 text-2xl cursor-pointer md:block md:flex'>
+        <ul className='items-center hidden mr-3 text-2xl cursor-pointer md:flex'>
           <NavLink to='/about'><li className='mr-5'>about</li></NavLink>
           <li className='mr-5'>work</li>
           <li className='mr-5'>board</li>
