@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'animate.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudSun, faL, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faCloudSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
 function Header({ dark, toggleDarkMode }) {
@@ -70,9 +70,9 @@ function Header({ dark, toggleDarkMode }) {
       </div>
       <div className={`bg-white z-[998] fixed overflow-hidden top-0 w-[320px] h-full md:hidden ${isActive ? `right-0` : `-right-[330px]`}`}>
         <ul className='w-4/5 mx-auto mt-20 text-xl'>
-          <li className='mb-5 border-b hover:font-bold'>about</li>
-          <li className='mb-5 border-b hover:font-bold'>work</li>
-          <li className='mb-2 border-b hover:font-bold'>game</li>
+          <li className='mb-5 border-b cursor-pointer hover:font-bold'>about</li>
+          <li className='mb-5 border-b cursor-pointer hover:font-bold'>work</li>
+          <li className='mb-2 border-b cursor-pointer hover:font-bold'>game</li>
         </ul>
       </div>
     </>
