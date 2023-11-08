@@ -1,14 +1,5 @@
 const contentdata = [
   {
-    "id" : "Project",
-    "day" : "2Weeks",
-    "title" : "UUF",
-    "desc" : "JavaScript",
-    "desc2" : "css",
-    "img" : "/images/toy-project.svg",
-    "URL" : "http://127.0.0.1:5501/BSY/index.html"
-  },
-  {
       "id" : "Project",
       "day" : "1Month",
       "title" : "Greenping",
@@ -46,7 +37,7 @@ const contentdata = [
     "desc" : "React",
     "desc2" : "useEffect",
     "desc3" : "JavaScript",
-    "URL" : "https://festival-busan.vercel.app/"
+    "URL" : "https://festival-pink.vercel.app/"
   },
   { 
     "id" : "API",
@@ -87,6 +78,15 @@ const contentdata = [
     "desc2" : "HTML",
     "desc3" : "CSS",
     "URL" : "https://suyeonpar.github.io/drawing-mini-game/"
+  },
+  {
+    "id" : "Game",
+    "day" : "2Weeks",
+    "title" : "UUF",
+    "desc" : "JavaScript",
+    "desc2" : "css",
+    "img" : "/images/toy-project.svg",
+    "URL" : "http://127.0.0.1:5500/index.html"
   }
 ]
 

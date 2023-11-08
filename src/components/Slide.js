@@ -16,7 +16,7 @@ import { NavLink } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
 import { faL } from "@fortawesome/free-solid-svg-icons";
 
-function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
+function Slide({ dark }) {
 
   //필터
   const txtList = ["Project", "Clone", "API", "Game"];
@@ -132,7 +132,7 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
           spaceBetween={10}
           slidesPerView={1}
           centeredSlides={true}
-          autoplay={{ delay: 2000, disableOnInteraction : false }}
+          // autoplay={{ delay: 2000, disableOnInteraction : false }}
           breakpoints={{
             768: {
               slidesPerView: 1.6,
@@ -160,18 +160,20 @@ function Slide({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
         {DataFilter &&
           DataFilter.map((e, i) => (
             <SwiperSlide style={{ overflow: "hidden" }} key={i} onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
-              <div className='bg-white basis-1/2 h-[400px] border mb-10'>
-                <div className="flex justify-start w-[95%] mx-auto text-center mt-5" >
-                  <img src={e.img} alt={e.title} className='mb-2 mr-7 md:w-[200px] lg:mb-5 md:mb-5 border cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}} />
-                  <div className="w-4/5">
-                    <p className='mb-2 text-3xl font-bold'>{e.id}</p>
-                    <p>{e.title}</p>
-                    <div className="flex items-center mx-auto mt-5">
+              <div className='bg-white basis-1/2 h-[400px] border mb-10 mx-auto'>
+                <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5 basis-full md:basis-[30%]" >
+                  <img src={e.img} alt={e.title} className='mb-2 mr-7 md:w-[70%] md:h-[10%] lg:mb-5 md:mb-5 border cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}} />
+                  <div className="w-4/5 text-center md:text-start">
+                    <p className='mb-2 text-3xl'>{e.id}</p>
+                    <p className="text-3xl font-bold mb-10">{e.title}</p>
+                    <p className="text-3xl">작업기간</p>
+                    <p className="text-3xl font-bold">{e.day}</p>
+                    <div className="flex items-center mt-5">
                       <div className="w-1/2 mt-10 text-start">
-                        <p className='text-white bg-black rounded-sm w-[50px] text-center'>USE</p>
-                        <p className='text-xl'>{e.desc}</p>
-                        <p className='text-xl'>{e.desc2}</p>
-                        <p className='text-xl'>{e.desc3}</p>
+                        <p className="text-3xl">use</p>
+                        <p className='text-xl md:text-3xl font-bold'>{e.desc}</p>
+                        <p className='text-xl md:text-3xl font-bold'>{e.desc2}</p>
+                        <p className='text-xl md:text-3xl font-bold'>{e.desc3}</p>
                       </div>
                     </div>
                   </div>
