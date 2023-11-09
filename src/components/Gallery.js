@@ -4,13 +4,21 @@ import { useState } from 'react';
 import { createStars } from '../store';
 import Slide from './Slide';
 
-function Gallery({ dark, setShowGallery, setShowSlide, showGallery, showSlide }) {
+function Gallery({ dark }) {
 
   // 필터
   const txtList = ["Project", "Clone", "API", "Game"];
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
+
+  // pagination
+  const [totalCnt, setTotalCnt] = useState(0);
+  const [page, setPage] = useState(1);
+  const lastPage = Math.ceil(totalCnt / 1);
+  const totalPageCnt = 5;
+  const startPage = Math.floor((page - 1) / totalPageCnt)* totalPageCnt + 1;
+  const endPage = Math.min(lastPage, startPage + totalPageCnt - 1);
 
   useEffect(() => {
     if (txt === -1) {
@@ -107,19 +115,23 @@ function Gallery({ dark, setShowGallery, setShowSlide, showGallery, showSlide })
           DataFilter.map((e,i)=>{
             return(
               <>
-              <div key={i} className='bg-white basis-full h-[400px] border mb-10'>
-                <div className="flex justify-start w-[95%] mx-auto text-center mt-5">
-                  <img src={e.img} alt={e.title} className='mb-2 mr-7 md:w-[200px] lg:mb-5 md:mb-5 border cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}} />
-                  <div className="w-4/5">
-                    <p className='mb-2 text-3xl font-bold'>{e.id}</p>
-                    <p>{e.title}</p>
-                    <div className="flex items-center mx-auto mt-5">
-                      <div className="w-1/2 mt-10 text-start">
-                        <p className='text-white bg-black rounded-sm w-[50px] text-center'>USE</p>
-                        <p className='text-xl'>{e.desc}</p>
-                        <p className='text-xl'>{e.desc2}</p>
-                        <p className='text-xl'>{e.desc3}</p>
-                      </div>
+              <div key={i} className='bg-white basis-4/5 md:basis-full h-auto md:h-[400px] border mb-10 mx-auto'>
+                <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
+                  <img src={e.img} alt={e.title} className='mb-2 basis-full md:basis-[55%] md:mr-7 md:mb-0 border cursor-pointer shadow-sm' onClick={()=>{OpenNewTab(e.URL)}} />
+                  <div className="text-start">
+                    <div className='mb-2 md:mb-5'>
+                      <p className='md-0 md:mb-2 text-sm md:text-2xl font-bold'>{e.id}</p>
+                      <p className='text-sm md:text-2xl'>{e.title}</p>
+                    </div>
+                    <div className='mb-2 md:mb-5'>
+                      <p className='font-bold text-sm md:text-2xl'>Work hours</p>
+                      <p className='text-sm md:text-2xl'>{e.day}</p>
+                    </div>
+                    <div className='mb-2 md:mb-5'>
+                      <p className='text-sm md:text-2xl font-bold'>USE</p>
+                      <p className='text-sm md:text-2xl'>{e.desc}</p>
+                      <p className='text-sm md:text-2xl'>{e.desc2}</p>
+                      <p className='text-sm md:text-2xl'>{e.desc3}</p>
                     </div>
                   </div>
                 </div>
@@ -130,6 +142,20 @@ function Gallery({ dark, setShowGallery, setShowSlide, showGallery, showSlide })
         }
       </div>
     </div>
+    {/* <div className="flex justify-center gap-x-5">
+            <>
+            {page > 5 && <button className='mt-5 border px-1.5 py-1.5 bg-white rounded-md text-sm mb-20' onClick={()=>{setPage(page - 5)}}>이전</button>}
+            {
+                Array(endPage - startPage + 1).fill(null).map((_, i) => {
+                const pageNumber = i + startPage;
+                    return (
+                        <button className={`mb-20 mt-5 rounded-md text-sm border px-3 py-1.5 ${page === pageNumber ? `bg-pink-300 text-white` : `bg-white`}`} key={i} onClick={() => { setPage(pageNumber) }}>{pageNumber}</button>
+                    );
+                })
+            }
+            {page < lastPage && <button className='mt-5 border px-1.5 py-1.5 bg-white rounded-md text-sm mb-20' onClick={()=>{setPage(page + 5)}}>다음</button>}
+            </>
+        </div> */}
     </>
   )
 }

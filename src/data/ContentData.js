@@ -6,14 +6,14 @@ const contentdata = [
       "desc" : "React",
       "desc2" : "JaveScript",
       "desc3" : "Styled-components",
-      "img" : "/images/greenping.jpg",
+      "img" : "https://via.placeholder.com/600x310",
       "URL" : "https://suyeonpar.github.io/clone-belif/"
   },
   {
     "id" : "Clone",
     "day" : "2Weeks",
     "title" : "belif",
-    "img" : "../images/belif.jpg",
+    "img" : "https://via.placeholder.com/600x310",
     "desc" : "HTML",
     "desc2" : "CSS",
     "desc3" : "JavaScript",
@@ -23,7 +23,7 @@ const contentdata = [
     "id" : "Clone",
     "day" : "4Days",
     "title" : "SUBWAY",
-    "img" : "../images/subway.svg",
+    "img" : "https://via.placeholder.com/600x310",
     "desc" : "HTML",
     "desc2" : "CSS",
     "desc3" : "JavaScript",
@@ -33,7 +33,7 @@ const contentdata = [
     "id" : "API",
     "day" : "7Days",
     "title" : "부산 축제 즐기기",
-    "img" : "../images/api.jpg",
+    "img" : "https://via.placeholder.com/600x310",
     "desc" : "React",
     "desc2" : "useEffect",
     "desc3" : "JavaScript",
@@ -43,17 +43,17 @@ const contentdata = [
     "id" : "API",
     "day" : "1Day",
     "title" : "택배 조회하기",
-    "img" : "../images/pracel.jpg",
+    "img" : "https://via.placeholder.com/600x310",
     "desc" : "React",
     "desc2" : "typescript",
     "desc3" : "tailwind CSS",
-    "URL" : "https://suyeonpar.github.io/clone-belif/"
+    "URL" : "https://parcel-pi-seven.vercel.app/"
   },
   {
     "id" : "Game",
     "day" : "3Days",
     "title" : "Quiz",
-    "img" : "../images/quiz.svg",
+    "img" : "https://via.placeholder.com/600x310",
     "desc" : "React",
     "desc2" : "Tailwind CSS",
     "desc3" : "JavaScript",
@@ -61,9 +61,9 @@ const contentdata = [
   },
   {
     "id" : "Game",
-    "day" : "1Days",
+    "day" : "1Day",
     "title" : "Drawing",
-    "img" : "../images/drawing.jpg",
+    "img" : "https://via.placeholder.com/600x310",
     "desc" : "JavaScript",
     "desc2" : "HTML",
     "desc3" : "CSS",
@@ -71,22 +71,22 @@ const contentdata = [
   },
   {
     "id" : "Game",
-    "day" : "1Days",
+    "day" : "1Day",
     "title" : "오늘의 운세",
-    "img" : "../images/drawing.jpg",
+    "img" : "https://via.placeholder.com/600x310",
     "desc" : "JavaScript",
     "desc2" : "HTML",
     "desc3" : "CSS",
-    "URL" : "https://suyeonpar.github.io/drawing-mini-game/"
+    "URL" : "https://lucky-beige.vercel.app/"
   },
   {
     "id" : "Game",
-    "day" : "2Weeks",
+    "day" : "1Day",
     "title" : "UUF",
     "desc" : "JavaScript",
     "desc2" : "css",
-    "img" : "/images/toy-project.svg",
-    "URL" : "http://127.0.0.1:5500/index.html"
+    "img" : "https://via.placeholder.com/600x310",
+    "URL" : "https://suyeonpar.github.io/snail-race/"
   }
 ]
 

@@ -14,7 +14,6 @@ import "animate.css";
 import contentdata from '../data/ContentData'
 import { NavLink } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
-import { faL } from "@fortawesome/free-solid-svg-icons";
 
 function Slide({ dark }) {
 
@@ -126,6 +125,7 @@ function Slide({ dark }) {
 
       <div className="relative flex justify-center items-center w-full h-[450px] mt-10 mx-auto mb-[150px] bg-black">
         <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
+        <div className="absolute right-0 transform -translate-x-1/2 -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
         <Swiper
           className='absolute top-[20%]'
           loop={true}
@@ -160,21 +160,23 @@ function Slide({ dark }) {
         {DataFilter &&
           DataFilter.map((e, i) => (
             <SwiperSlide style={{ overflow: "hidden" }} key={i} onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
-              <div className='bg-white basis-1/2 h-[400px] border mb-10 mx-auto'>
-                <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5 basis-full md:basis-[30%]" >
-                  <img src={e.img} alt={e.title} className='mb-2 mr-7 md:w-[70%] md:h-[10%] lg:mb-5 md:mb-5 border cursor-pointer' onClick={()=>{OpenNewTab(e.URL)}} />
-                  <div className="w-4/5 text-center md:text-start">
-                    <p className='mb-2 text-3xl'>{e.id}</p>
-                    <p className="text-3xl font-bold mb-10">{e.title}</p>
-                    <p className="text-3xl">작업기간</p>
-                    <p className="text-3xl font-bold">{e.day}</p>
-                    <div className="flex items-center mt-5">
-                      <div className="w-1/2 mt-10 text-start">
-                        <p className="text-3xl">use</p>
-                        <p className='text-xl md:text-3xl font-bold'>{e.desc}</p>
-                        <p className='text-xl md:text-3xl font-bold'>{e.desc2}</p>
-                        <p className='text-xl md:text-3xl font-bold'>{e.desc3}</p>
-                      </div>
+              <div key={i} className='bg-white basis-4/5 md:basis-full h-auto border mb-10 mx-auto'>
+                <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
+                  <img src={e.img} alt={e.title} className='mb-2 basis-full md:w-[200px] md:basis-2/3 md:mr-7 md:mb-5 border cursor-pointer shadow-sm' onClick={()=>{OpenNewTab(e.URL)}} />
+                  <div className="text-start">
+                    <div className='mb-2 md:mb-5'>
+                      <p className='md-0 md:mb-2 text-sm md:text-2xl font-bold'>{e.id}</p>
+                      <p className='text-sm md:text-2xl'>{e.title}</p>
+                    </div>
+                    <div className='mb-2 md:mb-5'>
+                      <p className='font-bold text-sm md:text-2xl'>Work hours</p>
+                      <p className='text-sm md:text-2xl'>{e.day}</p>
+                    </div>
+                    <div className='mb-2 md:mb-5'>
+                      <p className='text-sm md:text-2xl font-bold'>USE</p>
+                      <p className='text-sm md:text-2xl'>{e.desc}</p>
+                      <p className='text-sm md:text-2xl'>{e.desc2}</p>
+                      <p className='text-sm md:text-2xl'>{e.desc3}</p>
                     </div>
                   </div>
                 </div>

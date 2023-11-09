@@ -12,8 +12,6 @@ import Notfound from './pages/Notfound';
 import { useEffect, useState } from 'react';
 import Ex from './pages/Ex';
 import './index.css'
-import Gallery from './components/Gallery';
-import Slide from './components/Slide';
 
 function App() { 
 
@@ -31,7 +29,6 @@ function App() {
       <Route path='/sam' element={<Sample />} />
       <Route path='/about' element={<About dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/e' element={<Ex />} />
-      <Route path='/gallery' element={<Gallery />} />
       <Route path='/content' element={<Content />} />
       <Route path='/*' element={<Notfound />} />
     </Routes>

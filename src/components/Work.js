@@ -12,11 +12,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import WOW from "wowjs";
 import "animate.css";
-import contentdata from '../data/ContentData'
 import Gallery from "../components/Gallery";
 import Slide from "./Slide";
 
-function Work({dark, stars, restars}) {
+function Work({dark}) {
 
   const [showGallery, setShowGallery] = useState(false);
   const [showSlide, setShowSlide] = useState(true);
