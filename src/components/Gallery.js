@@ -110,6 +110,7 @@ function Gallery({ dark }) {
       </div>
     <div className='w-full mx-auto mt-10'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
+        <p className='text-xl md:text-2xl'><span className='font-bold'>TOTAL: </span>{DataFilter.length}</p>
         {
           DataFilter &&
           DataFilter.map((e,i)=>{

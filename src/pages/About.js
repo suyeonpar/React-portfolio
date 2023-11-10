@@ -4,13 +4,10 @@ import WOW from 'wowjs';
 import 'animate.css';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faChevronDown, faList } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import './../index.css'
 import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
-import { isCursorAtEnd } from '@testing-library/user-event/dist/utils';
-
-
 
 function About({ dark, toggleDarkMode }) {
 
@@ -78,31 +75,26 @@ function About({ dark, toggleDarkMode }) {
     {
       title: "React",
       desc: "저는 동적 및 대화형 사용자 인터페이스를 구축하기 위한 강력한 JavaScript 라이브러리인 React에 능숙합니다. React를 사용하여 해당 구성 요소를 활용하여 반응형 웹 애플리케이션을 만든 경험이 있습니다."
-    },
+    }
   ]
 
-  const [isArrows, setIsArrows] = useState(false);
+  const arrowData2 = [
+    {
+      title: "work",
+      desc: "저는 동적 및 대화형 사용자 인터페이스를 구축하기 위한 강력한 JavaScript 라이브러리인 React에 능숙합니다. React를 사용하여 해당 구성 요소를 활용하여 반응형 웹 애플리케이션을 만든 경험이 있습니다."
+    }
+  ]
 
-  const toggleArrows = () => {
-    const a0 = setIsArrows(isArrows[0])
-    const a1 = setIsArrows(isArrows[1])
-    const a2 = setIsArrows(isArrows[2])
-    const a3 = setIsArrows(isArrows[3])
+  // 더보기 화살표
+  const [isArrows, setIsArrows] = useState([false, false,false, false]);
+
+  const toggleArrows = (i) => {
+    setIsArrows(prevArrows => {
+      const newArrows = [...prevArrows];
+      newArrows[i] = !newArrows[i];
+      return newArrows;
+    });
   };
-
-  // const toggleArrow = () => {
-  //   setIsArrows(!isArrows);
-  // };
-
-  // const [isArrows, setIsArrows] = useState(Array(data.length).fill(false));
-
-  // const toggleArrow = (i) => {
-  //   const updatedArrows = [...isArrows];
-  //   updatedArrows[i] = !updatedArrows[i];
-    
-  //   updatedArrows
-  //   setIsArrows(updatedArrows); // Update the state here
-  // };
   
   return (
     <>
@@ -152,9 +144,25 @@ function About({ dark, toggleDarkMode }) {
                 }  
                 </li>
                 <li className="absolute text-xs cursor-pointer right-5 bottom-5 md:text-xl">
-                  <FontAwesomeIcon icon={faChevronDown} onClick={()=>{toggleArrows(i); setIsArrows(i)}} className={`${isArrows ? `rotate-180` : `rotate-0`}`}/>
+                  <FontAwesomeIcon icon={faChevronDown} onClick={()=>{toggleArrows(i)}} className={`${isArrows[i] ? `rotate-180` : `rotate-0`}`}/>
                 </li>
               </ul>
+              <ul>
+              
+              </ul>
+                {/* {
+                  isArrows[1] &&
+                  arrowData2.map((e,i)=>{
+                    return(
+                      <>
+                      <ul key={i}>
+                        <li>{e.title}</li>
+                        <li>{e.desc}</li>
+                      </ul>
+                      </>
+                    )
+                  })
+                } */}
               </>
             )
           })

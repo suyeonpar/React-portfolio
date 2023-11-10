@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Aside from '../components/Aside';
 import Work from '../components/Work';
 import { createStars } from './../store';
+import Contact from '../components/Contact';
 
 function Main() {
 
@@ -116,7 +117,8 @@ function Main() {
       <Profile dark={dark} />
       <Work dark={dark} Stars={Stars} stars={stars} restars={restars} />
       <Use />
-      <Board dark={dark} />
+      <Board />
+      <Contact />
       <Footer dark={dark} />
       <Aside dark={dark} toggleDarkMode={toggleDarkMode} />
     </div>

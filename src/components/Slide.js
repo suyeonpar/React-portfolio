@@ -122,7 +122,7 @@ function Slide({ dark }) {
         </div>
       </div>
       </div>
-
+      <p className='text-xl md:text-2xl'><span className='font-bold'>TOTAL: </span>{DataFilter.length}</p>
       <div className="relative flex justify-center items-center w-full h-[450px] mt-10 mx-auto mb-[150px] bg-black">
         <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
         <div className="absolute right-0 transform -translate-x-1/2 -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
