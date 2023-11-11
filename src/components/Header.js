@@ -70,7 +70,7 @@ function Header({ dark, toggleDarkMode }) {
       </div>
       <div className={`bg-white z-[998] fixed overflow-hidden top-0 w-[320px] h-full md:hidden ${isActive ? `right-0` : `-right-[330px]`}`}>
         <ul className='w-4/5 mx-auto mt-20 text-xl'>
-          <li className='mb-5 border-b cursor-pointer hover:font-bold'>about</li>
+          <NavLink to='/about'><li className='mb-5 border-b cursor-pointer hover:font-bold'>about</li></NavLink>
           <li className='mb-5 border-b cursor-pointer hover:font-bold'>work</li>
           <li className='mb-2 border-b cursor-pointer hover:font-bold'>game</li>
         </ul>

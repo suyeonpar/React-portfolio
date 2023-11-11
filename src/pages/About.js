@@ -44,44 +44,26 @@ function About({ dark, toggleDarkMode }) {
     {
       title: "SKILL",
       desc: "제가 자신 있는 것은요",
-      desc2: ["React", "Next.js","HTML5", "CSS3","JavaScript","TypeScript", "TailwindCSS", "SCSS", "node.js", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
-      desc3 : [""],
-      iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
+      desc2: ["React", "Next.js","HTML5", "CSS3","JavaScript","TypeScript", "TailwindCSS", "SCSS", "node.js","firebase","mysql", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
+      desc3: ["React: 저는 동적 및 대화형 사용자 인터페이스를 구축하기 위한 강력한 JavaScript 라이브러리인 React에 능숙합니다. React를 사용하여 해당 구성 요소를 활용하여 반응형 웹 애플리케이션을 만든 경험이 있습니다.", "Next.js: Next.js를 통해 서버 사이드 렌더링(SSR)과 정적 사이트 생성(SSG)을 구현하여 사용자 경험과 성능을 최적화했습니다. Next.js의 간편한 라우팅 시스템을 활용하여 사용자가 원하는 정보에 빠르게 접근할 수 있도록 페이지를 최적화했습니다.", "HTML: 사용자 친화적이고 접근성을 고려한 웹 페이지를 디자인하고 개발하는 프론트엔드 엔지니어입니다. HTML은 웹 개발의 기초이자 핵심인 만큼, 나만의 효율적이고 의미 있는 마크업을 만들어내기에 주력하고 있습니다.","","",""]
     },
     {
       title: "WORK EXPERIENCE",
       desc: "제가 경험한 것은요",
       desc2: ["No.1 스포츠 의류 쇼핑몰", "Allendino 남성쇼핑몰", "오늘미술학원"],
-      desc3 : ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"],
-      iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
+      desc3: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
     },
     {
       title: "Collaboration & Tools ",
       desc: "제가 자신있는 협업툴은요",
       desc2: ["figma", "slack", "npm", "yarn", "Git", "Github", "Notion", "Vercel"],
-      desc3 : [""],
-      iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
+      desc3: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
     },
     {
       title : "EDUCTION",
       desc : "제가 배운것은요",
       desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "스터디 Toy project"],
-      desc3 : ["2023.06.29 ~", "2023.09.06 ~ 2023.10.06", "2023.10.12 ~"],
-      iconDesc: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
-    }
-  ]
-
-  const arrowData = [
-    {
-      title: "React",
-      desc: "저는 동적 및 대화형 사용자 인터페이스를 구축하기 위한 강력한 JavaScript 라이브러리인 React에 능숙합니다. React를 사용하여 해당 구성 요소를 활용하여 반응형 웹 애플리케이션을 만든 경험이 있습니다."
-    }
-  ]
-
-  const arrowData2 = [
-    {
-      title: "work",
-      desc: "저는 동적 및 대화형 사용자 인터페이스를 구축하기 위한 강력한 JavaScript 라이브러리인 React에 능숙합니다. React를 사용하여 해당 구성 요소를 활용하여 반응형 웹 애플리케이션을 만든 경험이 있습니다."
+      desc3: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
     }
   ]
 
@@ -111,7 +93,6 @@ function About({ dark, toggleDarkMode }) {
                   <div key={i}>
                     <p className={`text-xs mb-5 md:text-xl md:w-4/5 md:mx-auto lg:w-full lg:text-2xl ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc}</p>
                     <p className={`text-xs mb-5 md:text-xl md:w-4/5 md:mx-auto lg:w-full lg:text-2xl ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc2}</p>
-                    <p className={`text-xs mb-5 md:text-xl md:w-4/5 md:mx-auto lg:w-full lg:text-2xl md:mb-10 ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc3}</p>
                   </div>
                 )
               })
@@ -138,7 +119,7 @@ function About({ dark, toggleDarkMode }) {
                 <li className='flex flex-wrap mx-auto'>
                   {Array(e.desc2.length).fill().map((_,index)=>{
                     return (
-                      <span key={i} className={`p-1 mr-2 mb-2 text-xs border ${dark ? `text-[#ddd]` : ``} border-[#5E5BE3] rounded-lg md:text-sm lg:text-xl`}>{e.desc2[index]}</span>
+                      <span key={index} className={`p-1 mr-2 mb-2 text-xs border ${dark ? `text-[#ddd]` : ``} border-[#5E5BE3] rounded-lg md:text-sm lg:text-xl`}>{e.desc2[index]}</span>
                     )
                   })
                 }  
@@ -147,22 +128,16 @@ function About({ dark, toggleDarkMode }) {
                   <FontAwesomeIcon icon={faChevronDown} onClick={()=>{toggleArrows(i)}} className={`${isArrows[i] ? `rotate-180` : `rotate-0`}`}/>
                 </li>
               </ul>
-              <ul>
-              
-              </ul>
-                {/* {
-                  isArrows[1] &&
-                  arrowData2.map((e,i)=>{
-                    return(
-                      <>
-                      <ul key={i}>
-                        <li>{e.title}</li>
-                        <li>{e.desc}</li>
-                      </ul>
-                      </>
-                    )
-                  })
-                } */}
+              {
+                isArrows[i] &&
+                Array(e.desc3.length).fill().map((_,index)=>{
+                  return(
+                    <ul key={index}>
+                      <li>{data[i].desc3[index]}</li>
+                    </ul>
+                  )
+                })
+              }
               </>
             )
           })

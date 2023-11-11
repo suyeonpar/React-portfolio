@@ -108,9 +108,11 @@ function Gallery({ dark }) {
         </div>
       </div>
       </div>
-    <div className='w-full mx-auto mt-10'>
+    <div className='w-full mx-auto mt-7 md:mt-10'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
-        <p className='text-xl md:text-2xl'><span className='font-bold'>TOTAL: </span>{DataFilter.length}</p>
+        <div className='basis-full ml-12 md:ml-0 mb-2 md:mb-5'>
+          <p className={`${dark ? `text-white` : `text-black`} text-sm md:text-xl `}><span className={`${dark ? `text-white` : `text-black`} font-bold`}>TOTAL: </span>{DataFilter.length}</p>
+        </div>
         {
           DataFilter &&
           DataFilter.map((e,i)=>{

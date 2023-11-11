@@ -1,27 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createStars } from './../store';
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Autoplay,
-  EffectCoverflow
-} from "swiper/modules";
+import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import WOW from "wowjs";
 import "animate.css";
 import contentdata from '../data/ContentData'
-import { NavLink } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
+
 
 function Slide({ dark }) {
 
-  //필터
   const txtList = ["Project", "Clone", "API", "Game"];
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
+  const [showSwiper, setShowSwiper] = useState(false);
 
   useEffect(() => {
     if (txt === -1) {
@@ -32,21 +28,26 @@ function Slide({ dark }) {
     }
   }, [txt]);
 
+
+  useEffect(()=>{
+    const delay = setTimeout(() => {
+      setShowSwiper(true);
+    }, 2000);
+    return () => clearTimeout(delay);
+  },[txt])
+
     //새로운창 연결
     const OpenNewTab = (url) => {
         window.open(url, "_blank", "noopener, noreferrer");
     };
 
   // 마우스오버 이벤트
-  const [autoPlay, setAutoPlay] = useState(true)
-  console.log(autoPlay)
-
-  const onMouseOver = () => {
-    setAutoPlay(false)
+  const handleMouseOver = () => {
+    Swiper.autoplay.stop();
   };
-
-  const onMouseLeave = () => {
-    setAutoPlay(true)
+  
+  const handleMouseOut = () => {
+    Swiper.autoplay.start();
   };
 
   // 별
@@ -122,23 +123,27 @@ function Slide({ dark }) {
         </div>
       </div>
       </div>
-      <p className='text-xl md:text-2xl'><span className='font-bold'>TOTAL: </span>{DataFilter.length}</p>
-      <div className="relative flex justify-center items-center w-full h-[450px] mt-10 mx-auto mb-[150px] bg-black">
+      <div className='basis-full ml-3 mb-2 md:mr-2 mt-5 md:mt-10 md:mb-5'>
+        <p className={`text-sm md:text-xl ${dark ? 'text-white' : 'text-black'}`}>
+          <span className='font-bold'>TOTAL: </span>{DataFilter.length}
+        </p>
+      </div>
+      <div className="relative flex justify-center items-center w-full h-[450px] mx-auto mb-[150px] bg-black">
         <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
         <div className="absolute right-0 transform -translate-x-1/2 -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
-        <Swiper
+        {showSwiper && <Swiper
           className='absolute top-[20%]'
           loop={true}
           spaceBetween={10}
           slidesPerView={1}
           centeredSlides={true}
-          // autoplay={{ delay: 2000, disableOnInteraction : false }}
+          autoplay={{ delay: 4000, disableOnInteraction : false }}
           breakpoints={{
             768: {
-              slidesPerView: 1.6,
+              slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 2,
+              slidesPerView: 3,
             }
           }}
           navigation={{ 
@@ -159,11 +164,11 @@ function Slide({ dark }) {
         >
         {DataFilter &&
           DataFilter.map((e, i) => (
-            <SwiperSlide style={{ overflow: "hidden" }} key={i} onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
-              <div key={i} className='bg-white basis-4/5 md:basis-full h-auto border mb-10 mx-auto'>
+            <SwiperSlide style={{ overflow: "hidden" }} key={i}>
+              <div key={i} className='bg-white basis-[95%] md:basis-full h-auto border mb-10 mx-auto'>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
-                  <img src={e.img} alt={e.title} className='mb-2 basis-full md:w-[200px] md:basis-2/3 md:mr-7 md:mb-5 border cursor-pointer shadow-sm' onClick={()=>{OpenNewTab(e.URL)}} />
-                  <div className="text-start">
+                  <img src={e.img} alt={e.title} className='mb-2 basis-full md:basis-1/2 md:mr-7 md:mb-5 border cursor-pointer shadow-sm' onClick={()=>{OpenNewTab(e.URL)}} />
+                  <div className="text-start basis-full md:basis-1/2">
                     <div className='mb-2 md:mb-5'>
                       <p className='md-0 md:mb-2 text-sm md:text-2xl font-bold'>{e.id}</p>
                       <p className='text-sm md:text-2xl'>{e.title}</p>
@@ -183,7 +188,7 @@ function Slide({ dark }) {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper>}
       </div>
     </div>
     </>
