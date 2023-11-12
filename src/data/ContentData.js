@@ -9,16 +9,6 @@ const contentdata = [
       "img" : "https://via.placeholder.com/600x310",
       "URL" : "https://suyeonpar.github.io/clone-belif/"
   },
-  // {
-  //     "id" : "Project",
-  //     "day" : "1Month",
-  //     "title" : "Greenping",
-  //     "desc" : "React",
-  //     "desc2" : "JaveScript",
-  //     "desc3" : "Styled-components",
-  //     "img" : "https://via.placeholder.com/600x310",
-  //     "URL" : "https://suyeonpar.github.io/clone-belif/"
-  // },
   {
     "id" : "Clone",
     "day" : "2Weeks",
@@ -40,9 +30,9 @@ const contentdata = [
     "URL" : "https://suyeonpar.github.io/subway/"
   },
   {
-    "id" : "API",
+    "id" : "Mini.P",
     "day" : "7Days",
-    "title" : "부산 축제 즐기기",
+    "title" : "미니프로젝트 : 부산 축제 즐기기",
     "img" : "https://via.placeholder.com/600x310",
     "desc" : "React",
     "desc2" : "useEffect",
@@ -50,9 +40,9 @@ const contentdata = [
     "URL" : "https://festival-pink.vercel.app/"
   },
   { 
-    "id" : "API",
+    "id" : "Mini.P",
     "day" : "1Day",
-    "title" : "택배 조회하기",
+    "title" : "미니프로젝트 : 택배 조회하기",
     "img" : "https://via.placeholder.com/600x310",
     "desc" : "React",
     "desc2" : "typescript",
@@ -84,17 +74,18 @@ const contentdata = [
     "day" : "1Day",
     "title" : "오늘의 운세",
     "img" : "https://via.placeholder.com/600x310",
-    "desc" : "JavaScript",
-    "desc2" : "HTML",
+    "desc" : "HTML",
+    "desc2" : "JavaScript",
     "desc3" : "CSS",
     "URL" : "https://lucky-beige.vercel.app/"
   },
   {
     "id" : "Game",
     "day" : "1Day",
-    "title" : "UUF",
-    "desc" : "JavaScript",
-    "desc2" : "css",
+    "title" : "Snail Race",
+    "desc" : "HTML",
+    "desc2" : "CSS",
+    "desc3" : "JavaScript",
     "img" : "https://via.placeholder.com/600x310",
     "URL" : "https://suyeonpar.github.io/snail-race/"
   }

@@ -44,8 +44,8 @@ function About({ dark, toggleDarkMode }) {
     {
       title: "SKILL",
       desc: "제가 자신 있는 것은요",
-      desc2: ["React", "Next.js","HTML5", "CSS3","JavaScript","TypeScript", "TailwindCSS", "SCSS", "node.js","firebase","mysql", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
-      desc3: ["React: 저는 동적 및 대화형 사용자 인터페이스를 구축하기 위한 강력한 JavaScript 라이브러리인 React에 능숙합니다. React를 사용하여 해당 구성 요소를 활용하여 반응형 웹 애플리케이션을 만든 경험이 있습니다.", "Next.js: Next.js를 통해 서버 사이드 렌더링(SSR)과 정적 사이트 생성(SSG)을 구현하여 사용자 경험과 성능을 최적화했습니다. Next.js의 간편한 라우팅 시스템을 활용하여 사용자가 원하는 정보에 빠르게 접근할 수 있도록 페이지를 최적화했습니다.", "HTML: 사용자 친화적이고 접근성을 고려한 웹 페이지를 디자인하고 개발하는 프론트엔드 엔지니어입니다. HTML은 웹 개발의 기초이자 핵심인 만큼, 나만의 효율적이고 의미 있는 마크업을 만들어내기에 주력하고 있습니다.","","",""]
+      desc2: ["React", "Next.js","HTML5", "CSS3","JavaScript","TypeScript", "TailwindCSS", "SCSS","stylecomponents", "node.js","firebase","mysql", "AdobePhotoshop CS6", "AdobeIllustrator 2020"],
+      desc3: ["React: 저는 동적 및 대화형 사용자 인터페이스를 구축하기 위한 강력한 JavaScript 라이브러리인 React에 능숙합니다. React를 사용하여 해당 구성 요소를 활용하여 반응형 웹 애플리케이션을 만든 경험이 있습니다.", "Next.js: Next.js를 통해 서버 사이드 렌더링(SSR)과 정적 사이트 생성(SSG)을 구현하여 사용자 경험과 성능을 최적화했습니다. Next.js의 간편한 라우팅 시스템을 활용하여 사용자가 원하는 정보에 빠르게 접근할 수 있도록 페이지를 최적화했습니다.", "HTML: 사용자 친화적이고 접근성을 고려한 웹 페이지를 디자인하고 개발하는 프론트엔드 엔지니어입니다. HTML은 웹 개발의 기초이자 핵심인 만큼, 나만의 효율적이고 의미 있는 마크업을 만들어내기에 주력하고 있습니다.","CSS: CSS3 변수를 활용하여 코드를 모듈화하고 유지보수를 간편하게 하였으며, 아이콘과 다양한 글꼴을 적용하여 시각적 다양성을 높였습니다.","JavaScript: JavaScript를 활용하여 사용자의 입력에 실시간으로 반응하고, 동적인 콘텐츠를 제공하는데 중점을 두어, 인터랙티브한 웹 페이지를 개발할 수 있습니다. 또한, 클라이언트 측에서 동적으로 DOM을 조작하여 사용자 인터페이스를 업데이트하고, 모던 JavaScript 프레임워크를 적용하여 코드의 가독성과 유지보수성을 높였습니다.","TypeScript: TypeScript를 도입하여 코드의 안정성을 향상시키고, 명시적인 타입 정의를 통해 개발 생산성을 높였습니다.", "TailwindCSS: Tailwind CSS를 도입하여 직관적이고 유연한 클래스 기반 스타일링을 구현하였으며, 커스터마이징 가능한 디자인 시스템을 활용하여 웹 페이지의 스타일을 빠르게 구축하고 관리했습니다.", "SCSS: SCSS를 도입하여 변수, 중첩 규칙, 및 모듈화된 스타일링을 활용하여 유지보수성이 뛰어나고 가독성이 좋은 스타일 시트를 작성할 수 있습니다."]
     },
     {
       title: "WORK EXPERIENCE",
@@ -62,7 +62,7 @@ function About({ dark, toggleDarkMode }) {
     {
       title : "EDUCTION",
       desc : "제가 배운것은요",
-      desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "스터디 Toy project"],
+      desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "Deep Dive"],
       desc3: ["2022.11 ~ 2023.04", "2021.10 ~ 2022.10", "2016.01 ~ 2019.06"]
     }
   ]

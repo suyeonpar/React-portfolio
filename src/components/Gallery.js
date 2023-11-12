@@ -7,7 +7,7 @@ import Slide from './Slide';
 function Gallery({ dark }) {
 
   // 필터
-  const txtList = ["Project", "Clone", "API", "Game"];
+  const txtList = ["Project", "Clone", "Mini.P", "Game"];
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
@@ -110,7 +110,7 @@ function Gallery({ dark }) {
       </div>
     <div className='w-full mx-auto mt-7 md:mt-10'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
-        <div className='basis-full ml-12 md:ml-0 mb-2 md:mb-5'>
+        <div className='mb-2 ml-12 basis-full md:ml-0 md:mb-5'>
           <p className={`${dark ? `text-white` : `text-black`} text-sm md:text-xl `}><span className={`${dark ? `text-white` : `text-black`} font-bold`}>TOTAL: </span>{DataFilter.length}</p>
         </div>
         {
@@ -123,15 +123,15 @@ function Gallery({ dark }) {
                   <img src={e.img} alt={e.title} className='mb-2 basis-full md:basis-[55%] md:mr-7 md:mb-0 border cursor-pointer shadow-sm' onClick={()=>{OpenNewTab(e.URL)}} />
                   <div className="text-start">
                     <div className='mb-2 md:mb-5'>
-                      <p className='md-0 md:mb-2 text-sm md:text-2xl font-bold'>{e.id}</p>
+                      <p className='text-sm font-bold md-0 md:mb-2 md:text-2xl'>{e.id}</p>
                       <p className='text-sm md:text-2xl'>{e.title}</p>
                     </div>
                     <div className='mb-2 md:mb-5'>
-                      <p className='font-bold text-sm md:text-2xl'>Work hours</p>
+                      <p className='text-sm font-bold md:text-2xl'>Work hours</p>
                       <p className='text-sm md:text-2xl'>{e.day}</p>
                     </div>
                     <div className='mb-2 md:mb-5'>
-                      <p className='text-sm md:text-2xl font-bold'>USE</p>
+                      <p className='text-sm font-bold md:text-2xl'>USE</p>
                       <p className='text-sm md:text-2xl'>{e.desc}</p>
                       <p className='text-sm md:text-2xl'>{e.desc2}</p>
                       <p className='text-sm md:text-2xl'>{e.desc3}</p>
