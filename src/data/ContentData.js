@@ -1,3 +1,5 @@
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 const contentdata = [
   {
       "id" : "Project",
@@ -7,7 +9,9 @@ const contentdata = [
       "desc2" : "JaveScript",
       "desc3" : "Styled-components",
       "img" : "https://via.placeholder.com/600x310",
-      "URL" : "https://suyeonpar.github.io/clone-belif/"
+      "URL" : "https://suyeonpar.github.io/clone-belif/",
+      "icon": faGithub,
+      "gitURL" : ""
   },
   {
     "id" : "Clone",
@@ -17,7 +21,9 @@ const contentdata = [
     "desc" : "HTML",
     "desc2" : "CSS",
     "desc3" : "JavaScript",
-    "URL" : "https://suyeonpar.github.io/clone-belif/"
+    "URL" : "https://suyeonpar.github.io/clone-belif/",
+    "icon": faGithub,
+    "gitURL" : ""
   },
   {
     "id" : "Clone",
@@ -27,7 +33,9 @@ const contentdata = [
     "desc" : "HTML",
     "desc2" : "CSS",
     "desc3" : "JavaScript",
-    "URL" : "https://suyeonpar.github.io/subway/"
+    "URL" : "https://suyeonpar.github.io/subway/",
+    "icon": faGithub,
+    "gitURL" : ""
   },
   {
     "id" : "Mini.P",
@@ -37,7 +45,9 @@ const contentdata = [
     "desc" : "React",
     "desc2" : "useEffect",
     "desc3" : "JavaScript",
-    "URL" : "https://festival-pink.vercel.app/"
+    "URL" : "https://festival-pink.vercel.app/",
+    "icon": faGithub,
+    "gitURL" : ""
   },
   { 
     "id" : "Mini.P",
@@ -47,7 +57,9 @@ const contentdata = [
     "desc" : "React",
     "desc2" : "typescript",
     "desc3" : "tailwind CSS",
-    "URL" : "https://parcel-pi-seven.vercel.app/"
+    "URL" : "https://parcel-pi-seven.vercel.app/",
+    "icon": faGithub,
+    "gitURL" : ""
   },
   {
     "id" : "Game",
@@ -57,7 +69,9 @@ const contentdata = [
     "desc" : "React",
     "desc2" : "Tailwind CSS",
     "desc3" : "JavaScript",
-    "URL" : "https://quiz-one-sigma.vercel.app/"
+    "URL" : "https://quiz-one-sigma.vercel.app/",
+    "icon": faGithub,
+    "gitURL" : ""
   },
   {
     "id" : "Game",
@@ -67,7 +81,9 @@ const contentdata = [
     "desc" : "JavaScript",
     "desc2" : "HTML",
     "desc3" : "CSS",
-    "URL" : "https://suyeonpar.github.io/drawing-mini-game/"
+    "URL" : "https://suyeonpar.github.io/drawing-mini-game/",
+    "icon": faGithub,
+    "gitURL" : ""
   },
   {
     "id" : "Game",
@@ -77,7 +93,9 @@ const contentdata = [
     "desc" : "HTML",
     "desc2" : "JavaScript",
     "desc3" : "CSS",
-    "URL" : "https://lucky-beige.vercel.app/"
+    "URL" : "https://lucky-beige.vercel.app/",
+    "icon": faGithub,
+    "gitURL": "https://github.com/suyeonpar/Lucky.git"
   },
   {
     "id" : "Game",
@@ -87,7 +105,9 @@ const contentdata = [
     "desc2" : "CSS",
     "desc3" : "JavaScript",
     "img" : "https://via.placeholder.com/600x310",
-    "URL" : "https://suyeonpar.github.io/snail-race/"
+    "URL" : "https://suyeonpar.github.io/snail-race/",
+    "icon": faGithub,
+    "gitURL" : ""
   }
 ]
 

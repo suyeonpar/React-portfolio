@@ -3,6 +3,7 @@ import contentdata from '../data/ContentData'
 import { useState } from 'react';
 import { createStars } from '../store';
 import Slide from './Slide';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Gallery({ dark }) {
 
@@ -137,6 +138,7 @@ function Gallery({ dark }) {
                       <p className='text-sm md:text-2xl'>{e.desc3}</p>
                     </div>
                   </div>
+                  <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className='cursor-pointer' />
                 </div>
               </div>
               </>
