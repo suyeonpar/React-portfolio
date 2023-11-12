@@ -9,6 +9,7 @@ import WOW from "wowjs";
 import "animate.css";
 import contentdata from '../data/ContentData'
 import 'swiper/swiper-bundle.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function Slide({ dark }) {
@@ -75,10 +76,10 @@ function Slide({ dark }) {
         {
           contentdata.map((e, i) => (
             <SwiperSlide style={{ overflow: "hidden" }} key={i}>
-              <div key={i} className='bg-white basis-[95%] md:basis-full h-auto border mb-10 mx-auto'>
+              <div key={i} className='bg-white basis-[95%] md:basis-full h-auto border mb-10 mx-auto relative'>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
                   <img src={e.img} alt={e.title} className='mb-2 border shadow-sm cursor-pointer basis-full md:basis-1/2 md:mr-7 md:mb-5' onClick={()=>{OpenNewTab(e.URL)}} />
-                  <div className="text-start basis-full md:basis-1/2">
+                  <div className="text-start basis-full">
                     <div className='mb-2 md:mb-5'>
                       <p className='text-sm font-bold md-0 md:mb-2 md:text-2xl'>{e.id}</p>
                       <p className='text-sm md:text-2xl'>{e.title}</p>
@@ -94,6 +95,7 @@ function Slide({ dark }) {
                       <p className='text-sm md:text-2xl'>{e.desc3}</p>
                     </div>
                   </div>
+                  <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className='absolute text-2xl cursor-pointer bottom-2 right-2 md:bottom-7 md:right-7 md:text-3xl' />
                 </div>
               </div>
             </SwiperSlide>

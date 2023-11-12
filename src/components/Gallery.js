@@ -119,7 +119,7 @@ function Gallery({ dark }) {
           DataFilter.map((e,i)=>{
             return(
               <>
-              <div key={i} className='bg-white basis-4/5 md:basis-full h-auto md:h-[400px] border mb-10 mx-auto'>
+              <div key={i} className='bg-white basis-4/5 md:basis-full h-auto md:h-[400px] border mb-10 mx-auto relative'>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
                   <img src={e.img} alt={e.title} className='mb-2 basis-full md:basis-[55%] md:mr-7 md:mb-0 border cursor-pointer shadow-sm' onClick={()=>{OpenNewTab(e.URL)}} />
                   <div className="text-start">
@@ -138,7 +138,7 @@ function Gallery({ dark }) {
                       <p className='text-sm md:text-2xl'>{e.desc3}</p>
                     </div>
                   </div>
-                  <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className='cursor-pointer' />
+                  <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className='absolute text-2xl cursor-pointer bottom-2 right-2 md:bottom-7 md:right-7 md:text-3xl' />
                 </div>
               </div>
               </>
