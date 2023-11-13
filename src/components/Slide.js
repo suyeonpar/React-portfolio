@@ -13,28 +13,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function Slide({ dark }) {
-  
-  const [showSwiper, setShowSwiper] = useState(false);
-
 
     //새로운창 연결
     const OpenNewTab = (url) => {
         window.open(url, "_blank", "noopener, noreferrer");
     };
 
-  // 마우스오버 이벤트
-  const handleMouseOver = () => {
-    Swiper.autoplay.stop();
-  };
-  
-  const handleMouseOut = () => {
-    Swiper.autoplay.start();
-  };
+    // slide hover
+    const [slideHover, setSlideHover] = useState(null);
 
   return (
     <>
     <div className='w-full pb-20 mx-auto'>
-      <div className='mt-5 mb-2 ml-3 basis-full md:mr-2 md:mt-10 md:mb-5'>
+      <div className='mt-5 mb-2 ml-3 basis-full md:mr-2 md:mt-10 md:mb-10'>
         <p className={`text-sm md:text-xl ${dark ? 'text-white' : 'text-black'}`}>
           <span className='font-bold'>TOTAL: </span>{contentdata.length}
         </p>
@@ -43,12 +34,12 @@ function Slide({ dark }) {
         <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
         <div className="absolute right-0 transform -translate-x-1/2 -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
         {<Swiper
-          className='absolute top-[20%]'
+          className='swiper-styles absolute top-[25%] transition-all duration-300'
           loop={true}
           spaceBetween={10}
           slidesPerView={1}
           centeredSlides={true}
-          autoplay={{ delay: 4000, disableOnInteraction : false }}
+          autoplay={{ delay: 2500, disableOnInteraction : false }}
           breakpoints={{
             768: {
               slidesPerView: 2,
@@ -75,8 +66,10 @@ function Slide({ dark }) {
         >
         {
           contentdata.map((e, i) => (
-            <SwiperSlide style={{ overflow: "hidden" }} key={i}>
-              <div key={i} className='bg-white basis-[95%] md:basis-full h-auto border mb-10 mx-auto relative'>
+            <SwiperSlide style={{ overflow: "hidden", transition: "transform 0.3s" }} key={i} onMouseOver={()=>{document.querySelector('.swiper-styles').swiper.autoplay.stop(); setSlideHover(i)}} onMouseLeave={()=>{document.querySelector('.swiper-styles').swiper.autoplay.start(); setSlideHover(null);}}   className={`bg-white border transform ${
+              slideHover === i ? "-translate-y-10" : "translate-y-0"
+            }`}>
+              <div key={i} className='basis-[95%] md:basis-full h-auto mb-7 mx-auto relative'>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
                   <img src={e.img} alt={e.title} className='mb-2 border shadow-sm cursor-pointer basis-full md:basis-1/2 md:mr-7 md:mb-5' onClick={()=>{OpenNewTab(e.URL)}} />
                   <div className="text-start basis-full">

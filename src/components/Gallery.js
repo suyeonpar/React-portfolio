@@ -62,11 +62,11 @@ function Gallery({ dark }) {
               FilterId &&
               FilterId.map((e,i)=>{
                 return(
-                  <p key={i} className={`text-white text-[12px] leading-[60px] text-on cursor-pointer md:text-xl lg:text-2xl
+                  <span key={i} className={`text-white text-[12px] leading-[60px] text-on cursor-pointer md:text-xl lg:text-2xl
                   ${txt === i ? 'text-[14px] md:text-2xl lg:text-4xl font-bold on' : ''}`}
                    onClick={()=>{
                    setTxt(i)
-                  }}>{e}</p>
+                  }}>{e}</span>
                 )
               })
             }
@@ -132,7 +132,7 @@ function Gallery({ dark }) {
                       <p className='text-sm md:text-2xl'>{e.day}</p>
                     </div>
                     <div className='mb-2 md:mb-5'>
-                      <p className='text-sm font-bold md:text-2xl'>USE</p>
+                      <p className='text-sm font-bold md:text-2xl'>Use</p>
                       <p className='text-sm md:text-2xl'>{e.desc}</p>
                       <p className='text-sm md:text-2xl'>{e.desc2}</p>
                       <p className='text-sm md:text-2xl'>{e.desc3}</p>

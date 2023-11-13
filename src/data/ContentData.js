@@ -43,7 +43,7 @@ const contentdata = [
     "title" : "미니프로젝트 : 부산 축제 즐기기",
     "img" : "/images/festival-busan.jpg",
     "desc" : "React",
-    "desc2" : "useEffect",
+    "desc2" : "styled-components",
     "desc3" : "JavaScript",
     "URL" : "https://festival-pink.vercel.app/",
     "icon": faGithub,

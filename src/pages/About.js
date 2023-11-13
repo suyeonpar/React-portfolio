@@ -8,6 +8,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import './../index.css'
 import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
+import Aside from '../components/Aside';
 
 function About({ dark, toggleDarkMode }) {
 
@@ -51,7 +52,7 @@ function About({ dark, toggleDarkMode }) {
       title: "WORK EXPERIENCE",
       desc: "제가 경험한 것은요",
       desc2: ["No.1 스포츠 의류 쇼핑몰", "Allendino 남성쇼핑몰", "오늘미술학원"],
-      desc3: ["저는 웹디자이너로 꾸준히 일해왔습니다.","No.1 스포츠 의류 쇼핑몰 - 2022.11 ~ 2023.04", "웹디자인 업무(상세페이지, 배너 디자인 및 수정, 상품 업로드)", "Allendino 남성쇼핑몰 - 2021.10 ~ 2022.10","웹디자인 업무(상세페이지, 배너 디자인 및 수정, 상품 업로드)", "오늘미술학원 - 2016.01 ~ 2019.06","중,고등학생 입시미술 지도 및 강의"]
+      desc3: ["저는 웹디자이너로 꾸준히 일해왔습니다.","No.1 스포츠 의류 쇼핑몰 - 2022.11 ~ 2023.04", "웹디자인 업무(상세페이지, 배너 디자인 및 수정, 상품 업로드)", "Allendino 남성쇼핑몰 - 2021.10 ~ 2022.10","웹디자인 업무(상세페이지, 배너 디자인 및 수정, 상품 업로드)", "오늘미술학원 - 2016.01 ~ 2019.06 ","중,고등학생 입시미술 지도 및 강의"]
     },
     {
       title: "Collaboration & Tools ",
@@ -81,7 +82,7 @@ function About({ dark, toggleDarkMode }) {
   return (
     <>
     <Header dark={dark} toggleDarkMode={toggleDarkMode} />
-    <div className={`w-full mx-auto pt-[120px] md:pt-[180px] lg:pt-[200px] ${dark ? `bg-[#010b1a]` : `bg-white`}`}>
+    <div className={`w-full h-full mx-auto pt-[120px] md:pt-[180px] lg:pt-[200px] ${dark ? `bg-[#010b1a]` : `bg-white`}`}>
       <p className={`pb-5 md:pb-10 text-xl ${dark ? `text-white` : `text-black`} text-center md:text-4xl lg:text-5xl wow animate__fadeInUp`} data-wow-duration="1.5s">안녕하세요. 개발자 <span className='text-2xl font-bold text-[#5E5BE3] md:text-5xl lg:text-6xl'>박수연</span> 입니다.</p>
       <div className='flex mx-auto md:mb-20 max-w-7xl'>
         <div className="flex flex-wrap justify-between mx-auto text-center">
@@ -125,14 +126,14 @@ function About({ dark, toggleDarkMode }) {
                 }  
                 </li>
                 <li className="absolute text-xs cursor-pointer right-5 bottom-5 md:text-xl">
-                  <FontAwesomeIcon icon={faChevronDown} onClick={()=>{toggleArrows(i)}} className={`${isArrows[i] ? `rotate-180` : `rotate-0`}`}/>
+                  <FontAwesomeIcon icon={faChevronDown} onClick={()=>{toggleArrows(i)}} className={`${isArrows[i] ? `rotate-180` : `rotate-0`} ${dark ? `text-white` : `text-black`}`}/>
                 </li>
               </ul>
               {
                 isArrows[i] &&
                 Array(e.desc3.length).fill().map((_,index)=>{
                   return(
-                    <ul key={index} className='text-xs md:text-base md:even:text-base even:text-sm mt-2 mx-auto transition duration-100 w-[75%] md:w-[80%] lg:w-full odd:border-b even:font-bold'>
+                    <ul key={index} className={`text-xs md:text-base md:even:text-base even:text-sm mt-2 mx-auto transition duration-100 w-[75%] md:w-[80%] lg:w-full odd:border-b even:font-bold ${dark ? `text-[#ddd]` : ``}`}>
                       <li className='mb-3'>{data[i].desc3[index]}</li>
                     </ul>
                   )
@@ -143,10 +144,10 @@ function About({ dark, toggleDarkMode }) {
           })
         }
       </div>
-      <div className='w-full md:pb-3 md:pt-3 text-end'>
-      <span onClick={() => navigate(-1)} className={`cursor-pointer p-10 text-sm md:text-2xl ${dark ? `text-white` : ``}`}>Back</span>
+      <div className='w-full pb-1 md:pb-3 md:pt-3 text-end'>
+        <span onClick={() => navigate(-1)} className={`cursor-pointer mr-5 text-sm md:text-2xl ${dark ? `text-white` : ``}`}>Back</span>
       </div>
-      </div>
+    </div>
     <Footer />
     </>
   )

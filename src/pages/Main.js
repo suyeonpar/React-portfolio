@@ -16,25 +16,7 @@ import Work from '../components/Work';
 import { createStars } from './../store';
 import Contact from '../components/Contact';
 
-function Main() {
-
-  //다크모드
-  const savedDarkMode = localStorage.getItem('dark');
-  const isDarkMode = savedDarkMode ? savedDarkMode === 'true' : false;
-  const [dark, setDark] = useState(isDarkMode);
-
-  useEffect(() => {
-    if (dark) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-    localStorage.setItem('dark', dark ? 'true' : 'false');
-  }, [dark]);
-
-  const toggleDarkMode = () => {
-    setDark(!dark);
-  };
+function Main({dark, toggleDarkMode}) {
 
   //타이핑
   useEffect(() => {
@@ -115,9 +97,9 @@ function Main() {
         </div>
       </div>
       <Profile dark={dark} />
-      <Work dark={dark} Stars={Stars} stars={stars} restars={restars} />
-      <Use />
-      <Board />
+      <Work dark={dark} />
+      <Use dark={dark} /> 
+      <Board dark={dark} />
       <Contact />
       <Footer dark={dark} />
       <Aside dark={dark} toggleDarkMode={toggleDarkMode} />

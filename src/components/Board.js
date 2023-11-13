@@ -8,42 +8,14 @@ import React, { useState } from 'react'
 import './../index.css'
 import { useNavigate } from 'react-router-dom';
 
-function Board({ dark, toggleDarkMode }) {
-
-  const data = [
-    {
-      title : "clone cording",
-      img : "https://via.placeholder.com/300x200"
-    },
-    {
-      title : "game",
-      img : "https://via.placeholder.com/300x200"
-    },
-    {
-      title : "git",
-      img : "https://via.placeholder.com/300x200"
-    },
-    {
-      title : "notion",
-      img : "https://via.placeholder.com/300x200"
-    }, 
-    {
-      title : "notion",
-      img : "https://via.placeholder.com/300x200"
-    }, 
-    {
-      title : "notion",
-      img : "https://via.placeholder.com/300x200"
-    }
-  ]
+function Board({ dark }) {
 
   const [InputCnt, setInputCnt] = useState(0);
-  const navigate = useNavigate();
   const [maxLength, setMaxLength] = useState(50);
   
   //댓글 글자수 제한
   const InputText = (Comment, setComment) => {
-    if (Comment.length > maxLength) {
+    if (Comment.length >= maxLength) {
       setComment(Comment.slice(0, maxLength));
     }
     setInputCnt(Comment.length);
@@ -73,8 +45,10 @@ function Board({ dark, toggleDarkMode }) {
   return (
     <>
     <div className='w-full h-auto mx-auto text-center'>
-      <h3 className={`text-3xl ${dark ? `text-white` : `text-black`} font-bold md:text-6xl`}>BOARD</h3>
-      <p className={`mt-4 text-sm ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>의견을 남겨주세요 :{")"}</p>
+    <h3 className={`text-3xl font-bold md:text-6xl ${dark ? 'text-white' : 'text-black'}`}>
+  OPINION
+</h3>
+      <p className={`mt-4 text-sm ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>간단하게 의견을 남겨주세요 :{")"}</p>
       <div className='flex flex-wrap justify-between mx-auto mt-10 max-w-7xl'>
         <div className="h-28 md:h-40 bg-white border rounded-md basis-[59%] mb-5 mx-auto md:basis-1/2">
           <div className='bg-white border-b basis-full md:basis-1/2 overflow-y-scroll'>

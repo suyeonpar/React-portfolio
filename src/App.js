@@ -12,16 +12,28 @@ import './index.css'
 function App() { 
 
   //다크모드
-  const [dark, setDark] = useState(false);
-  const toggleDarkMode = () =>{
+  const savedDarkMode = localStorage.getItem('dark');
+  const isDarkMode = savedDarkMode ? savedDarkMode === 'true' : false;
+  const [dark, setDark] = useState(isDarkMode);
+
+  useEffect(() => {
+    if (dark) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem('dark', dark ? 'true' : 'false');
+  }, [dark]);
+
+  const toggleDarkMode = () => {
     setDark(!dark);
-  }
+  };
 
   return (
     <>
     <Header />
     <Routes>
-      <Route path='/' element={<Main />}></Route>
+      <Route path='/' element={<Main dark={dark} toggleDarkMode={toggleDarkMode} />}></Route>
       <Route path='/about' element={<About dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/content' element={<Content />} />
       <Route path='/*' element={<Notfound />} />
