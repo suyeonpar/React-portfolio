@@ -100,7 +100,7 @@ function Main({dark, toggleDarkMode}) {
       <Work dark={dark} />
       <Use dark={dark} /> 
       <Board dark={dark} />
-      <Contact />
+      <Contact dark={dark} />
       <Footer dark={dark} />
       <Aside dark={dark} toggleDarkMode={toggleDarkMode} />
     </div>

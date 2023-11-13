@@ -7,7 +7,6 @@ import PreventScroll from './components/PreventScroll';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
- 
   <BrowserRouter>
    <PreventScroll />
     <App />

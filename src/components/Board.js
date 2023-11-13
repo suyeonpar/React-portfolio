@@ -56,9 +56,9 @@ function Board({ dark }) {
               comments &&
               comments.map((Comment,i)=>{
                 return(
-                  <div key={i} className='p-2 items-center flex text-start justify-around mb-2 text-xs md:text-xl'>
+                  <div key={i} className='p-1 md:p-3 items-center flex text-start justify-around text-xs md:text-xl'>
                     <p className='mr-5'>{Comment}</p>
-                    <button onClick={deleteComment} className='bg-black w-12 h-5 border-gray-100 rounded-md text-white'>삭제</button>
+                    <button onClick={deleteComment} className='bg-black py-1 px-2 border-gray-100 rounded-md text-white'>삭제</button>
                   </div>
                 )
               })

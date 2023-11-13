@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import Header from './components/Header';
 import Content from './components/Content';
 import About from './pages/About';
-import Notfound from './pages/Notfound';
 import { useEffect, useState } from 'react';
 import './index.css'
+import Notfound from './pages/Notfound';
+import Footer from './components/Footer';
 
 function App() { 
 
@@ -31,7 +32,6 @@ function App() {
 
   return (
     <>
-    <Header />
     <Routes>
       <Route path='/' element={<Main dark={dark} toggleDarkMode={toggleDarkMode} />}></Route>
       <Route path='/about' element={<About dark={dark} toggleDarkMode={toggleDarkMode} />} />

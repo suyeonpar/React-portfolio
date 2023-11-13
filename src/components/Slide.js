@@ -66,9 +66,19 @@ function Slide({ dark }) {
         >
         {
           contentdata.map((e, i) => (
-            <SwiperSlide style={{ overflow: "hidden", transition: "transform 0.3s" }} key={i} onMouseOver={()=>{document.querySelector('.swiper-styles').swiper.autoplay.stop(); setSlideHover(i)}} onMouseLeave={()=>{document.querySelector('.swiper-styles').swiper.autoplay.start(); setSlideHover(null);}}   className={`bg-white border transform ${
-              slideHover === i ? "-translate-y-10" : "translate-y-0"
-            }`}>
+            <SwiperSlide
+              style={{ overflow: "hidden", transition: "transform 0.3s" }}
+              key={i}
+              onMouseOver={() => {
+                document.querySelector('.swiper-styles').swiper.autoplay.stop();
+                setSlideHover(i);
+              }}
+              onMouseLeave={() => {
+                document.querySelector('.swiper-styles').swiper.autoplay.start();
+                setSlideHover(null);
+              }}
+              className={`bg-white border transform ${slideHover === i ? 'hover:-translate-y-52' : ''}`}
+            >
               <div key={i} className='basis-[95%] md:basis-full h-auto mb-7 mx-auto relative'>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
                   <img src={e.img} alt={e.title} className='mb-2 border shadow-sm cursor-pointer basis-full md:basis-1/2 md:mr-7 md:mb-5' onClick={()=>{OpenNewTab(e.URL)}} />
