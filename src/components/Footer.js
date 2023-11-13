@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Footer({ dark, toggleDarkMode }) {
+function Footer() {
   return (
     <>
     <div className='w-full h-10 text-center bg-black border-t border-gray-600 md:h-[50px]'>
