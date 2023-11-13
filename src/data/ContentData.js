@@ -17,7 +17,7 @@ const contentdata = [
     "id" : "Clone",
     "day" : "2Weeks",
     "title" : "belif",
-    "img" : "/images/greenping.jpg",
+    "img" : "/images/belif.jpg",
     "desc" : "HTML",
     "desc2" : "CSS",
     "desc3" : "JavaScript",
@@ -47,7 +47,7 @@ const contentdata = [
     "desc3" : "JavaScript",
     "URL" : "https://festival-pink.vercel.app/",
     "icon": faGithub,
-    "gitURL" : ""
+    "gitURL" : "https://github.com/suyeonpar/Festival/blob/main/README.md"
   },
   { 
     "id" : "Mini.P",
@@ -59,13 +59,13 @@ const contentdata = [
     "desc3" : "tailwind CSS",
     "URL" : "https://parcel-pi-seven.vercel.app/",
     "icon": faGithub,
-    "gitURL" : ""
+    "gitURL" : "https://github.com/suyeonpar/Parcel/blob/main/README.md"
   },
   {
     "id" : "Game",
     "day" : "3Days",
     "title" : "Quiz",
-    "img" : "https://via.placeholder.com/600x310",
+    "img" : "/images/quiz.jpg",
     "desc" : "React",
     "desc2" : "Tailwind CSS",
     "desc3" : "JavaScript",
@@ -77,7 +77,7 @@ const contentdata = [
     "id" : "Game",
     "day" : "1Day",
     "title" : "Drawing",
-    "img" : "https://via.placeholder.com/600x310",
+    "img" : "/images/drawing.jpg",
     "desc" : "JavaScript",
     "desc2" : "HTML",
     "desc3" : "CSS",
@@ -104,7 +104,7 @@ const contentdata = [
     "desc" : "HTML",
     "desc2" : "CSS",
     "desc3" : "JavaScript",
-    "img" : "https://via.placeholder.com/600x310",
+    "img" : "/images/toy-project.jpg",
     "URL" : "https://suyeonpar.github.io/snail-race/",
     "icon": faGithub,
     "gitURL" : ""
