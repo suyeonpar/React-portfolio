@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import WOW from "wowjs";
 import "animate.css";
 import Gallery from "../components/Gallery";
 import Slide from "./Slide";
@@ -12,15 +11,16 @@ function Work({dark}) {
   const [showGallery, setShowGallery] = useState(true);
   const [showSlide, setShowSlide] = useState(false);
   
-  const toggleSlide = () =>{
-    setShowSlide(true);
-    setShowGallery(false);
-  };
+    const toggleSlide = () =>{
+      setShowSlide(true);
+      setShowGallery(false);
+    }
 
-  const toggleGallery = () => {
-    setShowGallery(true);
-    setShowSlide(false);
-  }
+    const toggleGallery = () => {
+      setShowGallery(true);
+      setShowSlide(false);
+    }
+
 
   return (
     <>
@@ -30,8 +30,8 @@ function Work({dark}) {
         <span onClick={toggleGallery} className={`p-2 text-xs mr-5 text-white bg-black cursor-pointer md:text-xl ${dark ? `border` : ``}`}>Gallery</span>
         <span onClick={toggleSlide} className={`p-2 text-xs text-white bg-black cursor-pointer md:text-xl ${dark ? `border` : ``}`}>Slide</span>
       </div>
-      {showGallery && <Gallery />}
-      {showSlide && <Slide />}
+      {showGallery && <Gallery dark={dark} />}
+      {showSlide && <Slide dark={dark} />}
     </div>
     </>
   );    

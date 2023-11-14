@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import contentdata from '../data/ContentData'
 import { useState } from 'react';
 import { createStars } from '../store';
-import Slide from './Slide';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Gallery({ dark }) {
@@ -111,8 +110,8 @@ function Gallery({ dark }) {
       </div>
     <div className='w-full mx-auto mt-7 md:mt-10'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
-        <div className='mb-2 ml-12 basis-full md:ml-0 md:mb-5'>
-          <p className={`${dark ? `text-white` : `text-black`} text-sm md:text-xl `}><span className={`${dark ? `text-white` : `text-black`} font-bold`}>TOTAL: </span>{DataFilter.length}</p>
+        <div className={`mb-2 ml-12 basis-full md:ml-0 md:mb-5 ${dark ? `text-white` : ``}`}>
+          <p className='text-sm md:text-xl'><span className='font-bold'>TOTAL: </span>{DataFilter.length}</p>
         </div>
         {
           DataFilter &&

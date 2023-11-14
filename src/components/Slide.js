@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { createStars } from './../store';
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
@@ -30,7 +29,7 @@ function Slide({ dark }) {
           <span className='font-bold'>TOTAL: </span>{contentdata.length}
         </p>
       </div>
-      <div className="relative flex justify-center items-center w-full h-[450px] mx-auto mb-[150px] bg-black">
+      <div className={`relative flex justify-center items-center w-full h-[450px] mx-auto mb-[150px] bg-black ${dark ? `border-t border-gray-700` : ``}`}>
         <div className="absolute left-0 transform translate-x-1/2 -translate-y-1/2 swiper-button-prev top-1/2" style={{ color: '#ddd' }} />
         <div className="absolute right-0 transform -translate-x-1/2 -translate-y-1/2 swiper-button-next top-1/2" style={{ color: '#ddd' }} />
         {<Swiper
@@ -77,7 +76,7 @@ function Slide({ dark }) {
                 document.querySelector('.swiper-styles').swiper.autoplay.start();
                 setSlideHover(null);
               }}
-              className={`bg-white border transform ${slideHover === i ? 'hover:-translate-y-52' : ''}`}
+              className={`bg-white border transform ${slideHover === i ? `-translate-y-52` : ``}`}
             >
               <div key={i} className='basis-[95%] md:basis-full h-auto mb-7 mx-auto relative'>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">

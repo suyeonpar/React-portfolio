@@ -1,16 +1,13 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'animate.css';
 import Typed from 'typed.js';
 import Board from '../components/Board';
 import Use from '../components/Use';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import WOW from 'wowjs';
 import '../App.css';
 import '../index.css';
 import Profile from '../components/Profile';
-import { faArrowDown, faL } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Aside from '../components/Aside';
 import Work from '../components/Work';
 import { createStars } from './../store';

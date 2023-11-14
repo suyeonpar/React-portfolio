@@ -1,4 +1,3 @@
-//import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { useEffect, useState } from "react";
 
 // 별 배경

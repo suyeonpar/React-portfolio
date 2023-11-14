@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-
 function Use({dark}) {
 
   const descData = [
@@ -23,12 +22,14 @@ function Use({dark}) {
  console.log(descData[0])
   return (
     <>
-    <div className='w-full mx-auto mb-20 mt-6 md:mt-24'>
+    <div className='w-full mx-auto mt-6 mb-20 md:mt-24'>
         <h3 className={`text-3xl mb-2 md:mb-5 text-black font-bold text-center md:text-6xl ${dark ? `text-white` : ``}`}>MINI BOARD</h3>
         <p className={`text-center text-sm mb-5 ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>미니 보드 만들기</p>
       <div className='flex flex-wrap justify-between h-full mx-auto max-w-7xl'>
-        <div className='bg-[#eee] border w-[45%] h-[200px] md:h-[600px] lg:h-[600px] mx-auto rounded-md basis-4/5 mb-5 md:basis-[48%]'></div>
-        <div className='overflow-y-scroll inner-custom" w-[45%] h-[200px] md:h-[600px] lg:h-[600px] bg-[#eee] shadow-inner border mx-auto rounded-md basis-4/5 md:basis-[48%] overflow-hidden'>
+        <div className='inner-custom bg-[#eee] border w-[45%] h-[200px] md:h-[600px] lg:h-[600px] mx-auto rounded-md basis-4/5 mb-5 md:basis-[48%]'>
+          <img src='https://via.placeholder.com/200x200/fff' alt='사진' />
+        </div>
+        <div className='overflow-y-scroll w-[45%] h-[200px] md:h-[600px] lg:h-[600px] bg-[#eee] shadow-inner border mx-auto rounded-md basis-4/5 md:basis-[48%] overflow-hidden'>
           {
             descData &&
             descData.map((e,i)=>{

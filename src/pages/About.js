@@ -7,8 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import './../index.css'
-import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
-import Aside from '../components/Aside';
+import { useNavigate } from 'react-router-dom';
 
 function About({ dark, toggleDarkMode }) {
 

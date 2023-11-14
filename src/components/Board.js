@@ -1,17 +1,10 @@
-import { faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Swiper, SwiperSlide   } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules'
-import 'swiper/css/navigation';
-import 'swiper/css';
 import React, { useState } from 'react'
 import './../index.css'
-import { useNavigate } from 'react-router-dom';
 
 function Board({ dark }) {
 
   const [InputCnt, setInputCnt] = useState(0);
-  const [maxLength, setMaxLength] = useState(50);
+  const [maxLength, setMaxLength] = useState(30);
   
   //댓글 글자수 제한
   const InputText = (Comment, setComment) => {
@@ -40,6 +33,7 @@ function Board({ dark }) {
     const newComments = [...comments];
     newComments.splice(idx, 1);
     setComments(newComments);
+    alert("삭제되었습니다.")
   };
   
   return (
@@ -50,15 +44,15 @@ function Board({ dark }) {
 </h3>
       <p className={`mt-4 text-sm ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>간단하게 의견을 남겨주세요 :{")"}</p>
       <div className='flex flex-wrap justify-between mx-auto mt-10 max-w-7xl'>
-        <div className="h-28 md:h-40 bg-white border rounded-md basis-[59%] mb-5 mx-auto md:basis-1/2">
-          <div className='bg-white border-b basis-full md:basis-1/2 overflow-y-scroll'>
+        <div className="overflow-hidden overflow-y-scroll h-28 md:h-40 bg-white border rounded-md basis-[59%] mb-5 mx-auto md:basis-1/2">
+          <div className='bg-white basis-full md:basis-1/2'>
             {
               comments &&
               comments.map((Comment,i)=>{
                 return(
-                  <div key={i} className='p-1 md:p-3 items-center flex text-start justify-around text-xs md:text-xl'>
-                    <p className='mr-5'>{Comment}</p>
-                    <button onClick={deleteComment} className='bg-black py-1 px-2 border-gray-100 rounded-md text-white'>삭제</button>
+                  <div key={i} className='flex items-center justify-around p-1 text-xs border-b md:p-3 text-start md:text-xl'>
+                    <p className='basis-[70%]'>{Comment}</p>
+                    <button onClick={deleteComment} className='px-2 py-1 text-white bg-black border-gray-100 rounded-md'>삭제</button>
                   </div>
                 )
               })
@@ -71,7 +65,7 @@ function Board({ dark }) {
               rows="5"
               cols="40"
               maxLength={maxLength}
-              className="p-2 text-black text-xs md:text-xl placeholder-gray-400 border rounded textarea"
+              className="p-2 text-xs text-black placeholder-gray-400 border rounded md:text-xl textarea"
               placeholder="의견 작성하기."
               value={Comment}
               onChange={(e) => {
