@@ -52,7 +52,7 @@ function Header({ dark, toggleDarkMode }) {
         <ul className='items-center hidden mr-3 text-2xl cursor-pointer md:flex'>
           <NavLink to='/about'><li className='mr-5'>about</li></NavLink>
           <li className='mr-5'>work</li>
-          <li className='mr-5'>board</li>
+          <li className='mr-5'>renew</li>
           <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={dark ? `bg-black text-white` : `bg-white text-black`} />
         </ul>
         <div onClick={handleHamburgerClick} className='mt-2 mr-5 transition-all cursor-pointer md:hidden'>

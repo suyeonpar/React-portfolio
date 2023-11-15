@@ -11,7 +11,9 @@ const contentdata = [
       "img" : "/images/greenping.jpg",
       "URL" : "https://suyeonpar.github.io/clone-belif/",
       "icon": faGithub,
-      "gitURL" : ""
+      "nimg" : "/images/notion.png",
+      "gitURL" : "https://github.com/kkkkinderjoy/project_greenping/blob/main/README.md",
+      "notionURL" : "https://www.notion.so/greenping-91cd4bfbc52f4e68b571045537b7b5dc?pvs=4"
   },
   {
     "id" : "Clone",
@@ -23,7 +25,7 @@ const contentdata = [
     "desc3" : "JavaScript",
     "URL" : "https://suyeonpar.github.io/clone-belif/",
     "icon": faGithub,
-    "gitURL" : ""
+    "gitURL" : "https://github.com/suyeonpar/clone-belif/blob/main/README.md"
   },
   {
     "id" : "Clone",
@@ -35,7 +37,7 @@ const contentdata = [
     "desc3" : "JavaScript",
     "URL" : "https://suyeonpar.github.io/subway/",
     "icon": faGithub,
-    "gitURL" : ""
+    "gitURL" : "https://github.com/suyeonpar/subway/blob/main/README.md"
   },
   {
     "id" : "Mini.P",
@@ -71,19 +73,19 @@ const contentdata = [
     "desc3" : "JavaScript",
     "URL" : "https://quiz-one-sigma.vercel.app/",
     "icon": faGithub,
-    "gitURL" : ""
+    "gitURL" : "https://github.com/suyeonpar/Quiz/blob/main/README.md"
   },
   {
     "id" : "Game",
     "day" : "1Day",
-    "title" : "Drawing",
-    "img" : "/images/drawing.jpg",
-    "desc" : "JavaScript",
-    "desc2" : "HTML",
-    "desc3" : "CSS",
-    "URL" : "https://suyeonpar.github.io/drawing-mini-game/",
+    "title" : "Snail Race",
+    "desc" : "HTML",
+    "desc2" : "CSS",
+    "desc3" : "JavaScript",
+    "img" : "/images/toy-project.jpg",
+    "URL" : "https://suyeonpar.github.io/snail-race/",
     "icon": faGithub,
-    "gitURL" : ""
+    "gitURL" : "https://github.com/suyeonpar/snail-race/blob/main/README.md"
   },
   {
     "id" : "Game",
@@ -100,14 +102,14 @@ const contentdata = [
   {
     "id" : "Game",
     "day" : "1Day",
-    "title" : "Snail Race",
-    "desc" : "HTML",
-    "desc2" : "CSS",
-    "desc3" : "JavaScript",
-    "img" : "/images/toy-project.jpg",
-    "URL" : "https://suyeonpar.github.io/snail-race/",
+    "title" : "Drawing",
+    "img" : "/images/drawing.jpg",
+    "desc" : "JavaScript",
+    "desc2" : "HTML",
+    "desc3" : "CSS",
+    "URL" : "https://suyeonpar.github.io/drawing-mini-game/",
     "icon": faGithub,
-    "gitURL" : ""
+    "gitURL" : "https://github.com/suyeonpar/drawing-mini-game/blob/main/README.md"
   }
 ]
 

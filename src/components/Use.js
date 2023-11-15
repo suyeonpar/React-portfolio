@@ -5,8 +5,9 @@ function Use({dark}) {
   const descData = [
     {
       id: 1,
-      title: "1. 회원가입 하기",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      title: "기존 메인화면",
+      desc: "",
+      img: ""
     },
     {
       id: 2,
@@ -23,8 +24,8 @@ function Use({dark}) {
   return (
     <>
     <div className='w-full mx-auto mt-6 mb-20 md:mt-24'>
-        <h3 className={`text-3xl mb-2 md:mb-5 text-black font-bold text-center md:text-6xl ${dark ? `text-white` : ``}`}>MINI BOARD</h3>
-        <p className={`text-center text-sm mb-5 ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>미니 보드 만들기</p>
+        <h3 className={`text-3xl mb-2 md:mb-5 text-black font-bold text-center md:text-6xl ${dark ? `text-white` : ``}`}>RENEWAL</h3>
+        <p className={`text-center text-sm mb-5 ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>새롭게 만들다</p>
       <div className='flex flex-wrap justify-between h-full mx-auto max-w-7xl'>
         <div className='inner-custom bg-[#eee] border w-[45%] h-[200px] md:h-[600px] lg:h-[600px] mx-auto rounded-md basis-4/5 mb-5 md:basis-[48%]'>
           <img src='https://via.placeholder.com/200x200/fff' alt='사진' />

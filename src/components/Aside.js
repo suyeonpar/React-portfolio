@@ -39,7 +39,7 @@ function Aside({dark, toggleDarkMode}) {
         isActive &&
         <ul className='flex flex-col items-center text-xl md:text-3xl p-3 rounded-[45%] z-[99999]'>
           <li>
-          <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`rounded-[50%] p-1 text-xl md:hidden ${dark ? `bg-black text-white` : `text-black`}`} />
+          <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`rounded-[50%] p-1 text-xl md:hidden cursor-pointer ${dark ? `bg-black text-white` : `text-black`}`} />
           </li>
           <li onClick={Top} className={ `p-1 rounded-full ${dark ? `text-white bg-[#02081f]` : ``}`}><FontAwesomeIcon icon={faChevronUp} /></li>
           <li onClick={Down} className={ `p-1 rounded-full ${dark ? `text-white bg-[#02081f]` : ``}`}><FontAwesomeIcon icon={faChevronDown} /></li>

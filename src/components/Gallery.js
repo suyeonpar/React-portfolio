@@ -136,8 +136,16 @@ function Gallery({ dark }) {
                       <p className='text-sm md:text-2xl'>{e.desc2}</p>
                       <p className='text-sm md:text-2xl'>{e.desc3}</p>
                     </div>
-                  </div>
-                  <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className='absolute text-2xl cursor-pointer bottom-2 right-2 md:bottom-7 md:right-7 md:text-3xl' />
+                  </div> 
+                    <div className='absolute bottom-2 right-2'>
+                      {
+                        e.nimg &&
+                        <img src={e.nimg} alt='노션 이미지' onClick={()=>{OpenNewTab(e.notionURL)}} className='w-7 h-7 mb-1 md:w-8 md:h-8 cursor-pointer'/>
+                      }
+                      <div>
+                      <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className='text-2xl cursor-pointer md:text-3xl' />
+                      </div>
+                    </div>
                 </div>
               </div>
               </>

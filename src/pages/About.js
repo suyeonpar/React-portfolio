@@ -51,19 +51,19 @@ function About({ dark, toggleDarkMode }) {
       title: "WORK EXPERIENCE",
       desc: "제가 경험한 것은요",
       desc2: ["No.1 스포츠 의류 쇼핑몰", "Allendino 남성쇼핑몰", "오늘미술학원"],
-      desc3: ["저는 웹디자이너로 꾸준히 일해왔습니다.","No.1 스포츠 의류 쇼핑몰 - 2022.11 ~ 2023.04", "웹디자인 업무(상세페이지, 배너 디자인 및 수정, 상품 업로드)", "Allendino 남성쇼핑몰 - 2021.10 ~ 2022.10","웹디자인 업무(상세페이지, 배너 디자인 및 수정, 상품 업로드)", "오늘미술학원 - 2016.01 ~ 2019.06 ","중,고등학생 입시미술 지도 및 강의"]
+      desc3: ["No.1 스포츠 의류 쇼핑몰 - 2022.11 ~ 2023.04", "웹디자인 업무(상세페이지, 배너 디자인 및 수정, 상품 업로드)", "Allendino 남성쇼핑몰 - 2021.10 ~ 2022.10","웹디자인 업무(상세페이지, 배너 디자인 및 수정, 상품 업로드)", "오늘미술학원 - 2016.01 ~ 2019.06 ","중,고등학생 입시미술 지도 및 강의"]
     },
     {
       title: "Collaboration & Tools ",
       desc: "제가 자신있는 협업툴은요",
       desc2: ["figma", "npm(Node Package Manager)", "Yarn", "Git", "GitHub", "Notion", "Vercel"],
-      desc3: ["","figma","figma를 사용하여 디자인 프로세스를 간편하게 디자인 할 수 있습니다. 실시간 협업과 간편한 인터페이스 덕분에, 나만의 작업실을 마련하고 창의적인 디자인을 자유롭게 펼칠 수 있습니다.","npm(Node Package Manager)", "npm을 통해 글로벌 및 로컬로 패키지를 설치하는 방법을 이해하고, 각각의 장단점을 고려하여 적절히 활용할 수 있습니다.", "Yarn","Yarn 스크립트를 통해 프로젝트 빌드, 테스트, 배포 등의 작업을 자동화하고 효율적으로 수행할 수 있습니다.","Git","Git을 통해 원격 저장소와 협업하고, 팀원들과 코드를 효과적으로 공유하며 변경 사항을 통합할 수 있습니다.","GitHub","Git을 기반으로 하는 코드 호스팅 플랫폼을 사용해 Git으로 관리되는 프로젝트를 온라인 상에서 저장소(repository)로 호스팅하고, 다른 개발자들과 협업할 수 있습니다.","Notion","Notion을 사용하여 다양한 형식의 문서를 작성하고 노트테이킹을 수행합니다. 텍스트, 이미지, 체크리스트 등을 통합하여 효과적으로 정보를 기록할 수 있습니다.","Vercel","Vercel을 사용하여 정적인 웹사이트 및 서버리스 함수를 효과적으로 배포하고 관리할 수 있습니다"]
+      desc3: ["figma","figma를 사용하여 디자인 프로세스를 간편하게 디자인 할 수 있습니다. 실시간 협업과 간편한 인터페이스 덕분에, 나만의 작업실을 마련하고 창의적인 디자인을 자유롭게 펼칠 수 있습니다.","npm(Node Package Manager)", "npm을 통해 글로벌 및 로컬로 패키지를 설치하는 방법을 이해하고, 각각의 장단점을 고려하여 적절히 활용할 수 있습니다.", "Yarn","Yarn 스크립트를 통해 프로젝트 빌드, 테스트, 배포 등의 작업을 자동화하고 효율적으로 수행할 수 있습니다.","Git","Git을 통해 원격 저장소와 협업하고, 팀원들과 코드를 효과적으로 공유하며 변경 사항을 통합할 수 있습니다.","GitHub","Git을 기반으로 하는 코드 호스팅 플랫폼을 사용해 Git으로 관리되는 프로젝트를 온라인 상에서 저장소(repository)로 호스팅하고, 다른 개발자들과 협업할 수 있습니다.","Notion","Notion을 사용하여 다양한 형식의 문서를 작성하고 노트테이킹을 수행합니다. 텍스트, 이미지, 체크리스트 등을 통합하여 효과적으로 정보를 기록할 수 있습니다.","Vercel","Vercel을 사용하여 정적인 웹사이트 및 서버리스 함수를 효과적으로 배포하고 관리할 수 있습니다"]
     },
     {
       title : "EDUCTION",
-      desc : "제가 배운것은요",
+      desc : "저는 과거부터 현재까지 그리고 앞으로도",
       desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "Deep Dive"],
-      desc3: ["저는 과거부터 현재까지 그리고 앞으로도","Deep Dive - 2023.09 ~", "자바스크립트의 이해를 돕고자 정독","그린 컴퓨터아트학원 - 2023.06.29 ~ 2023.11.30","공부", "그린 온라인 캠프 - 2023.09 ~ 2023.10","javascript 이해를 위해 강의 시청"]
+      desc3: ["Deep Dive - 2023.09 ~", "자바스크립트의 이해를 돕고자 정독","그린 컴퓨터아트학원 - 2023.06.29 ~ 2023.11.30","공부", "그린 온라인 캠프 - 2023.09 ~ 2023.10","javascript 이해를 위해 강의 시청"]
     }
   ]
 
@@ -132,7 +132,7 @@ function About({ dark, toggleDarkMode }) {
                 isArrows[i] &&
                 Array(e.desc3.length).fill().map((_,index)=>{
                   return(
-                    <ul key={index} className={`text-xs md:text-base md:even:text-base even:text-sm mt-2 mx-auto transition duration-100 w-[75%] md:w-[80%] lg:w-full odd:border-b even:font-bold ${dark ? `text-[#ddd]` : ``}`}>
+                    <ul key={index} className={`text-xs md:text-base md:even:text-base even:text-sm mt-2 mx-auto transition duration-100 w-[75%] md:w-[80%] lg:w-full odd:border-b ${dark ? `text-[#ddd]` : ``}`}>
                       <li className='mb-3'>{data[i].desc3[index]}</li>
                     </ul>
                   )

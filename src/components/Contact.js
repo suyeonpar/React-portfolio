@@ -11,7 +11,7 @@ function Contact({ dark }) {
           <img src='/images/qrcode_50.png' alt='카카오톡 연결' className={`w-10 md:w-20 ${dark ? `bg-white rounded-sm` : ``}`} />
         </div>
       </div>
-      <div className={`text-sm text-center md:text-4xl ${dark ? `text-white` : ``}`}>
+      <div className={`text-xl text-center md:text-4xl ${dark ? `text-white` : ``}`}>
         <p className='mb-2 md:mb-5'>or</p>
         <p className='mb-5'>sksrbdpdy@naver.com</p>
       </div>
