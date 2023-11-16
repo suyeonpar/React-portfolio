@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import 'animate.css';
 import Typed from 'typed.js';
 import Board from '../components/Board';
@@ -48,6 +48,10 @@ function Main({dark, toggleDarkMode}) {
     setRestars(restars);
   }, [Stars, width, height, rewidth, reheight]);
 
+  // 스크롤 이동
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const workRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
     <div className={`w-full ${dark ? `bg-[#02081f]` : `bg-white`} h-full mx-auto`}>
@@ -95,7 +99,7 @@ function Main({dark, toggleDarkMode}) {
       <Profile dark={dark} />
       <Work dark={dark} />
       {/* <Use dark={dark} />  */}
-      <Board dark={dark} />
+      {/* <Board dark={dark} /> */}
       {/* <Contact dark={dark} /> */}
       <Aside dark={dark} toggleDarkMode={toggleDarkMode} />
     </div>

@@ -63,7 +63,7 @@ function About({ dark, toggleDarkMode }) {
       title : "EDUCTION",
       desc : "저는 과거부터 현재까지 그리고 앞으로도",
       desc2 : ["그린 컴퓨터아트학원", "그린 온라인 캠프", "Deep Dive"],
-      desc3: ["Deep Dive - 2023.09 ~", "자바스크립트의 이해를 돕고자 정독","그린 컴퓨터아트학원 - 2023.06.29 ~ 2023.11.30","공부", "그린 온라인 캠프 - 2023.09 ~ 2023.10","javascript 이해를 위해 강의 시청"]
+      desc3: ["Deep Dive - 2023.09 ~", "자바스크립트의 이해를 돕고자 정독","그린 컴퓨터아트학원 - 2023.06.29 ~ 2023.11.30 500시간","(혼합+디지털컨버전스) React를 활용한 프론트엔드 개발자 양성 (SPA 프로젝트 개발) A 과정 공부", "그린 온라인 캠프 - 2023.09 ~ 2023.10","javascript 이해를 위해 강의 시청"]
     }
   ]
 
@@ -76,6 +76,19 @@ function About({ dark, toggleDarkMode }) {
       newArrows[i] = !newArrows[i];
       return newArrows;
     });
+  };
+
+  // 글자복제
+  const [textToCopy, setTextToCopy] = useState('sksrbdpdy@naver.com')
+  
+  const copyClick = () => {
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        alert("주소가 복사되었습니다. :)");
+      })
+      .catch((err) => {
+        console.error('클립보드 복사 실패:', err);
+      });
   };
   
   return (
@@ -98,7 +111,7 @@ function About({ dark, toggleDarkMode }) {
               })
             }
             <div className='flex mx-auto w-full md:w-[95%] lg:w-full justify-between items-center'>
-              <span className={`text-sm ${dark ? `text-white` : `text-[#221616]`} cursor-pointer group relative md:text-2xl lg:text-3xl lg:ml-0`}>sksrbdpdy@naver.com
+              <span onClick={copyClick} className={`text-sm ${dark ? `text-white` : `text-[#221616]`} cursor-pointer group relative md:text-2xl lg:text-3xl lg:ml-0`}>sksrbdpdy@naver.com
               <span className={`absolute text-sm hidden truncate ${dark ? `text-[#5c5c5c]` : `text-[#ddd]`} left-0 transform group-hover:block transition-[1s] md:text-xl lg:text-2xl group-hover:lg:top-11 group-hover:md:top-8`}>메일은 언제나 환영입니다. :{')'}</span></span>
               <div className='flex mt-0 md:mt-2'> 
                 <FontAwesomeIcon icon={faGithub} onClick={gitClick} className={`text-2xl md:text-[40px] p-1 cursor-pointer ${dark ? `bg-white rounded-lg` : ``}`} />

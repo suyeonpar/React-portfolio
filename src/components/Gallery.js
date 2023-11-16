@@ -118,7 +118,7 @@ function Gallery({ dark }) {
           DataFilter.map((e,i)=>{
             return(
               <>
-              <div key={i} className='bg-white basis-4/5 md:basis-[90%] lg:basis-full h-auto lg:h-[400px] border mb-10 mx-auto relative'>
+              <div key={i} className={`${dark ? `bg-gray-200` : `bg-white`} basis-4/5 md:basis-[90%] lg:basis-full h-auto lg:h-[400px] border mb-10 mx-auto relative`}>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
                   <img src={e.img} alt={e.title} className='mb-2 basis-full lg:basis-[55%] md:mb-3 lg:mr-7 border cursor-pointer shadow-sm' onClick={()=>{OpenNewTab(e.URL)}} />
                   <div className="text-start">
@@ -140,10 +140,10 @@ function Gallery({ dark }) {
                   <div className='absolute bottom-2 right-2 md:right-3 lg:right-5 lg:bottom-7'>
                     {
                       e.nimg &&
-                      <img src={e.nimg} alt='노션 이미지' onClick={()=>{OpenNewTab(e.notionURL)}} className='w-7 h-7 mb-1 md:w-8 md:h-8 lg:w-10 lg:h-10 cursor-pointer'/>
+                      <img src={e.nimg} alt='노션 이미지' onClick={()=>{OpenNewTab(e.notionURL)}} className='mb-1 cursor-pointer w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10'/>
                     }
                     <div>
-                    <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className='text-2xl cursor-pointer md:text-3xl lg:text-4xl' />
+                    <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className={`text-2xl cursor-pointer md:text-3xl lg:text-4xl ${dark ? `bg-white rounded-[50%]` : ``}`} />
                     </div>
                   </div>
                 </div>
