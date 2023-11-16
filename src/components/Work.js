@@ -25,7 +25,7 @@ function Work({dark}) {
   return (
     <>
     <div className='w-full mt-[150px] pb-20 mx-auto'>
-      <p className={`md:mb-20 mb-10 text-3xl font-bold text-center md:text-6xl ${dark ? `text-white` : `text-black`}`}>WORK</p>
+      <p className={`md:mb-12 lg:mb-16 mb-8 text-3xl font-bold text-center md:text-5xl lg:text-6xl ${dark ? `text-white` : `text-black`}`}>WORK</p>
       <div className="w-[90%] flex justify-center mx-auto mb-7">
         <span onClick={toggleGallery} className={`p-2 text-xs mr-5 text-white bg-black cursor-pointer md:text-xl ${dark ? `border` : ``}`}>Gallery</span>
         <span onClick={toggleSlide} className={`p-2 text-xs text-white bg-black cursor-pointer md:text-xl ${dark ? `border` : ``}`}>Slide</span>

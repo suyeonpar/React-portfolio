@@ -51,7 +51,6 @@ function Main({dark, toggleDarkMode}) {
   return (
     <>
     <div className={`w-full ${dark ? `bg-[#02081f]` : `bg-white`} h-full mx-auto`}>
-      <Header dark={dark} toggleDarkMode={toggleDarkMode} />
       <div className={`w-full overflow-hidden h-[500px] transform pb-10 md:h-[800px] ${dark ? `bg-gradient-to-b from-[#010b1a] via-[#010b1a] to-black` : `bg-gradient-to-b from-black via-[#010b1a] to-[#fff] `}`}>
         <div className='relative custom-spin-animation'> 
           {
@@ -95,10 +94,9 @@ function Main({dark, toggleDarkMode}) {
       </div>
       <Profile dark={dark} />
       <Work dark={dark} />
-      <Use dark={dark} /> 
+      {/* <Use dark={dark} />  */}
       <Board dark={dark} />
       {/* <Contact dark={dark} /> */}
-      <Footer dark={dark} />
       <Aside dark={dark} toggleDarkMode={toggleDarkMode} />
     </div>
     </>

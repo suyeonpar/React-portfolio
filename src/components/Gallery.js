@@ -53,16 +53,16 @@ function Gallery({ dark }) {
   return (
     <>
     <div className="flex flex-wrap items-center mx-auto">
-        <div className={`h-[40px] w-[80%] leading-[40px] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[60px] md:w-[60%]`}>
+        <div className={`h-[40px] w-[80%] leading-[40px] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[50px] lg:h-[60px] md:w-[70%] lg:w-[60%]`}>
         <div className='flex w-[82%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
-            <p className={`text-white text-[12px] cursor-pointer md:text-2xl
-            ${txt === -1 ? 'text-[14px] md:text-3xl lg:text-4xl font-bold on' : ''}`} onClick={() => {setTxt(-1);}}>ALL</p>
+            <p className={`text-white text-[12px] cursor-pointer md:text-xl
+            ${txt === -1 ? 'text-[14px] md:text-2xl lg:text-3xl font-bold on' : ''}`} onClick={() => {setTxt(-1);}}>ALL</p>
             {
               FilterId &&
               FilterId.map((e,i)=>{
                 return(
                   <span key={i} className={`text-white text-[12px] leading-[60px] text-on cursor-pointer md:text-xl lg:text-2xl
-                  ${txt === i ? 'text-[14px] md:text-2xl lg:text-4xl font-bold on' : ''}`}
+                  ${txt === i ? 'text-[14px] md:text-2xl lg:text-3xl font-bold on' : ''}`}
                    onClick={()=>{
                    setTxt(i)
                   }}>{e}</span>
@@ -110,7 +110,7 @@ function Gallery({ dark }) {
       </div>
     <div className='w-full mx-auto mt-7 md:mt-10'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
-        <div className={`mb-2 ml-12 basis-full md:ml-0 md:mb-5 ${dark ? `text-white` : ``}`}>
+        <div className={`mb-2 ml-12 basis-full md:ml-10 md:mb-5 lg:ml-0 ${dark ? `text-white` : ``}`}>
           <p className='text-sm md:text-xl'><span className='font-bold'>TOTAL: </span>{DataFilter.length}</p>
         </div>
         {
@@ -118,9 +118,9 @@ function Gallery({ dark }) {
           DataFilter.map((e,i)=>{
             return(
               <>
-              <div key={i} className='bg-white basis-4/5 md:basis-full h-auto md:h-[400px] border mb-10 mx-auto relative'>
+              <div key={i} className='bg-white basis-4/5 md:basis-[90%] lg:basis-full h-auto lg:h-[400px] border mb-10 mx-auto relative'>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
-                  <img src={e.img} alt={e.title} className='mb-2 basis-full md:basis-[55%] md:mr-7 md:mb-0 border cursor-pointer shadow-sm' onClick={()=>{OpenNewTab(e.URL)}} />
+                  <img src={e.img} alt={e.title} className='mb-2 basis-full lg:basis-[55%] md:mb-3 lg:mr-7 border cursor-pointer shadow-sm' onClick={()=>{OpenNewTab(e.URL)}} />
                   <div className="text-start">
                     <div className='mb-2 md:mb-5'>
                       <p className='text-sm font-bold md-0 md:mb-2 md:text-2xl'>{e.id}</p>
@@ -137,15 +137,15 @@ function Gallery({ dark }) {
                       <p className='text-sm md:text-2xl'>{e.desc3}</p>
                     </div>
                   </div> 
-                    <div className='absolute bottom-2 right-2'>
-                      {
-                        e.nimg &&
-                        <img src={e.nimg} alt='노션 이미지' onClick={()=>{OpenNewTab(e.notionURL)}} className='w-7 h-7 mb-1 md:w-8 md:h-8 cursor-pointer'/>
-                      }
-                      <div>
-                      <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className='text-2xl cursor-pointer md:text-3xl' />
-                      </div>
+                  <div className='absolute bottom-2 right-2 md:right-3 lg:right-5 lg:bottom-7'>
+                    {
+                      e.nimg &&
+                      <img src={e.nimg} alt='노션 이미지' onClick={()=>{OpenNewTab(e.notionURL)}} className='w-7 h-7 mb-1 md:w-8 md:h-8 lg:w-10 lg:h-10 cursor-pointer'/>
+                    }
+                    <div>
+                    <FontAwesomeIcon icon={e.icon} onClick={()=>{OpenNewTab(e.gitURL)}} className='text-2xl cursor-pointer md:text-3xl lg:text-4xl' />
                     </div>
+                  </div>
                 </div>
               </div>
               </>
