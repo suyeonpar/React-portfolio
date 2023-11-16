@@ -52,62 +52,62 @@ function Gallery({ dark }) {
 
   return (
     <>
-    <div className="flex flex-wrap items-center mx-auto">
-        <div className={`h-[40px] w-[80%] leading-[40px] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[50px] lg:h-[60px] md:w-[70%] lg:w-[60%]`}>
+    <div className="flex flex-wrap items-center mx-auto max-w-7xl">
+      <div className={`h-[40px] w-[80%] leading-[40px] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[50px] lg:h-[60px] md:w-full`}>
         <div className='flex w-[82%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
-            <p className={`text-white text-[12px] cursor-pointer md:text-xl
-            ${txt === -1 ? 'text-[14px] md:text-2xl lg:text-3xl font-bold on' : ''}`} onClick={() => {setTxt(-1);}}>ALL</p>
-            {
-              FilterId &&
-              FilterId.map((e,i)=>{
-                return(
-                  <span key={i} className={`text-white text-[12px] leading-[60px] text-on cursor-pointer md:text-xl lg:text-2xl
-                  ${txt === i ? 'text-[14px] md:text-2xl lg:text-3xl font-bold on' : ''}`}
-                   onClick={()=>{
-                   setTxt(i)
-                  }}>{e}</span>
-                )
-              })
-            }
-          </div>
-          <div className='flex w-[82%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
-          </div>
-          <div className='relative h-full custom-spin-animation'> 
-            {stars &&
-              stars.map((e,i) => (
-                <div
-                  key={i}
-                  className="absolute -top-[50px] bg-white rounded-full"
-                  style={{
-                    left: `${e.x}px`,
-                    top: `${e.y}px`,
-                    width: `${e.size}px`,
-                    height: `${e.size}px`,
-                  }}
-                ></div>
+          <p className={`text-white text-[12px] cursor-pointer md:text-xl
+          ${txt === -1 ? 'text-[14px] md:text-2xl lg:text-3xl font-bold on' : ''}`} onClick={() => {setTxt(-1);}}>ALL</p>
+          {
+            FilterId &&
+            FilterId.map((e,i)=>{
+              return(
+                <span key={i} className={`text-white text-[12px] leading-[60px] text-on cursor-pointer md:text-xl lg:text-2xl
+                ${txt === i ? 'text-[14px] md:text-2xl lg:text-3xl font-bold on' : ''}`}
+                 onClick={()=>{
+                 setTxt(i)
+                }}>{e}</span>
               )
-            )}
-          </div>
-          <div className='relative custom-spin-animation2'> 
-          {restars &&
-            restars.map((e, i) => (
+            })
+          }
+        </div>
+        <div className='flex w-[82%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
+        </div>
+        <div className='relative h-full custom-spin-animation'> 
+          {stars &&
+            stars.map((e,i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-white rounded-full overflow-hidden left-[50%]"
+                className="absolute -top-[50px] bg-white rounded-full"
                 style={{
                   left: `${e.x}px`,
                   top: `${e.y}px`,
                   width: `${e.size}px`,
                   height: `${e.size}px`,
-                  animationDelay: `${e.animationDelay}s`
                 }}
-              >
-              </div>
-            ))
-          }
+              ></div>
+            )
+          )}
         </div>
+        <div className='relative custom-spin-animation2'> 
+        {restars &&
+          restars.map((e, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-white rounded-full overflow-hidden left-[50%]"
+              style={{
+                left: `${e.x}px`,
+                top: `${e.y}px`,
+                width: `${e.size}px`,
+                height: `${e.size}px`,
+                animationDelay: `${e.animationDelay}s`
+              }}
+            >
+            </div>
+          ))
+        }
       </div>
-      </div>
+    </div>
+    </div>
     <div className='w-full mx-auto mt-7 md:mt-10'>
       <div className='flex flex-wrap justify-between mx-auto max-w-7xl'>
         <div className={`mb-2 ml-12 basis-full md:ml-10 md:mb-5 lg:ml-0 ${dark ? `text-white` : ``}`}>

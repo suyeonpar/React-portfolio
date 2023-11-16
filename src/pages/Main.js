@@ -33,11 +33,11 @@ function Main({dark, toggleDarkMode}) {
   }, []);
 
   //별배경
-  const Stars = 2000;
-  const [width, setWidth] = useState(1920);
-  const [height, setHeight] = useState(800);
-  const [rewidth, setReWidth] = useState(1920);
-  const [reheight, setReHeight] = useState(-800);
+  const Stars = 2500;
+  const [width, setWidth] = useState(2500);
+  const [height, setHeight] = useState(1000);
+  const [rewidth, setReWidth] = useState(2500);
+  const [reheight, setReHeight] = useState(-1000);
 
   const [stars, setStars] = useState([]);
   const [restars, setRestars] = useState([]);
@@ -51,7 +51,7 @@ function Main({dark, toggleDarkMode}) {
   return (
     <>
     <div className={`w-full ${dark ? `bg-[#02081f]` : `bg-white`} h-full mx-auto`}>
-      <div className={`w-full overflow-hidden h-[500px] transform pb-10 md:h-[800px] ${dark ? `bg-gradient-to-b from-[#010b1a] via-[#010b1a] to-black` : `bg-gradient-to-b from-black via-[#010b1a] to-[#fff] `}`}>
+      <div className={`w-full overflow-hidden h-[500px] transform pb-10 md:h-[1000px] ${dark ? `bg-gradient-to-t from-[#010b1a] to-black` : `bg-gradient-to-b from-black via-[#010b1a] to-[#fff] `}`}>
         <div className='relative custom-spin-animation'> 
           {
             stars.map((e, i) => (

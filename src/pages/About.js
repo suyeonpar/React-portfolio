@@ -99,7 +99,7 @@ function About({ dark, toggleDarkMode }) {
             }
             <div className='flex mx-auto w-full md:w-[95%] lg:w-full justify-between items-center'>
               <span className={`text-sm ${dark ? `text-white` : `text-[#221616]`} cursor-pointer group relative md:text-2xl lg:text-3xl lg:ml-0`}>sksrbdpdy@naver.com
-              <span class={`absolute text-sm hidden truncate ${dark ? `text-[#5c5c5c]` : `text-[#ddd]`} left-0 transform group-hover:block transition-[1s] md:text-xl lg:text-2xl group-hover:lg:top-11 group-hover:md:top-8`}>메일은 언제나 환영입니다. :{')'}</span></span>
+              <span className={`absolute text-sm hidden truncate ${dark ? `text-[#5c5c5c]` : `text-[#ddd]`} left-0 transform group-hover:block transition-[1s] md:text-xl lg:text-2xl group-hover:lg:top-11 group-hover:md:top-8`}>메일은 언제나 환영입니다. :{')'}</span></span>
               <div className='flex mt-0 md:mt-2'> 
                 <FontAwesomeIcon icon={faGithub} onClick={gitClick} className={`text-2xl md:text-[40px] p-1 cursor-pointer ${dark ? `bg-white rounded-lg` : ``}`} />
                 <img src="../images/notion.png" alt='{e.img}' title='{e.img}' className='w-[32px] md:w-[45px] cursor-pointer ml-3 md:ml-7' onClick={notionClick} />
@@ -112,8 +112,8 @@ function About({ dark, toggleDarkMode }) {
         {
           data.map((e,i)=>{
             return(
-              <>
-              <ul key={i} className='relative pb-10 md:pb-16 w-[75%] md:w-[80%] lg:w-full mx-auto mt-5 border-b border-[#ddd]'>
+              <React.Fragment key={i}>
+              <ul className='relative pb-10 md:pb-16 w-[75%] md:w-[80%] lg:w-full mx-auto mt-5 border-b border-[#ddd]'>
                 <li className={`mb-3 text-xl font-bold md:text-2xl lg:text-3xl ${dark ? `text-white` : ``}`}>{e.title}</li>
                 <li className={`text-xs mb-2 md:mb-5 lg:mb-10 md:text-xl lg:text-[24px] ${dark ? `text-[#e6e6e6]` : ``}`}>{e.desc}</li>
                 <li className='flex flex-wrap mx-auto'>
@@ -140,7 +140,7 @@ function About({ dark, toggleDarkMode }) {
                   })
                 }
               </div>
-              </>
+              </React.Fragment>
             )
           })
         }
