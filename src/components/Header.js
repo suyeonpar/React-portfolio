@@ -50,6 +50,12 @@ function Header({ dark, toggleDarkMode }) {
     behavior: "smooth"
   });
 
+  const contactScroll = () =>
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
+  });
+
 
   //햄버거 네비
   const HamburgerNav = () =>{
@@ -65,10 +71,10 @@ function Header({ dark, toggleDarkMode }) {
     <>
       <div className={`z-[999] h-[50px] w-full mx-auto items-center top-0 flex justify-between md:h-[80px] ${ScrollActive ? 'fixed bg-white border-b border-[#808080]' : 'absolute'}`}>
         <NavLink to='/'><img src={ScrollActive | location.pathname !== '/' ? `/images/suyeon-logo-1.png` : `/images/suyeon-logo-dark-1.png`} alt='logo' className='scale-[0.5] md:scale-[0.8] md:mr-0 mr-3' /></NavLink>
-        <ul className={`items-center hidden ${ScrollActive | setScrollY === 0 ? `text-black` : `text-white`} mr-3 text-2xl cursor-pointer md:flex`}>
+        <ul className={`items-center hidden ${ScrollActive | location.pathname !== '/' ? `text-black` : `text-white`} mr-3 text-2xl cursor-pointer md:flex`}>
           <li className='mr-5' onClick={aboutScroll}>About</li>
           <li className='mr-5' onClick={workScroll}>Work</li>
-          <li className='mr-5'>Contact</li>
+          <li className='mr-5' onClick={contactScroll}>Contact</li>
           <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className='' />
         </ul>
         <div onClick={handleHamburgerClick} className='mt-2 mr-5 transition-all cursor-pointer md:hidden'>
