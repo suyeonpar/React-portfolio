@@ -12,6 +12,7 @@ import Aside from '../components/Aside';
 import Work from '../components/Work';
 import { createStars } from './../store';
 import Contact from '../components/Contact';
+import Lang from '../components/Lang';
 
 function Main({dark, toggleDarkMode}) {
 
@@ -98,9 +99,6 @@ function Main({dark, toggleDarkMode}) {
       </div>
       <Profile dark={dark} />
       <Work dark={dark} />
-      {/* <Use dark={dark} />  */}
-      {/* <Board dark={dark} /> */}
-      {/* <Contact dark={dark} /> */}
       <Aside dark={dark} toggleDarkMode={toggleDarkMode} />
     </div>
     </>

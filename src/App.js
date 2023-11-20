@@ -1,4 +1,5 @@
 import './App.css';
+import { useTranslation } from 'react-i18next'
 import { Routes, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import Content from './components/Content';
@@ -10,8 +11,15 @@ import Workpage from './pages/Workpage';
 import Renewpage from './pages/Renewpage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Lang from './components/Lang';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './lang/i18n';
 
 function App() { 
+
+  const { t, i18n } = useTranslation()
+  const changelanguageToKo = () => i18n.changeLanguage('ko')
+  const changelanguageToEn = () => i18n.changeLanguage('en')
 
   //다크모드
   const savedDarkMode = localStorage.getItem('dark');
@@ -33,6 +41,7 @@ function App() {
 
   return (
     <>
+    <I18nextProvider i18n={i18n}>
     <Header dark={dark} toggleDarkMode={toggleDarkMode} />
     <Routes>
       <Route path='/' element={<Main dark={dark} toggleDarkMode={toggleDarkMode} />}></Route>
@@ -41,8 +50,10 @@ function App() {
       <Route path='/workpage' element={<Workpage dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/renewpage' element={<Renewpage dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/*' element={<Notfound dark={dark} toggleDarkMode={toggleDarkMode} />} />
+      <Route path='/lang' element={<Lang changelanguageToKo={changelanguageToKo} changelanguageToEn={changelanguageToEn} />} />
     </Routes>
     <Footer />
+    </I18nextProvider>
     </>
   );
 }

@@ -76,6 +76,7 @@ function Header({ dark, toggleDarkMode }) {
           <li className='mr-5' onClick={workScroll}>Work</li>
           <li className='mr-5' onClick={contactScroll}>Contact</li>
           <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className='' />
+          <select>Lan</select>
         </ul>
         <div onClick={handleHamburgerClick} className='mt-2 mr-5 transition-all cursor-pointer md:hidden'>
           {Array(3).fill().map((_, i) => (
@@ -93,8 +94,8 @@ function Header({ dark, toggleDarkMode }) {
       <div className={`${dark ? `bg-gray-400` : `bg-white`} z-[998] fixed overflow-hidden top-0 w-[320px] h-full md:hidden ${isActive ? `right-0` : `-right-[330px]`}`}>
         <ul className='w-4/5 mx-auto mt-20 text-xl cursor-pointer'>
           <li className={`mb-3 border-b hover:font-bold pb-1 ${dark ? `text-white` : ``}`}>About</li>
-          <NavLink to='/workpage'><li className={`mb-3 border-b hover:font-bold pb-1 ${dark ? `text-white` : ``}`}>Work</li></NavLink>
-          <NavLink to='/renewpage'><li className={`mb-2 border-b hover:font-bold pb-1 ${dark ? `text-white` : ``}`}>Contact</li></NavLink>
+          <li className={`mb-3 border-b hover:font-bold pb-1 ${dark ? `text-white` : ``}`}>Work</li>
+          <li className={`mb-2 border-b hover:font-bold pb-1 ${dark ? `text-white` : ``}`}>Contact</li>
           <li><FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`${dark ? `text-white` : ``}`}></FontAwesomeIcon></li>
         </ul>
       </div>

@@ -9,7 +9,7 @@ const contentdata = [
       "desc2" : "JaveScript",
       "desc3" : "Styled-components",
       "img" : "/images/greenping.jpg",
-      "URL" : "https://suyeonpar.github.io/clone-belif/",
+      "URL" : "https://project-greenping-aql4akyqb-kkkkinderjoy.vercel.app/",
       "icon": faGithub,
       "nimg" : "/images/notion.png",
       "gitURL" : "https://github.com/kkkkinderjoy/project_greenping/blob/main/README.md",
