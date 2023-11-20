@@ -76,7 +76,10 @@ function Header({ dark, toggleDarkMode }) {
           <li className='mr-5' onClick={workScroll}>Work</li>
           <li className='mr-5' onClick={contactScroll}>Contact</li>
           <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className='' />
-          <select>Lan</select>
+          <select>
+            <option>KR</option>
+            <option>EN</option>
+          </select>
         </ul>
         <div onClick={handleHamburgerClick} className='mt-2 mr-5 transition-all cursor-pointer md:hidden'>
           {Array(3).fill().map((_, i) => (

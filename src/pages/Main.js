@@ -99,6 +99,7 @@ function Main({dark, toggleDarkMode}) {
       </div>
       <Profile dark={dark} />
       <Work dark={dark} />
+      <Board />
       <Aside dark={dark} toggleDarkMode={toggleDarkMode} />
     </div>
     </>
