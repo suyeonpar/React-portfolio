@@ -3,6 +3,16 @@ import './../index.css'
 
 function Board({ dark }) {
 
+  const linkBoard = [
+    {
+      link : "https://board-next-js-dun.vercel.app/",
+      img: "https://via.placeholder.com/200x200"
+    }
+  ]
+
+  
+
+
   const descData = [
     {
       id: 1,
@@ -23,10 +33,10 @@ function Board({ dark }) {
   
   return (
     <>
-    <div className='w-full h-auto mx-auto text-center'>
+    <div className='w-full h-auto mx-auto text-center mb-10'>
       <h3 className={`text-3xl font-bold md:text-6xl ${dark ? 'text-white' : 'text-black'}`}>MINI BOARD</h3>
       <p className={`mt-4 text-sm ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>Sooo의 미니 게시판</p>
-      <div className='flex flex-wrap justify-between h-full mx-auto max-w-7xl'>
+      <div className='flex flex-wrap justify-between h-full mx-auto max-w-7xl mt-5'>
         <div className='inner-custom bg-[#eee] border w-[45%] h-[200px] md:h-[600px] lg:h-[600px] mx-auto rounded-md basis-4/5 mb-5 md:basis-[48%]'>
           <img src='https://via.placeholder.com/200x200/fff' alt='사진' />
         </div>
@@ -36,8 +46,8 @@ function Board({ dark }) {
             descData.map((e,i)=>{
               return(
                 <div key={i}>
-                  <h3 className='text-2xl md:text-3xl'>{e.title}</h3>
-                  <p className='text-xl md:text-2xl'>{e.desc}</p>
+                  <h3 className='text-xl md:text-2xl'>{e.title}</h3>
+                  <p className='text-xs md:text-xl'>{e.desc}</p>
                 </div>
               )
             })

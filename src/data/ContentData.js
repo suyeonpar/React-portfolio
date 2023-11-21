@@ -97,7 +97,7 @@ const contentdata = [
     "desc3" : "CSS",
     "URL" : "https://lucky-beige.vercel.app/",
     "icon": faGithub,
-    "gitURL": "https://github.com/suyeonpar/Lucky.git"
+    "gitURL": "https://github.com/suyeonpar/Lucky/blob/main/README.md"
   },
   {
     "id" : "Game",
