@@ -76,31 +76,8 @@ function Header({ dark, toggleDarkMode }) {
           <li className='mr-5' onClick={workScroll}>Work</li>
           <li className='mr-5' onClick={contactScroll}>Contact</li>
           <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className='' />
-          {/* <select>
-            <option>KR</option>
-            <option>EN</option>
-          </select> */}
         </ul>
-        <div onClick={handleHamburgerClick} className='mt-2 mr-5 transition-all cursor-pointer md:hidden'>
-          {Array(3).fill().map((_, i) => (
-            <span
-              key={i}
-              className={`hamburger w-[30px] h-[1px] mb-2 block ${(ScrollActive || ScrollY > 120 | location.pathname !== '/') ? 'bg-black' : 'bg-white'} `}
-              style={{
-                transform: isActive ? (i === 0 ? 'rotate(45deg) translateY(12px)' : i === 2 ? 'rotate(-45deg) translateY(-13px)' : 'rotate(0)') : '',
-                opacity: isActive ? (i === 1 ? 0 : 1) : 1,
-              }}>
-            </span>
-          ))}
-        </div>
-      </div>
-      <div className={`${dark ? `bg-gray-400` : `bg-white`} z-[998] fixed overflow-hidden top-0 w-[320px] h-full md:hidden ${isActive ? `right-0` : `-right-[330px]`}`}>
-        <ul className='w-4/5 mx-auto mt-20 text-xl cursor-pointer'>
-          <li className={`mb-3 border-b hover:font-bold pb-1 ${dark ? `text-white` : ``}`}>About</li>
-          <li className={`mb-3 border-b hover:font-bold pb-1 ${dark ? `text-white` : ``}`}>Work</li>
-          <li className={`mb-2 border-b hover:font-bold pb-1 ${dark ? `text-white` : ``}`}>Contact</li>
-          <li><FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`${dark ? `text-white` : ``}`}></FontAwesomeIcon></li>
-        </ul>
+        <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`block  md:hidden mr-7 z-[9999] ${ScrollActive ? `text-black` : `text-white`}`} />
       </div>
     </>
   );

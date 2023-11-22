@@ -118,7 +118,7 @@ function Gallery({ dark }) {
           DataFilter.map((e,i)=>{
             return(
               <>
-              <div key={i} className={`${dark ? `bg-gray-200` : `bg-white`} basis-4/5 md:basis-[90%] lg:basis-full h-auto lg:h-[400px] border mb-10 mx-auto relative`}>
+              <div key={i} className={`${dark ? `bg-gray-200` : `bg-gray-100`} basis-4/5 md:basis-[90%] border mb-10 mx-auto relative`}>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
                   <img src={e.img} alt={e.title} className='mb-2 basis-full lg:basis-[55%] md:mb-3 lg:mr-7 border cursor-pointer shadow-sm group' onClick={()=>{OpenNewTab(e.URL)}} />
                   <div className="text-start">
