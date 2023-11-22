@@ -131,6 +131,10 @@ function Gallery({ dark }) {
                       <p className='text-sm md:text-2xl'>{e.day}</p>
                     </div>
                     <div className='mb-2 md:mb-5'>
+                      <p className='text-sm font-bold md:text-2xl'>Contribution</p>
+                      <p className='text-sm md:text-2xl'>{e.contribution}</p>
+                    </div>
+                    <div className='mb-2 md:mb-5'>
                       <p className='text-sm font-bold md:text-2xl'>Use</p>
                       <p className='text-sm md:text-2xl'>{e.desc}</p>
                       <p className='text-sm md:text-2xl'>{e.desc2}</p>

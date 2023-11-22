@@ -90,6 +90,10 @@ function Slide({ dark }) {
                       <p className='text-sm font-bold lg:mb-2 md:text-xl lg:text-2xl'>Work hours</p>
                       <p className='text-sm md:text-xl lg:text-2xl'>{e.day}</p>
                     </div>
+                    <div className='mb-2 md:mb-5'>
+                      <p className='text-sm font-bold lg:mb-2 md:text-xl lg:text-2xl'>Contribution</p>
+                      <p className='text-sm md:text-xl lg:text-2xl'>{e.contribution}</p>
+                    </div>
                     <div className='mb-0 md:mb-1 lg:mb-3'>
                       <p className='text-sm font-bold lg:mb-2 md:text-xl lg:text-2xl'>USE</p>
                       <p className='text-sm md:text-xl lg:text-2xl'>{e.desc}</p>
