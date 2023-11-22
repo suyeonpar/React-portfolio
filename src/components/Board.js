@@ -37,10 +37,10 @@ function Board({ dark }) {
       <h3 className={`text-3xl font-bold md:text-6xl ${dark ? 'text-white' : 'text-black'}`}>MINI BOARD</h3>
       <p className={`mt-4 text-sm ${dark ? `text-white` : `text-[#999]`} md:text-2xl`}>Sooo의 미니 게시판</p>
       <div className='flex flex-wrap justify-between h-full mx-auto max-w-7xl mt-5'>
-        <div className='inner-custom bg-[#eee] border w-[45%] h-[200px] md:h-[600px] lg:h-[600px] mx-auto rounded-md basis-4/5 mb-5 md:basis-[48%]'>
+        <div className='bg-gray-100 border w-[45%] h-[200px] md:h-[600px] lg:h-[600px] mx-auto rounded-md basis-4/5 mb-5 md:basis-[48%]'>
           <img src='https://via.placeholder.com/200x200/fff' alt='사진' />
         </div>
-        <div className='overflow-y-scroll w-[45%] h-[200px] md:h-[600px] lg:h-[600px] bg-[#eee] shadow-inner border mx-auto rounded-md basis-4/5 md:basis-[48%] overflow-hidden'>
+        <div className='overflow-y-scroll w-[45%] h-[200px] md:h-[600px] lg:h-[600px] bg-gray-100 shadow-inner border mx-auto rounded-md basis-4/5 md:basis-[48%] overflow-hidden'>
           {
             descData &&
             descData.map((e,i)=>{
