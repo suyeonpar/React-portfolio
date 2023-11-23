@@ -1,6 +1,6 @@
 import './App.css';
 import { useTranslation } from 'react-i18next'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Main from './pages/Main';
 import Content from './components/Content';
 import About from './pages/About';
@@ -38,6 +38,8 @@ function App() {
   const toggleDarkMode = () => {
     setDark(!dark);
   };
+
+  const location = useLocation();
 
   return (
     <>

@@ -9,7 +9,7 @@ const contentdata = [
       "desc2" : "JaveScript",
       "desc3" : "Styled-components",
       "img" : "/images/greenping.jpg",
-      "contribution" : "25%",
+      "contribution" : "20%",
       "URL" : "https://project-greenping-aql4akyqb-kkkkinderjoy.vercel.app/",
       "icon": faGithub,
       "nimg" : "/images/notion.png",
