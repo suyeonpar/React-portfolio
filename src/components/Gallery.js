@@ -27,7 +27,7 @@ function Gallery({ dark }) {
       const filteredData = contentdata.filter(e => e.id === txtList[txt]);
       setDataFilter(filteredData);
     }
-  }, [txt]);
+  }, [txt, contentdata, txtList]);
   
   //새로운창 연결
   const OpenNewTab = (url) => {
@@ -53,7 +53,7 @@ function Gallery({ dark }) {
   return (
     <>
     <div className="flex flex-wrap items-center mx-auto max-w-7xl">
-      <div className={`h-[40px] w-[80%] leading-[40px] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[50px] lg:h-[60px] md:w-full`}>
+      <div className={`h-[40px] w-[80%] leading-[40px] bg-[#010b1a] border rounded-md overflow-hidden relative text-center mx-auto ${dark ? `border-gray-200` : ``} md:h-[50px] lg:h-[60px] md:w-[90%] lg:w-full`}>
         <div className='flex w-[82%] h-full justify-between mx-auto md:w-[80%] lg:w-[85%] items-center'>
           <p className={`text-white text-[12px] cursor-pointer md:text-xl
           ${txt === -1 ? 'text-[14px] md:text-2xl lg:text-3xl font-bold on' : ''}`} onClick={() => {setTxt(-1);}}>ALL</p>
@@ -118,7 +118,7 @@ function Gallery({ dark }) {
           DataFilter.map((e,i)=>{
             return(
               <>
-              <div key={i} className={`${dark ? `bg-gray-200` : `bg-gray-100`} basis-4/5 md:basis-[90%] border mb-10 mx-auto relative`}>
+              <div key={i} className={`${dark ? `bg-gray-200` : `bg-gray-100`} basis-4/5 md:basis-[90%] lg:basis-full border mb-10 mx-auto relative`}>
                 <div className="flex flex-wrap justify-start w-[95%] mx-auto text-center mt-5">
                   <img src={e.img} alt={e.title} className='mb-2 basis-full lg:basis-[55%] md:mb-3 lg:mr-7 border cursor-pointer shadow-sm group' onClick={()=>{OpenNewTab(e.URL)}} />
                   <div className="text-start">

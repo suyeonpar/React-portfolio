@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 // 별 배경
 export const createStars = (Stars, width, height, rewidth, reheight) => {
   const stars = [];

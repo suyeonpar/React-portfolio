@@ -24,7 +24,7 @@ function About({ dark, toggleDarkMode }) {
   useEffect(()=>{
     new WOW.WOW({
       boxClass: "wow",
-      animateCladd: "animate__animated",
+      animateClass: "animate__animated",
       live: false,
       mobile: true
     }).init();

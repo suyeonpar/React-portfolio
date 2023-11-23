@@ -34,10 +34,10 @@ function Header({ dark, toggleDarkMode }) {
     return () => {
       window.removeEventListener("scroll", scrollFixed);
     };
-  });
+  }, [scrollFixed]);
   
   console.log(ScrollY)
-  // 1140
+  
   const aboutScroll = () =>
   window.scrollTo({
     top: 1140,
@@ -70,14 +70,14 @@ function Header({ dark, toggleDarkMode }) {
   return (
     <>
       <div className={`z-[999] h-[50px] w-full mx-auto items-center top-0 flex justify-between md:h-[80px] ${ScrollActive ? 'fixed bg-white border-b border-[#808080]' : 'absolute'}`}>
-        <NavLink to='/'><img src={ScrollActive | location.pathname !== '/' ? `/images/suyeon-logo-1.png` : `/images/suyeon-logo-dark-1.png`} alt='logo' className='scale-[0.5] md:scale-[0.8] md:mr-0 mr-3' /></NavLink>
+        <NavLink to='/'><img src={ScrollActive | location.pathname !== '/' ? `/images/suyeon-logo-1.png` : `/images/suyeon-logo-dark-1.png`} alt='logo' className={`scale-[0.5] md:scale-[0.8] md:mr-0 mr-3`} /></NavLink>
         <ul className={`items-center hidden ${ScrollActive | location.pathname !== '/' ? `text-black` : `text-white`} mr-3 text-2xl cursor-pointer md:flex`}>
           <li className='mr-5' onClick={aboutScroll}>About</li>
           <li className='mr-5' onClick={workScroll}>Work</li>
           <li className='mr-5' onClick={contactScroll}>Contact</li>
           <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className='' />
         </ul>
-        <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`block  md:hidden mr-7 z-[9999] ${ScrollActive ? `text-black` : `text-white`}`} />
+        <FontAwesomeIcon icon={dark ? faCloudSun : faMoon} onClick={toggleDarkMode} className={`block cursor-pointer md:hidden mr-7 z-[9999] ${ScrollActive ? `text-black` : `text-white`}`} />
       </div>
     </>
   );

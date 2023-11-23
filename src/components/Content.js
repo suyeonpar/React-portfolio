@@ -18,7 +18,7 @@ function Content({ stars, dark, toggleDarkMode }) {
       const filteredData = contentdata.filter(e => e.id === txtList[txt]);
       setDataFilter(filteredData);
     }
-  }, [txt]);
+  }, [txt, contentdata, txtList]);
   
   //새로운창 연결
   const OpenNewTab = (url) => {

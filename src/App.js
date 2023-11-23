@@ -49,8 +49,8 @@ function App() {
       <Route path='/content' element={<Content />} />
       <Route path='/workpage' element={<Workpage dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/renewpage' element={<Renewpage dark={dark} toggleDarkMode={toggleDarkMode} />} />
-      <Route path='/*' element={<Notfound dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/lang' element={<Lang changelanguageToKo={changelanguageToKo} changelanguageToEn={changelanguageToEn} />} />
+      <Route path='/*' element={<Notfound dark={dark} toggleDarkMode={toggleDarkMode} />} />
     </Routes>
     <Footer />
     </I18nextProvider>
