@@ -17,6 +17,36 @@ const contentdata = [
       "notionURL" : "https://www.notion.so/greenping-91cd4bfbc52f4e68b571045537b7b5dc?pvs=4"
   },
   {
+      "id" : "Mini.web",
+      "day" : "3Weeks",
+      "title" : "Sooo's board",
+      "desc" : "Next.js",
+      "desc2" : "TypeScript",
+      "desc3" : "Tailwind CSS",
+      "img" : "/images/board.jpg",
+      "contribution" : "100%",
+      "URL" : "https://board-next-js-dun.vercel.app",
+      "icon": faGithub,
+      "nimg" : "/images/notion.png",
+      "gitURL" : "https://github.com/kkkkinderjoy/project_greenping/blob/main/README.md",
+      "notionURL" : "https://www.notion.so/greenping-91cd4bfbc52f4e68b571045537b7b5dc?pvs=4"
+  },
+  {
+      "id" : "Mini.web",
+      "day" : "2Weeks",
+      "title" : "Template_website",
+      "desc" : "React",
+      "desc2" : "JaveScript",
+      "desc3" : "Styled-components",
+      "img" : "/images/greenping.jpg",
+      "contribution" : "100%",
+      "URL" : "https://template-website-drab.vercel.app",
+      "icon": faGithub,
+      "nimg" : "/images/notion.png",
+      "gitURL" : "https://github.com/kkkkinderjoy/project_greenping/blob/main/README.md",
+      "notionURL" : "https://www.notion.so/greenping-91cd4bfbc52f4e68b571045537b7b5dc?pvs=4"
+  },
+  {
     "id" : "Clone",
     "day" : "2Weeks",
     "title" : "belif",

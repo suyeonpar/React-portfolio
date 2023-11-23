@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Gallery({ dark }) {
 
   // 필터
-  const txtList = ["Project", "Clone", "Mini.P", "Game"];
+  const txtList = ["Project","Mini.web", "Clone", "Mini.P", "Game"];
   const [txt, setTxt] = useState(-1);
   const FilterId = [...new Set(contentdata.map(e => e.id))];
   const [DataFilter, setDataFilter] = useState([]);
