@@ -30,9 +30,9 @@ function Work({dark}) {
           <span onClick={toggleGallery} className={`w-14 mr-5 text-xs leading-7 md:w-24 md:leading-9 text-white bg-black cursor-pointer md:text-xl ${dark ? `border` : ``}`}>Gallery</span>
           <span onClick={toggleSlide} className={`w-14 leading-7 md:w-24 md:leading-9 text-xs  text-white bg-black cursor-pointer md:text-xl ${dark ? `border` : ``}`}>Slide</span>
         </div>
+      </div>
         {showSlide && <Slide dark={dark} />}
         {showGallery && <Gallery dark={dark} />}
-      </div>
     </div>
     </>
   );    

@@ -39,8 +39,6 @@ function App() {
     setDark(!dark);
   };
 
-  const location = useLocation();
-
   return (
     <>
     <I18nextProvider i18n={i18n}>
@@ -49,8 +47,6 @@ function App() {
       <Route path='/' element={<Main dark={dark} toggleDarkMode={toggleDarkMode} />}></Route>
       <Route path='/about' element={<About dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/content' element={<Content />} />
-      <Route path='/workpage' element={<Workpage dark={dark} toggleDarkMode={toggleDarkMode} />} />
-      <Route path='/renewpage' element={<Renewpage dark={dark} toggleDarkMode={toggleDarkMode} />} />
       <Route path='/lang' element={<Lang changelanguageToKo={changelanguageToKo} changelanguageToEn={changelanguageToEn} />} />
       <Route path='/*' element={<Notfound dark={dark} toggleDarkMode={toggleDarkMode} />} />
     </Routes>

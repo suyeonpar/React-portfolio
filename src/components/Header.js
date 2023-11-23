@@ -46,7 +46,7 @@ function Header({ dark, toggleDarkMode }) {
   
   const workScroll = () =>
   window.scrollTo({
-    top: 1850,
+    top: 1870,
     behavior: "smooth"
   });
 
