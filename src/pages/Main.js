@@ -2,16 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import 'animate.css';
 import Typed from 'typed.js';
 import Board from '../components/Board';
-import Use from '../components/Use';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import '../App.css';
 import '../index.css';
 import Profile from '../components/Profile';
 import Aside from '../components/Aside';
 import Work from '../components/Work';
 import { createStars } from './../store';
-import Contact from '../components/Contact';
 import Lang from '../components/Lang';
 
 function Main({dark, toggleDarkMode}) {
@@ -56,8 +52,8 @@ function Main({dark, toggleDarkMode}) {
   return (
     <>
     <div className={`w-full ${dark ? `bg-[#02081f]` : `bg-white`} h-full mx-auto`}>
-      <div className={`w-full overflow-hidden h-[500px] transform pb-10 md:h-[1000px] ${dark ? `bg-gradient-to-t from-[#010b1a] to-black` : `bg-gradient-to-b from-black via-[#010b1a] to-[#fff] `}`}>
-        <div className='relative custom-spin-animation'> 
+      <div className={`w-full overflow-hidden h-[500px] transform pb-10 md:h-[800px] lg:h-[1000px] ${dark ? `bg-gradient-to-t from-[#010b1a] to-black` : `bg-gradient-to-b from-black via-[#010b1a] to-[#fff] `}`}>
+        <div className='relative custom-spin-animation'>
           {
             stars.map((e, i) => (
               <div
@@ -92,9 +88,9 @@ function Main({dark, toggleDarkMode}) {
             ))
           }
         </div>
-        <div className='mt-20 text-center md:mt-28'>
+        <div className='mt-14 text-center md:mt-28'>
           <p className='mb-5 pt-[130px] text-xl text-[#ddd] md:text-4xl'>S o o o</p>
-          <span id="typed" className='text-6xl font-bold text-white md:text-8xl lg:text-[135px]' />
+          <span id="typed" className='text-5xl font-bold text-white md:text-8xl lg:text-[135px]' />
         </div>
       </div>
       <Profile dark={dark} />

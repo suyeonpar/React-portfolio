@@ -56,7 +56,6 @@ function Header({ dark, toggleDarkMode }) {
     behavior: "smooth"
   });
 
-
   //햄버거 네비
   const HamburgerNav = () =>{
     const [isOpen, setIsOpen] = useState(false);
