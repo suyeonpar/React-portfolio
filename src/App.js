@@ -38,7 +38,7 @@ function App() {
   const toggleDarkMode = () => {
     setDark(!dark);
   };
-
+  
   return (
     <>
     <I18nextProvider i18n={i18n}>
