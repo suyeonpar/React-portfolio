@@ -10,7 +10,7 @@ const contentdata = [
       "desc3" : "Styled-components",
       "img" : "/images/greenping.jpg",
       "contribution" : "20%",
-      "URL" : "https://project-greenping-aql4akyqb-kkkkinderjoy.vercel.app/",
+      "URL" : "https://project-greenping.vercel.app",
       "icon": faGithub,
       "nimg" : "/images/notion.png",
       "gitURL" : "https://github.com/kkkkinderjoy/project_greenping/blob/main/README.md",
@@ -136,20 +136,20 @@ const contentdata = [
     "URL" : "https://lucky-beige.vercel.app/",
     "icon": faGithub,
     "gitURL": "https://github.com/suyeonpar/Lucky/blob/main/README.md"
-  },
-  {
-    "id" : "Game",
-    "day" : "1Day",
-    "title" : "Drawing",
-    "img" : "/images/drawing.jpg",
-    "contribution" : "100%",
-    "desc" : "JavaScript",
-    "desc2" : "HTML",
-    "desc3" : "CSS",
-    "URL" : "https://suyeonpar.github.io/drawing-mini-game/",
-    "icon": faGithub,
-    "gitURL" : "https://github.com/suyeonpar/drawing-mini-game/blob/main/README.md"
   }
+  // {
+  //   "id" : "Game",
+  //   "day" : "1Day",
+  //   "title" : "Drawing",
+  //   "img" : "/images/drawing.jpg",
+  //   "contribution" : "100%",
+  //   "desc" : "JavaScript",
+  //   "desc2" : "HTML",
+  //   "desc3" : "CSS",
+  //   "URL" : "https://suyeonpar.github.io/drawing-mini-game/",
+  //   "icon": faGithub,
+  //   "gitURL" : "https://github.com/suyeonpar/drawing-mini-game/blob/main/README.md"
+  // }
 ]
 
 export default contentdata ;
